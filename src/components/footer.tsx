@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Instagram, Facebook, Youtube, MapPin, Mail } from 'lucide-react';
+import { Instagram, Facebook, Youtube, MapPin, Mail, Phone } from 'lucide-react';
 import { site } from '@/lib/site-data';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
 import { Logo } from '@/components/logo';
@@ -31,7 +31,8 @@ export function Footer() {
         </div>
         <div className="footer-card">
           <h4>Visit & Book</h4>
-          <span className="footer-line"><WhatsAppIcon size={15}/>{site.phone}</span>
+          <a className="footer-line" href={site.phoneHref}><Phone size={15}/>{site.phone}</a>
+          <a className="footer-line" href={site.whatsappUrl('Hello ALLORA, I would like to book a spa service.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={15}/>WhatsApp {site.phone}</a>
           <span className="footer-line"><Mail size={15}/>{site.email}</span>
           <span className="footer-line"><MapPin size={15}/>{site.location}</span>
           <a className="footer-book" href={site.whatsappUrl('Hello ALLORA, I would like to book a spa service.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={15}/>Book on WhatsApp</a>

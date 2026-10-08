@@ -1,12 +1,23 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Building2, Check, Home, PartyPopper, Sparkles } from 'lucide-react';
+import { ArrowRight, Building2, Check, Home, PartyPopper, ShieldCheck, Sparkles, UserRound } from 'lucide-react';
 import { HeroTherapists } from '@/components/hero-therapists';
 import { ReviewForm } from '@/components/review-form';
+import { TherapistTeam } from '@/components/therapist-team';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
 import { getPackages } from '@/lib/queries';
 import { site } from '@/lib/site-data';
 import { spaItems } from '@/lib/service-data';
+
+const packageImages: Record<string, string> = {
+  'luxury-spa-package-dubai': '/images/hero/massage.jpg',
+  'couples-spa-package-dubai': '/images/home/couples.jpg',
+  'spa-day-package-dubai': '/images/hero/scrub.jpg',
+  'massage-package-dubai': '/images/hero/massage.jpg',
+  'moroccan-bath-package-dubai': '/images/hero/scrub.jpg',
+  'bridal-spa-package-dubai': '/images/hero/glow.jpg',
+  'ladies-spa-package-dubai': '/images/hero/facial.jpg',
+};
 
 export default async function HomePage() {
   const packages = await getPackages();
@@ -19,6 +30,15 @@ export default async function HomePage() {
             <p className="eyebrow home-hero-kicker">Relax · Rejuvenate · Revive</p>
             <h1 className="display-font"><span className="home-hero-title">Luxury Spa & Wellness</span><br /><span>At Your Place</span></h1>
             <p>Premium spa, beauty and wellness services by our professional female therapists. Enjoy personalized care, relaxation and luxury – at your home, hotel or for your special events in Dubai.</p>
+            <ul className="home-hero-points">
+              <li><UserRound size={17} />Female therapists</li>
+              <li><Home size={17} />Home, hotel & events</li>
+              <li><ShieldCheck size={17} />Premium, hygienic care</li>
+            </ul>
+            <div className="actions">
+              <a className="btn-primary" href={site.whatsappUrl('Hello ALLORA, I would like to book an appointment.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={16} />Book Now <ArrowRight size={15} /></a>
+              <a className="btn-outline" href="#packages">View Packages</a>
+            </div>
           </div>
           <div className="home-hero-visual">
             <HeroTherapists />
@@ -45,7 +65,7 @@ export default async function HomePage() {
             <a className="btn-primary" href={site.whatsappUrl('Hello ALLORA, I would like to book an appointment.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={17} />Book via WhatsApp <ArrowRight size={15} /></a>
           </div>
           <div className="portrait-frame">
-            <Image src="/images/about/wellness-passion.jpg" alt="ALLORA therapist preparing a home spa treatment with premium oils and towels" fill sizes="(max-width:800px) 100vw, 560px" className="object-cover" />
+            <Image src="/images/hero/aromatherapy.jpg" alt="ALLORA therapist giving an aromatherapy massage with premium oils" fill sizes="(max-width:800px) 100vw, 560px" className="object-cover" />
           </div>
         </div>
       </section>
@@ -58,6 +78,8 @@ export default async function HomePage() {
           <div className="stat"><strong>100%</strong><span>Client Satisfaction</span></div>
         </div>
       </section>
+
+      <TherapistTeam />
 
       <section className="home-steps">
         <div className="container-page">
@@ -83,7 +105,7 @@ export default async function HomePage() {
           <div className="cards-3">
             {shown.slice(0, 3).map((p: { slug: string; name: string; short_description: string; image_url?: string; price?: number }, i: number) => (
               <article className="service-card" key={p.slug}>
-                <Image src={p.image_url || [site.images.spa, site.images.couple, site.images.premium][i]} alt={p.name} width={600} height={400} />
+                <Image src={packageImages[p.slug] || ['/images/hero/massage.jpg', '/images/home/couples.jpg', '/images/hero/scrub.jpg'][i]} alt={p.name} width={600} height={400} />
                 <div className="service-card-body">
                   <h3>{p.name}</h3>
                   <p>{p.short_description}</p>
@@ -106,13 +128,13 @@ export default async function HomePage() {
             <p>Enjoy professional spa and beauty services at your home, hotel or private location in Dubai.</p>
             <a className="btn-primary" href={site.whatsappUrl('Hello ALLORA, I would like to book a service at my place.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={16} />Book at Your Place <ArrowRight size={15} /></a>
           </div>
-          <div className="home-feature-photo"><Image src="/images/services/at-your-place.jpg" alt="ALLORA therapist preparing a spa treatment at a bright Dubai home" fill sizes="(max-width:800px) 100vw, 560px" className="object-cover" /></div>
+          <div className="home-feature-photo"><Image src="/images/home/at-home.jpg" alt="ALLORA therapist giving a facial treatment in a bright Dubai apartment" fill sizes="(max-width:800px) 100vw, 560px" className="object-cover" /></div>
         </div>
       </section>
 
       <section className="home-feature home-feature-plain">
         <div className="container-page home-feature-grid">
-          <div className="home-feature-photo"><Image src="/images/services/ready-to-relax.jpg" alt="ALLORA therapist ready for a spa session" fill sizes="(max-width:800px) 100vw, 560px" className="object-cover" /></div>
+          <div className="home-feature-photo"><Image src="/images/home/ready.jpg" alt="ALLORA therapist welcoming a guest with fresh towels beside a prepared spa bed" fill sizes="(max-width:800px) 100vw, 560px" className="object-cover" /></div>
           <div className="feature-band-copy">
             <p className="eyebrow">Book Today</p>
             <h2 className="display-font">Ready to Relax?</h2>

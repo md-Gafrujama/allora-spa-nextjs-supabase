@@ -1,6 +1,7 @@
 export const site = {
   name: 'ALLORA Spa & Wellness',
-  phone: 'xxxxxxxxxx',
+  phone: '+971 50 951 3634',
+  phoneHref: 'tel:+971509513634',
   email: 'xxxxxxxxxx',
   location: '.......',
   images: {
@@ -11,19 +12,19 @@ export const site = {
     spa: '/images/services/spa-relax.jpg',
     couple: '/images/services/spa-couple.jpg',
     premium: '/images/services/spa-premium.jpg',
-    aboutHero: '/images/about/about-hero.jpg',
+    aboutHero: '/images/about/team-group.jpg',
     about: '/images/about/about-story.jpg',
     why: '/images/about/about-why.jpg',
     contactHero: '/images/contact/contact-hero.jpg',
     contactRelax: '/images/contact/contact-relax.jpg',
     corporate: '/images/services/corporate-massage.jpg',
-    dropdownSpa: '/images/services/dropdown-spa.jpg',
-    dropdownPlace: '/images/services/dropdown-place.jpg',
-    dropdownEvent: '/images/services/dropdown-event.jpg',
-    dropdownCorporate: '/images/services/dropdown-corporate.jpg',
+    dropdownSpa: '/images/hero/massage.jpg',
+    dropdownPlace: '/images/home/at-home.jpg',
+    dropdownEvent: '/images/home/couples.jpg',
+    dropdownCorporate: '/images/home/ready.jpg',
     group: '/images/team/team-group.jpg',
   },
-  whatsappUrl: (_message: string) => '#',
+  whatsappUrl: (message: string) => `https://wa.me/971509513634?text=${encodeURIComponent(message)}`,
 };
 
 export const navData = {

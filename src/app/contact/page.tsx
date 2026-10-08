@@ -8,7 +8,7 @@ const areas = ['Dubai Marina', 'Jumeirah', 'Downtown Dubai', 'Business Bay', 'Pa
 const faqs = [
   ['Where do you visit?', 'Home, hotel, apartment and private events anywhere in Dubai.'],
   ['When are you available?', '....... Appointments are confirmed with the team.'],
-  ['How do I book?', 'Send a message on WhatsApp or use the form. Phone and email stay private on this page.'],
+  ['How do I book?', `Call or WhatsApp us on ${site.phone}, or use the form. We confirm the time, place and package with you.`],
 ];
 
 export default function Contact() {
@@ -23,7 +23,7 @@ export default function Contact() {
             <p>Have a question, need a custom package, or want to book a spa experience at your place, hotel, or event? Our team is here to help.</p>
           </div>
           <div className="contact-hero-photo">
-            <Image src="/images/contact/contact-welcome.jpg" alt="ALLORA therapist at the reception desk" width={1024} height={768} priority sizes="280px" />
+            <Image src="/images/contact/reception.jpg" alt="ALLORA team member at the reception desk ready to take your booking" width={1152} height={864} priority sizes="(max-width:800px) 92vw, 460px" />
           </div>
         </div>
       </section>
@@ -33,13 +33,14 @@ export default function Contact() {
           <div className="contact-way">
             <span><WhatsAppIcon size={18} /></span>
             <strong>WhatsApp Us</strong>
-            <small className="masked">{site.phone}</small>
+            <small>{site.phone}</small>
             <a href={site.whatsappUrl('Hello ALLORA, I have a question.')} target="_blank" rel="noreferrer">Chat Now <ArrowRight size={14} /></a>
           </div>
           <div className="contact-way">
             <span><Phone size={18} /></span>
             <strong>Call Us</strong>
-            <small className="masked">{site.phone}</small>
+            <small>{site.phone}</small>
+            <a href={site.phoneHref}>Call Now <ArrowRight size={14} /></a>
           </div>
           <div className="contact-way">
             <span><Mail size={18} /></span>
@@ -64,7 +65,7 @@ export default function Contact() {
           </div>
           <div className="contact-aside">
             <div className="contact-aside-photo">
-              <Image src="/images/services/at-your-place.jpg" alt="ALLORA therapist preparing a spa visit at your place" width={1152} height={864} sizes="(max-width:800px) 100vw, 520px" />
+              <Image src="/images/home/ready.jpg" alt="ALLORA therapist welcoming a guest with fresh towels" width={1152} height={864} sizes="(max-width:800px) 100vw, 520px" />
             </div>
             <h3>Relaxation Starts with a Conversation</h3>
             <p>Tell us what you need and we’ll create the right spa experience for you.</p>
