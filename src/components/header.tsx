@@ -12,8 +12,8 @@ const MenuPanel = ({ title, href, items, image }: {title:string;href:string;item
   <div className="mega-menu">
     <div className="mega-feature">
       <Image src={image} alt="ALLORA" fill className="object-cover object-[center_18%]" sizes="220px" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#051650] via-black/15 to-transparent" />
-      <div className="absolute bottom-5 left-5 right-5 text-white"><p className="text-[10px] uppercase tracking-[.24em] font-bold text-[#051650]">ALLORA</p><h3 className="display-font mt-1 text-2xl">{title}</h3><Link href={href} className="mega-explore">Explore <ArrowUpRight size={14}/></Link></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-transparent" />
+      <div className="absolute bottom-5 left-5 right-5 text-[#051650]"><p className="text-[10px] uppercase tracking-[.24em] font-bold text-[#051650]">ALLORA</p><h3 className="display-font mt-1 text-2xl">{title}</h3><Link href={href} className="mega-explore">Explore <ArrowUpRight size={14}/></Link></div>
     </div>
     <div className="mega-list">{items.map(([label,url],i)=><Link href={url} key={url} className="mega-item"><span className="mega-number">{String(i+1).padStart(2,'0')}</span><span><b>{label}</b></span><ArrowUpRight size={15}/></Link>)}</div>
   </div>

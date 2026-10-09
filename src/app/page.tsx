@@ -5,23 +5,9 @@ import { HeroTherapists } from '@/components/hero-therapists';
 import { ReviewForm } from '@/components/review-form';
 import { TherapistTeam } from '@/components/therapist-team';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
-import { getPackages } from '@/lib/queries';
 import { site } from '@/lib/site-data';
-import { spaItems } from '@/lib/service-data';
 
-const packageImages: Record<string, string> = {
-  'luxury-spa-package-dubai': '/images/hero/massage.jpg',
-  'couples-spa-package-dubai': '/images/home/couples.jpg',
-  'spa-day-package-dubai': '/images/hero/scrub.jpg',
-  'massage-package-dubai': '/images/hero/massage.jpg',
-  'moroccan-bath-package-dubai': '/images/hero/scrub.jpg',
-  'bridal-spa-package-dubai': '/images/hero/glow.jpg',
-  'ladies-spa-package-dubai': '/images/hero/facial.jpg',
-};
-
-export default async function HomePage() {
-  const packages = await getPackages();
-  const shown = packages.length ? packages : spaItems.slice(0, 3);
+export default function HomePage() {
   return (
     <main className="home">
       <section className="home-hero">
@@ -35,23 +21,20 @@ export default async function HomePage() {
               <li><Home size={17} />Home, hotel & events</li>
               <li><ShieldCheck size={17} />Premium, hygienic care</li>
             </ul>
+            <div className="home-hero-types">
+              <Link href="/spa-packages"><Sparkles size={22} />Spa Package</Link>
+              <Link href="/your-place"><Home size={22} />Your Place</Link>
+              <Link href="/event-services"><PartyPopper size={22} />Event Service</Link>
+              <Link href="/corporate"><Building2 size={22} />Corporate</Link>
+            </div>
             <div className="actions">
               <a className="btn-primary" href={site.whatsappUrl('Hello ALLORA, I would like to book an appointment.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={16} />Book Now <ArrowRight size={15} /></a>
-              <a className="btn-outline" href="#packages">View Packages</a>
+              <Link className="btn-outline" href="/spa-packages">View Packages</Link>
             </div>
           </div>
           <div className="home-hero-visual">
             <HeroTherapists />
           </div>
-        </div>
-      </section>
-
-      <section className="home-types" aria-label="Service types">
-        <div className="container-page home-types-row">
-          <Link href="/spa-packages"><Sparkles size={22} />Spa Package</Link>
-          <Link href="/your-place"><Home size={22} />Your Place</Link>
-          <Link href="/event-services"><PartyPopper size={22} />Event Service</Link>
-          <Link href="/corporate"><Building2 size={22} />Corporate</Link>
         </div>
       </section>
 
@@ -65,7 +48,7 @@ export default async function HomePage() {
             <a className="btn-primary" href={site.whatsappUrl('Hello ALLORA, I would like to book an appointment.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={17} />Book via WhatsApp <ArrowRight size={15} /></a>
           </div>
           <div className="portrait-frame">
-            <Image src="/images/hero/aromatherapy.jpg" alt="ALLORA therapist giving an aromatherapy massage with premium oils" fill sizes="(max-width:800px) 100vw, 560px" className="object-cover" />
+            <Image src="/images/hero/aromatherapy.jpg" alt="ALLORA therapist giving an aromatherapy massage with premium oils" fill sizes="(max-width:800px) 100vw, 560px" className="object-contain" />
           </div>
         </div>
       </section>
@@ -93,33 +76,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="section" id="packages">
-        <div className="container-page">
-          <div className="service-list-head">
-            <div>
-              <p className="eyebrow">Spa Packages</p>
-              <h2>Our Popular Spa Packages</h2>
-            </div>
-            <Link className="quick-link" href="/spa-packages">View All Packages <ArrowRight size={14} /></Link>
-          </div>
-          <div className="cards-3">
-            {shown.slice(0, 3).map((p: { slug: string; name: string; short_description: string; image_url?: string; price?: number }, i: number) => (
-              <article className="service-card" key={p.slug}>
-                <Image src={packageImages[p.slug] || ['/images/hero/massage.jpg', '/images/home/couples.jpg', '/images/hero/scrub.jpg'][i]} alt={p.name} width={600} height={400} />
-                <div className="service-card-body">
-                  <h3>{p.name}</h3>
-                  <p>{p.short_description}</p>
-                  <div className="price-row">
-                    <span className="price">....</span>
-                    <Link className="arrow-circle" href={`/spa-packages/${p.slug}`} aria-label={`View ${p.name}`}>→</Link>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="home-feature">
         <div className="container-page home-feature-grid">
           <div className="feature-band-copy">
@@ -128,13 +84,13 @@ export default async function HomePage() {
             <p>Enjoy professional spa and beauty services at your home, hotel or private location in Dubai.</p>
             <a className="btn-primary" href={site.whatsappUrl('Hello ALLORA, I would like to book a service at my place.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={16} />Book at Your Place <ArrowRight size={15} /></a>
           </div>
-          <div className="home-feature-photo"><Image src="/images/home/at-home.jpg" alt="ALLORA therapist giving a facial treatment in a bright Dubai apartment" fill sizes="(max-width:800px) 100vw, 560px" className="object-cover" /></div>
+          <div className="home-feature-photo is-square"><Image src="/images/home/at-home.jpg" alt="ALLORA therapist giving a head massage in a bright white spa room" fill sizes="(max-width:800px) 100vw, 560px" className="object-contain" /></div>
         </div>
       </section>
 
       <section className="home-feature home-feature-plain">
         <div className="container-page home-feature-grid">
-          <div className="home-feature-photo"><Image src="/images/home/ready.jpg" alt="ALLORA therapist welcoming a guest with fresh towels beside a prepared spa bed" fill sizes="(max-width:800px) 100vw, 560px" className="object-cover" /></div>
+          <div className="home-feature-photo is-wide"><Image src="/images/home/ready.jpg" alt="ALLORA therapist welcoming a guest with fresh towels beside a prepared spa bed" fill sizes="(max-width:800px) 100vw, 560px" className="object-contain" /></div>
           <div className="feature-band-copy">
             <p className="eyebrow">Book Today</p>
             <h2 className="display-font">Ready to Relax?</h2>
