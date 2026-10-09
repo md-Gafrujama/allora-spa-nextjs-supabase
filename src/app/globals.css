@@ -647,7 +647,7 @@ html,body,main,.section,.home,.about-page,.contact-page,.corporate-page,.home se
 .home-hero-visual .hero-slide-copy{padding:8px 4px 4px}
 .home-hero-visual .hero-slide-copy b{font-size:18px}
 .home-hero-visual .hero-reel-dots{margin-top:6px}
-@media(max-width:800px){.home .home-hero{padding:10px 0 12px}.home .home-hero-visual{width:min(100%,300px);justify-self:center;margin-inline:auto}.home .home-hero-copy h1,.home .home-hero-copy h1 span{font-size:28px}.home-hero-types a{min-height:58px;font-size:14px}.home-hero-visual .hero-slide img,.home-hero-visual .hero-slide .hero-slide-media img{aspect-ratio:auto;object-fit:contain!important}}
+@media(max-width:800px){.home .home-hero{padding:10px 0 12px}.home .home-hero-visual{width:100%;max-width:none;justify-self:stretch;margin-inline:0}.home .home-hero-copy h1,.home .home-hero-copy h1 span{font-size:28px}.home-hero-types a{min-height:58px;font-size:14px}.home-hero-visual .hero-slide img,.home-hero-visual .hero-slide .hero-slide-media img{aspect-ratio:auto;object-fit:contain!important}}
 .home .home-hero-inner{grid-template-columns:minmax(0,1fr) minmax(320px,460px);gap:20px;align-items:center}
 .home .home-hero-visual{width:100%;justify-self:stretch}
 .home .section{padding:18px 0}
@@ -676,4 +676,4 @@ html,body,main,.section,.home,.about-page,.contact-page,.corporate-page,.home se
 .pro-team-photo img{object-fit:contain!important;object-position:center!important;filter:brightness(1.08) saturate(1.02)}
 .home-hero-visual .hero-slide .hero-slide-media .hero-slide-img{filter:brightness(1.1) saturate(1.03)!important}
 .home .service-card:hover img,.home-feature:hover .home-feature-photo img,.home .portrait-frame:hover img,.pro-team-card:hover .pro-team-photo img{transform:none}
-@media(max-width:800px){.home .home-hero-inner{grid-template-columns:minmax(0,1fr);gap:16px}.home .home-hero-copy{min-width:0;max-width:100%}.home .home-hero-copy h1,.home .home-hero-copy p,.home-hero-points,.home-hero-types,.home .home-hero .actions{max-width:100%}.home .home-hero-visual{width:min(100%,300px);justify-self:center;margin-inline:auto}.home .split,.home-feature-grid{gap:16px}.home-feature{padding:14px 0}}
+@media(max-width:800px){.home .home-hero-inner{grid-template-columns:minmax(0,1fr);gap:16px;width:min(100% - 28px,680px)}.home .home-hero-copy{min-width:0;max-width:100%}.home .home-hero-copy h1,.home .home-hero-copy p,.home-hero-points,.home-hero-types,.home .home-hero .actions{max-width:100%}.home .home-hero-visual{width:calc(100% + 28px);max-width:none;margin-inline:-14px;justify-self:stretch}.home-hero-visual .hero-slide,.home-hero-visual .hero-slide-media{border-radius:0}.home .split,.home-feature-grid{gap:16px}.home-feature{padding:14px 0}}
