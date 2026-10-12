@@ -3,6 +3,7 @@ export const site = {
   phone: '+971 50 951 3634',
   phoneHref: 'tel:+971509513634',
   email: 'xxxxxxxxxx',
+  emailHref: 'mailto:xxxxxxxxxx?subject=Hello%20ALLORA%2C%20I%20would%20like%20to%20get%20in%20touch.',
   location: '.......',
   images: {
     hero: '/images/team/team-group.jpg',
@@ -70,5 +71,12 @@ export const navData = {
     ['Arm and hand massage', '/corporate#arm-hand'],
     ['Upper-leg or seated relaxation massage', '/corporate#seated-relaxation'],
     ['Work-stress and muscle-tension relief', '/corporate#work-stress'],
+  ],
+  deepTissue: [
+    ['Deep Tissue', '/deep-tissue#deep-tissue'],
+    ['Lymphatic Drainage', '/deep-tissue#lymphatic-drainage'],
+    ['Hot Stone', '/deep-tissue#hot-stone'],
+    ['Cellulite', '/deep-tissue#cellulite'],
+    ['Medotherapy', '/deep-tissue#medotherapy'],
   ],
 };

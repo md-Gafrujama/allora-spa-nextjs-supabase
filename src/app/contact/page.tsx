@@ -46,6 +46,7 @@ export default function Contact() {
             <span><Mail size={18} /></span>
             <strong>Email Us</strong>
             <small className="masked">{site.email}</small>
+            <a href={site.emailHref}>Email Now <ArrowRight size={14} /></a>
           </div>
           <div className="contact-way">
             <span><Heart size={18} /></span>

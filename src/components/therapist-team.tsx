@@ -4,14 +4,14 @@ import { site } from '@/lib/site-data';
 import { therapists } from '@/lib/therapists';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
 
-export function TherapistTeam() {
+export function TherapistTeam({ intro = 'Our trained and experienced female therapists are dedicated to providing the best spa and wellness experience. Every therapist is professional, friendly and passionate about your wellbeing.' }: { intro?: string }) {
   return (
     <section className="pro-team" aria-labelledby="pro-team-title">
       <div className="container-page">
         <div className="pro-team-head">
           <p className="eyebrow">Meet Our Team</p>
           <h2 id="pro-team-title">Our Professional Therapists</h2>
-          <p>Our trained and experienced female therapists are dedicated to providing the best spa and wellness experience. Every therapist is professional, friendly and passionate about your wellbeing.</p>
+          <p>{intro}</p>
         </div>
         <div className="pro-team-grid">
           {therapists.map((t, i) => (
@@ -22,7 +22,6 @@ export function TherapistTeam() {
               </div>
               <div className="pro-team-body">
                 <b>{t.role}</b>
-                <small>{t.service}</small>
                 <a href={site.whatsappUrl(`Hello ALLORA, I would like to book the ${t.role}.`)} target="_blank" rel="noreferrer" className="btn-outline"><WhatsAppIcon size={14} />Book</a>
               </div>
             </article>

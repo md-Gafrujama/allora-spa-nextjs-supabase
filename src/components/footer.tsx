@@ -11,7 +11,7 @@ export function Footer() {
         <div className="footer-brand-col">
           <Logo />
           <p className="footer-kicker">Relax · Rejuvenate · Revive</p>
-          <p className="footer-copy">Premium spa and wellness, brought to your home, hotel or private event in Dubai by professional female therapists.</p>
+          <p className="footer-copy">Spa care at your place in Dubai.</p>
           <div className="socials" aria-label="Social media"><span><Instagram size={15}/></span><span><Facebook size={15}/></span><span><Youtube size={15}/></span></div>
         </div>
         <div className="footer-links">
@@ -21,6 +21,7 @@ export function Footer() {
           <Link href="/your-place">Your Place</Link>
           <Link href="/event-services">Event Services</Link>
           <Link href="/corporate">Corporate</Link>
+          <Link href="/deep-tissue">Deep Tissue</Link>
         </div>
         <div className="footer-links">
           <h4>Company</h4>
@@ -33,7 +34,7 @@ export function Footer() {
           <h4>Visit & Book</h4>
           <a className="footer-line" href={site.phoneHref}><Phone size={15}/>{site.phone}</a>
           <a className="footer-line" href={site.whatsappUrl('Hello ALLORA, I would like to book a spa service.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={15}/>WhatsApp {site.phone}</a>
-          <span className="footer-line"><Mail size={15}/>{site.email}</span>
+          <a className="footer-line" href={site.emailHref}><Mail size={15}/>Email Us</a>
           <span className="footer-line"><MapPin size={15}/>{site.location}</span>
           <a className="footer-book" href={site.whatsappUrl('Hello ALLORA, I would like to book a spa service.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={15}/>Book on WhatsApp</a>
         </div>

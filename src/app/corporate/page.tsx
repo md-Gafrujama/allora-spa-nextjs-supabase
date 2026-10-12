@@ -33,7 +33,7 @@ export default function Corporate() {
             </a>
           </div>
           <div className="portrait-frame">
-            <Image src="/images/services/corporate-massage.jpg" alt="ALLORA therapist giving a seated shoulder massage in a bright Dubai office" fill sizes="(max-width:800px) 100vw, 560px" className="object-cover" />
+            <Image src="/images/services/corporate-massage.jpg" alt="ALLORA therapist giving a seated shoulder massage in a bright Dubai office" fill sizes="(max-width:800px) 100vw, 560px" className="object-contain" />
           </div>
         </div>
       </section>
