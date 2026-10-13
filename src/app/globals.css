@@ -899,6 +899,7 @@ body{padding-top:74px}
 .home .home-moment:hover{border-color:#e7d5da;box-shadow:0 16px 32px rgba(5,22,80,.08)}
 .brand-logo{display:block;height:50px;width:auto;flex:none}
 .footer .brand-logo{height:76px}
+@media(min-width:801px){.footer-links{padding-top:26px}.footer .footer-card{padding-top:26px!important}}
 @media(max-width:800px){.brand-logo{height:42px}.footer .brand-logo{height:68px}}
 @media(max-width:800px){.home-explore-grid a:last-child{grid-column:1 / -1}}
 @media(prefers-reduced-motion:reduce){.home-explore-grid a:hover .home-explore-photo img,.home-treat:hover .home-treat-photo img{transform:none}}
