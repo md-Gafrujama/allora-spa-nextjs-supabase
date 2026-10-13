@@ -46,7 +46,7 @@ export function Header(){
   const on = (href: string) => (href === '/' ? path === '/' : path.startsWith(href)) ? 'nav-link active' : 'nav-link';
   return <header className="site-header">
     <div className="container-page nav-shell">
-      <Link href="/" className="brand-link" aria-label="ALLORA Spa & Wellness"><Logo /></Link>
+      <Link href="/" className="brand-link" aria-label="ALLORA Spa & Wellness"><Logo alt="" /></Link>
       <nav className="desktop-nav">
         <Link href="/" className={on('/')}>Home</Link>
         <div className="nav-dropdown"><Link href="/spa-packages" className={on('/spa-packages')}>Spa Package <ChevronDown size={14}/></Link><MenuPanel title="Spa Package" href="/spa-packages" items={navData.spa}/></div>

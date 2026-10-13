@@ -2,9 +2,9 @@
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { WhatsAppIcon } from '@/components/whatsapp-icon';
 import { site } from '@/lib/site-data';
 import { therapists } from '@/lib/therapists';
-import { WhatsAppIcon } from '@/components/whatsapp-icon';
 
 const INTERVAL_MS = 3000;
 const SLIDE_MS = 800;
@@ -62,21 +62,13 @@ export function HeroTherapists() {
                   width={slide.width}
                   height={slide.height}
                   priority={i === 0}
-                  sizes="(max-width:800px) 92vw, 600px"
+                  sizes="100vw"
                   style={{ objectPosition: slide.position }}
                 />
-              </div>
-              <div className="hero-slide-copy">
-                <b>{slide.role}</b>
-                <a
-                  className="hero-slide-book"
-                  href={site.whatsappUrl(`Hello ALLORA, I would like to book with the ${slide.role}.`)}
-                  target="_blank"
-                  rel="noreferrer"
-                  tabIndex={i === index ? 0 : -1}
-                >
-                  <WhatsAppIcon size={14} /> Book Now
-                </a>
+                <div className="hero-slide-caption">
+                  <strong>{slide.service}</strong>
+                  <a className="btn-primary" href={site.whatsappUrl(`Hello ALLORA, I would like to book a ${slide.service}.`)} target="_blank" rel="noreferrer" tabIndex={i === index ? 0 : -1}><WhatsAppIcon size={15} />Book Now</a>
+                </div>
               </div>
             </article>
           ))}
