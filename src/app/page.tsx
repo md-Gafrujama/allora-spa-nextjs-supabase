@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Home, Mail, Phone, ShieldCheck, UserRound } from 'lucide-react';
+import { ArrowRight, Home, Mail, ShieldCheck, UserRound } from 'lucide-react';
 import { HeroTherapists } from '@/components/hero-therapists';
 import { Reveal } from '@/components/reveal';
 import { ReviewForm } from '@/components/review-form';
@@ -57,7 +57,7 @@ export default function HomePage() {
             </ul>
             <div className="actions">
               <a className="btn-primary" href={site.whatsappUrl('Hello ALLORA, I would like to book an appointment.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={17} />WhatsApp <ArrowRight size={15} /></a>
-              <a className="btn-outline" href={site.phoneHref}>Call Now</a>
+              <a className="btn-outline" href={site.emailHref}><Mail size={16} />Email Us</a>
             </div>
           </div>
           <div className="home-about-photos">
@@ -80,56 +80,56 @@ export default function HomePage() {
           <p className="home-explore-lede">Therapies you can book at your place.</p>
           <div className="home-treat-grid">
             <article className="home-treat">
-              <div className="home-treat-photo"><Image src="/images/home/treat-thai.jpg" alt="Therapist stretching a covered client's leg" fill sizes="(max-width:800px) 100vw, 380px" /></div>
+              <div className="home-treat-photo"><Image src="/images/home/treat-thai-b.jpg" alt="Therapist lifting and stretching a client's leg" fill sizes="(max-width:800px) 100vw, 380px" /></div>
               <h3 className="display-font">Thai Massage</h3>
               <p>Gentle stretches to ease tight muscles.</p>
               <div className="actions">
-                <a className="btn-outline" href={site.phoneHref}><Phone size={15} />Call Now</a>
+                <a className="btn-outline" href={site.emailHref}><Mail size={15} />Email Us</a>
                 <a className="btn-primary" href={site.whatsappUrl('Hello ALLORA, I would like to book a Thai massage.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={15} />WhatsApp</a>
               </div>
             </article>
             <article className="home-treat">
-              <div className="home-treat-photo"><Image src="/images/home/treat-couple.jpg" alt="Two therapists giving a couples hand massage" fill sizes="(max-width:800px) 100vw, 380px" /></div>
+              <div className="home-treat-photo"><Image src="/images/home/treat-couple-d.jpg" alt="Two therapists massaging a woman and a man side by side" fill sizes="(max-width:800px) 100vw, 380px" /></div>
               <h3 className="display-font">Couple Massage</h3>
               <p>Side-by-side care for two.</p>
               <div className="actions">
-                <a className="btn-outline" href={site.phoneHref}><Phone size={15} />Call Now</a>
+                <a className="btn-outline" href={site.emailHref}><Mail size={15} />Email Us</a>
                 <a className="btn-primary" href={site.whatsappUrl('Hello ALLORA, I would like to book a couple massage.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={15} />WhatsApp</a>
               </div>
             </article>
             <article className="home-treat">
-              <div className="home-treat-photo"><Image src="/images/home/treat-hot-stone.jpg" alt="Therapist holding a hot stone beside a covered client" fill sizes="(max-width:800px) 100vw, 380px" /></div>
+              <div className="home-treat-photo"><Image src="/images/home/treat-stone-b.jpg" alt="Therapist pressing a hot stone onto a covered client" fill sizes="(max-width:800px) 100vw, 380px" /></div>
               <h3 className="display-font">Hot Stone</h3>
               <p>Warm stones for deep, calm relief.</p>
               <div className="actions">
-                <a className="btn-outline" href={site.phoneHref}><Phone size={15} />Call Now</a>
+                <a className="btn-outline" href={site.emailHref}><Mail size={15} />Email Us</a>
                 <a className="btn-primary" href={site.whatsappUrl('Hello ALLORA, I would like to book a hot stone massage.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={15} />WhatsApp</a>
               </div>
             </article>
             <article className="home-treat">
-              <div className="home-treat-photo"><Image src="/images/home/treat-jacuzzi.jpg" alt="Therapist massaging a client in a white robe beside a jacuzzi" fill sizes="(max-width:800px) 100vw, 380px" /></div>
+              <div className="home-treat-photo"><Image src="/images/home/treat-jacuzzi-b.jpg" alt="Therapist massaging a client's shoulders while her feet are in a jacuzzi" fill sizes="(max-width:800px) 100vw, 380px" /></div>
               <h3 className="display-font">Jacuzzi Massage</h3>
               <p>Warm water and a calming massage.</p>
               <div className="actions">
-                <a className="btn-outline" href={site.phoneHref}><Phone size={15} />Call Now</a>
+                <a className="btn-outline" href={site.emailHref}><Mail size={15} />Email Us</a>
                 <a className="btn-primary" href={site.whatsappUrl('Hello ALLORA, I would like to book a jacuzzi massage.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={15} />WhatsApp</a>
               </div>
             </article>
             <article className="home-treat">
-              <div className="home-treat-photo"><Image src="/images/home/treat-deep.jpg" alt="Therapist giving a deep tissue massage over a white sheet" fill sizes="(max-width:800px) 100vw, 380px" /></div>
+              <div className="home-treat-photo"><Image src="/images/home/treat-deep-d.jpg" alt="Therapist pressing firmly through a sheet during deep tissue massage" fill sizes="(max-width:800px) 100vw, 380px" /></div>
               <h3 className="display-font">Deep Tissue Massage</h3>
               <p>Firm pressure for tight muscles.</p>
               <div className="actions">
-                <a className="btn-outline" href={site.phoneHref}><Phone size={15} />Call Now</a>
+                <a className="btn-outline" href={site.emailHref}><Mail size={15} />Email Us</a>
                 <a className="btn-primary" href={site.whatsappUrl('Hello ALLORA, I would like to book a deep tissue massage.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={15} />WhatsApp</a>
               </div>
             </article>
             <article className="home-treat">
-              <div className="home-treat-photo"><Image src="/images/home/treat-lymphatic.jpg" alt="Therapist giving a gentle lymphatic massage on a covered arm" fill sizes="(max-width:800px) 100vw, 380px" /></div>
+              <div className="home-treat-photo"><Image src="/images/home/treat-lymph-b.jpg" alt="Therapist gliding both hands along a client's arm" fill sizes="(max-width:800px) 100vw, 380px" /></div>
               <h3 className="display-font">Lymphatic Drainage</h3>
               <p>Light strokes to ease heaviness.</p>
               <div className="actions">
-                <a className="btn-outline" href={site.phoneHref}><Phone size={15} />Call Now</a>
+                <a className="btn-outline" href={site.emailHref}><Mail size={15} />Email Us</a>
                 <a className="btn-primary" href={site.whatsappUrl('Hello ALLORA, I would like to book a lymphatic drainage massage.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={15} />WhatsApp</a>
               </div>
             </article>

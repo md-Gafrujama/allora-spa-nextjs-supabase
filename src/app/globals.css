@@ -903,3 +903,8 @@ body{padding-top:74px}
 @media(max-width:800px){.brand-logo{height:42px}.footer .brand-logo{height:68px}}
 @media(max-width:800px){.home-explore-grid a:last-child{grid-column:1 / -1}}
 @media(prefers-reduced-motion:reduce){.home-explore-grid a:hover .home-explore-photo img,.home-treat:hover .home-treat-photo img{transform:none}}
+@media(min-width:801px){.home .home-hero-copy{border-left:2px solid #7a1028;padding-left:18px!important}}
+.home .home-hero-visual .hero-slide .hero-slide-media .hero-slide-img{box-shadow:0 0 0 8px #fff,0 0 0 9px #e7d5da,0 30px 56px rgba(5,22,80,.13)!important}
+.home .hero-slide-caption strong{border-color:#e7d5da}
+.home .home-hero .actions{margin-top:26px}
+.home .home-about-main img{object-position:center top!important}
