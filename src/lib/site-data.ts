@@ -1,3 +1,5 @@
+import { massageHref, massages } from '@/lib/massage-data';
+
 export const site = {
   name: 'ALLORA Spa & Wellness',
   phone: '+971 50 951 3634',
@@ -29,6 +31,7 @@ export const site = {
 };
 
 export const navData = {
+  massages: massages.map((m) => [m.name, massageHref(m.slug)]),
   spa: [
     ['Luxury Spa Package', '/spa-packages/luxury-spa-package-dubai/'],
     ['Couples Spa Package', '/spa-packages/couples-spa-package-dubai/'],

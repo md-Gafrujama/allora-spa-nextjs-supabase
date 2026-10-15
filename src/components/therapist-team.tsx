@@ -14,12 +14,10 @@ export function TherapistTeam({ intro = 'Our trained and experienced female ther
           <p>{intro}</p>
         </div>
         <div className="pro-team-grid">
-          {therapists.map((t, i) => (
+          {therapists.map((t) => (
             <article className="pro-team-card" key={t.role}>
               <div className="pro-team-photo">
-                <Image src={t.src} alt={`ALLORA ${t.role} during a ${t.service.toLowerCase()} session`} width={t.width} height={t.height} sizes="(max-width:800px) 92vw, 280px" style={{ objectPosition: t.position }} />
-                <span>{String(i + 1).padStart(2, '0')}</span>
-              </div>
+                <Image src={t.src} alt={`ALLORA ${t.role} during a ${t.service.toLowerCase()} session`} width={t.width} height={t.height} sizes="(max-width:800px) 92vw, 280px" style={{ objectPosition: t.position }} />              </div>
               <div className="pro-team-body">
                 <b>{t.role}</b>
                 <a href={site.whatsappUrl(`Hello ALLORA, I would like to book the ${t.role}.`)} target="_blank" rel="noreferrer" className="btn-outline"><WhatsAppIcon size={14} />Book</a>

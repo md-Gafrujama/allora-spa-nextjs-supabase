@@ -14,7 +14,7 @@ const MenuPanel = ({ title, href, items }: {title:string;href:string;items:strin
       <h3 className="display-font">{title}</h3>
       <Link href={href} className="mega-explore">Explore <ArrowUpRight size={14}/></Link>
     </div>
-    <div className="mega-list">{items.map(([label,url],i)=><Link href={url} key={url} className="mega-item"><span className="mega-number">{String(i+1).padStart(2,'0')}</span><span><b>{label}</b></span><ArrowUpRight size={15}/></Link>)}</div>
+    <div className="mega-list">{items.map(([label,url])=><Link href={url} key={url} className="mega-item"><span><b>{label}</b></span><ArrowUpRight size={15}/></Link>)}</div>
   </div>
 );
 
@@ -49,6 +49,7 @@ export function Header(){
       <Link href="/" className="brand-link" aria-label="ALLORA Spa & Wellness"><Logo alt="" /></Link>
       <nav className="desktop-nav">
         <Link href="/" className={on('/')}>Home</Link>
+        <div className="nav-dropdown"><Link href="/massages" className={on('/massages')}>Massages <ChevronDown size={14}/></Link><MenuPanel title="Massages" href="/massages" items={navData.massages}/></div>
         <div className="nav-dropdown"><Link href="/spa-packages" className={on('/spa-packages')}>Spa Package <ChevronDown size={14}/></Link><MenuPanel title="Spa Package" href="/spa-packages" items={navData.spa}/></div>
         <div className="nav-dropdown"><Link href="/your-place" className={on('/your-place')}>Your Place <ChevronDown size={14}/></Link><MenuPanel title="Your Place" href="/your-place" items={navData.place}/></div>
         <div className="nav-dropdown"><Link href="/event-services" className={on('/event-services')}>Event Service <ChevronDown size={14}/></Link><MenuPanel title="Event Service" href="/event-services" items={navData.events}/></div>
@@ -59,6 +60,6 @@ export function Header(){
       <a href={site.whatsappUrl('Hello ALLORA, I would like to book an appointment.')} target="_blank" rel="noreferrer" className="book-btn"><WhatsAppIcon size={16}/> Book Now</a>
       <button className="mobile-menu" onClick={()=>{ setMobile(!mobile); setOpen(null); }} aria-label="Menu">{mobile?<X/>:<Menu/>}</button>
     </div>
-    {mobile && <div className="mobile-panel"><a className="book-btn mobile-book" href={site.whatsappUrl('Hello ALLORA, I would like to book an appointment.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={16}/> Book on WhatsApp</a><Link href="/" onClick={closeMenu}>Home</Link><MobileGroup id="spa" label="Spa Package" href="/spa-packages" items={navData.spa} open={open} setOpen={setOpen} close={closeMenu}/><MobileGroup id="place" label="Your Place" href="/your-place" items={navData.place} open={open} setOpen={setOpen} close={closeMenu}/><MobileGroup id="events" label="Event Service" href="/event-services" items={navData.events} open={open} setOpen={setOpen} close={closeMenu}/><MobileGroup id="corporate" label="Corporate" href="/corporate" items={navData.corporate} open={open} setOpen={setOpen} close={closeMenu}/><MobileGroup id="deep" label="Deep Tissue" href="/deep-tissue" items={navData.deepTissue} open={open} setOpen={setOpen} close={closeMenu}/><Link href="/about" onClick={closeMenu}>About Us</Link><Link href="/contact" onClick={closeMenu}>Contact Us</Link></div>}
+    {mobile && <div className="mobile-panel"><a className="book-btn mobile-book" href={site.whatsappUrl('Hello ALLORA, I would like to book an appointment.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={16}/> Book on WhatsApp</a><Link href="/" onClick={closeMenu}>Home</Link><MobileGroup id="massages" label="Massages" href="/massages" items={navData.massages} open={open} setOpen={setOpen} close={closeMenu}/><MobileGroup id="spa" label="Spa Package" href="/spa-packages" items={navData.spa} open={open} setOpen={setOpen} close={closeMenu}/><MobileGroup id="place" label="Your Place" href="/your-place" items={navData.place} open={open} setOpen={setOpen} close={closeMenu}/><MobileGroup id="events" label="Event Service" href="/event-services" items={navData.events} open={open} setOpen={setOpen} close={closeMenu}/><MobileGroup id="corporate" label="Corporate" href="/corporate" items={navData.corporate} open={open} setOpen={setOpen} close={closeMenu}/><MobileGroup id="deep" label="Deep Tissue" href="/deep-tissue" items={navData.deepTissue} open={open} setOpen={setOpen} close={closeMenu}/><Link href="/about" onClick={closeMenu}>About Us</Link><Link href="/contact" onClick={closeMenu}>Contact Us</Link></div>}
   </header>
 }
