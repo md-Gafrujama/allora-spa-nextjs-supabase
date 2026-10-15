@@ -4,6 +4,7 @@ export type ServiceItem = {
   category: 'spa' | 'place' | 'event';
   description: string;
   price: string;
+  
   duration: string;
   image: string;
   highlights: string[];
