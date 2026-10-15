@@ -30,8 +30,19 @@ export const site = {
   whatsappUrl: (message: string) => `https://wa.me/971509513634?text=${encodeURIComponent(message)}`,
 };
 
+const deepTissueNav = [
+  ['Deep Tissue', '/deep-tissue#deep-tissue'],
+  ['Lymphatic Drainage', '/deep-tissue#lymphatic-drainage'],
+  ['Hot Stone', '/deep-tissue#hot-stone'],
+  ['Cellulite', '/deep-tissue#cellulite'],
+  ['Medotherapy', '/deep-tissue#medotherapy'],
+];
+
 export const navData = {
-  massages: massages.map((m) => [m.name, massageHref(m.slug)]),
+  massages: [
+    ...massages.map((m) => [m.name, massageHref(m.slug)]),
+    ...deepTissueNav.filter(([name]) => !massages.some((m) => m.name.startsWith(name))),
+  ],
   spa: [
     ['Luxury Spa Package', '/spa-packages/luxury-spa-package-dubai/'],
     ['Couples Spa Package', '/spa-packages/couples-spa-package-dubai/'],
@@ -75,11 +86,5 @@ export const navData = {
     ['Upper-leg or seated relaxation massage', '/corporate#seated-relaxation'],
     ['Work-stress and muscle-tension relief', '/corporate#work-stress'],
   ],
-  deepTissue: [
-    ['Deep Tissue', '/deep-tissue#deep-tissue'],
-    ['Lymphatic Drainage', '/deep-tissue#lymphatic-drainage'],
-    ['Hot Stone', '/deep-tissue#hot-stone'],
-    ['Cellulite', '/deep-tissue#cellulite'],
-    ['Medotherapy', '/deep-tissue#medotherapy'],
-  ],
+  deepTissue: deepTissueNav,
 };

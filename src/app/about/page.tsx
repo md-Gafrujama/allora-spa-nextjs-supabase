@@ -1,8 +1,108 @@
-import Image from 'next/image';import {Check,ArrowRight} from 'lucide-react';import {site} from '@/lib/site-data';import {WhatsAppIcon} from '@/components/whatsapp-icon';import {ReviewForm} from '@/components/review-form';import {TherapistTeam} from '@/components/therapist-team';
-export default function About(){return <div className="about-page"><section className="about-hero"><div className="about-hero-inner"><div className="about-hero-copy"><p className="crumb">Home › About Us</p><p className="eyebrow about-hero-kicker">About ALLORA</p><h1 className="about-hero-title">Your Wellness Our Passion</h1><p>At ALLORA Spa & Wellness, we believe in bringing relaxation, beauty and wellness to your doorstep through professional female therapists and personalized care.</p><a className="btn-primary" href={site.whatsappUrl('Hello ALLORA, I would like to book a spa service.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={16}/>Book via WhatsApp <ArrowRight size={15}/></a></div><div className="about-hero-photo"><Image src="/images/about/team-group.jpg" alt="ALLORA team of seven female therapists in rose-red uniforms" width={1280} height={720} priority sizes="(max-width:800px) 72vw, 480px"/></div></div></section>
-<section className="section about-story"><div className="container-page split"><div className="about-photo"><Image src="/images/hero/glow.jpg" alt="ALLORA beauty specialist giving a glow facial" width={1024} height={768} sizes="(max-width:800px) 100vw, 560px"/></div><div><p className="eyebrow">Our Story</p><h2>A Journey Towards Better Living</h2><p className="copy">ALLORA Spa & Wellness was founded with a simple vision – to make high-quality spa and wellness services accessible, convenient and personalized for everyone in Dubai. What started as a small team of passionate therapists has grown into a trusted wellness experience built around professionalism, care and exceptional customer service.</p><p className="about-quote">Our goal is to help you relax, rejuvenate and feel your best – anytime, anywhere.</p></div></div></section>
-<section className="section about-values"><div className="container-page value-grid">{[['Our Mission','To provide premium spa and wellness services with professional care, safety and personalized experiences.'],['Our Vision','To be Dubai’s most trusted and preferred spa and wellness brand, bringing relaxation everywhere.'],['Our Values','Care, professionalism, hygiene, customer satisfaction and continuous improvement.'],['Our Commitment','Maintaining the highest standards of service, premium products and complete customer satisfaction.']].map(([t,d])=><article className="value-card" key={t}><span className="text-2xl text-[#051650]">✦</span><h3>{t}</h3><p>{d}</p></article>)}</div></section>
-<section className="about-stats"><div className="container-page stats-grid"><div className="stat"><strong>500+</strong><span>Happy Clients</span></div><div className="stat"><strong>50+</strong><span>Spa Packages</span></div><div className="stat"><strong>10+</strong><span>Event Partnerships</span></div><div className="stat"><strong>100%</strong><span>Client Satisfaction</span></div></div></section>
-<TherapistTeam/>
-<section className="home-reviews" aria-label="Reviews"><div className="container-page"><p className="eyebrow">Reviews</p><h2>What our clients say</h2><ReviewForm/></div></section>
-<section className="about-why"><div className="container-page about-why-grid"><div className="about-why-photo"><Image src="/images/home/at-home.jpg" alt="ALLORA therapist giving a head massage in a bright white room" width={1152} height={864} sizes="(max-width:800px) 100vw, 560px"/></div><div className="about-why-copy"><p className="eyebrow">Why ALLORA</p><h2>Why Choose ALLORA?</h2><p>Professional expertise, premium products and personalized care, delivered at your convenience.</p><ul className="check-list">{['Trained & Certified Therapists','Premium & Safe Products','Home, Hotel & Event Services','Hygienic & Comfortable Setup','Personalized Spa Experiences'].map(x=><li key={x}><Check size={15}/>{x}</li>)}</ul><a className="btn-primary" href={site.whatsappUrl('Hello ALLORA, I would like to book now.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={16}/>Book Now</a></div></div></section></div>}
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowRight, Check, Mail } from 'lucide-react';
+import { WhatsAppIcon } from '@/components/whatsapp-icon';
+import { ReviewForm } from '@/components/review-form';
+import { TherapistTeam } from '@/components/therapist-team';
+import { site } from '@/lib/site-data';
+
+const values = [
+  ['Mission', 'Premium spa care with safety and personal attention.'],
+  ['Vision', 'Dubai’s trusted wellness brand, anywhere you are.'],
+  ['Values', 'Care, hygiene, professionalism and continuous improvement.'],
+  ['Commitment', 'High standards, premium products and client satisfaction.'],
+] as const;
+
+const why = [
+  'Trained & certified therapists',
+  'Premium & safe products',
+  'Home, hotel & event services',
+  'Hygienic, comfortable setup',
+  'Personalized spa experiences',
+];
+
+export default function About() {
+  return (
+    <div className="about-page about-compact">
+      <section className="pkg-hero about-hero-block">
+        <div className="container-page pkg-hero-grid">
+          <div className="pkg-hero-copy">
+            <p className="crumb"><Link href="/">Home</Link> › About Us</p>
+            <p className="eyebrow">About ALLORA</p>
+            <h1>Your Wellness <em>Our Passion</em></h1>
+            <p className="pkg-lede">Relaxation, beauty and wellness at your doorstep — with trained female therapists and personalized care.</p>
+            <div className="pkg-hero-actions">
+              <a className="btn-primary" href={site.whatsappUrl('Hello ALLORA, I would like to book a spa service.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={16} />Book Now</a>
+              <a className="btn-outline" href={site.emailHref}><Mail size={16} />Email Us</a>
+            </div>
+          </div>
+          <div className="pkg-hero-collage about-hero-collage" aria-hidden="true">
+            <Image className="pkg-collage-main" src="/images/about/team-group.jpg" alt="" width={1280} height={720} priority sizes="(max-width:900px) 92vw, 560px" />
+          </div>
+        </div>
+      </section>
+
+      <section className="about-story-block">
+        <div className="container-page about-split">
+          <div className="about-split-photo">
+            <Image src="/images/about/about-story.jpg" alt="ALLORA therapist arriving with spa care at your place" width={1152} height={864} sizes="(max-width:800px) 100vw, 480px" />
+          </div>
+          <div className="about-split-copy">
+            <p className="eyebrow">Our Story</p>
+            <h2>Better living, brought to you</h2>
+            <p>ALLORA began with a simple idea: make premium spa care convenient across Dubai. A small passionate team grew into a trusted wellness experience built on professionalism and care.</p>
+            <p className="about-quote">Relax, rejuvenate and feel your best — anytime, anywhere.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="about-values-block">
+        <div className="container-page">
+          <div className="about-values-grid">
+            {values.map(([t, d]) => (
+              <article className="about-value" key={t}>
+                <h3>{t}</h3>
+                <p>{d}</p>
+              </article>
+            ))}
+          </div>
+          <div className="about-stats-row">
+            <div><strong>500+</strong><span>Happy Clients</span></div>
+            <div><strong>50+</strong><span>Spa Packages</span></div>
+            <div><strong>10+</strong><span>Event Partners</span></div>
+            <div><strong>100%</strong><span>Satisfaction</span></div>
+          </div>
+        </div>
+      </section>
+
+      <TherapistTeam intro="Trained female therapists — professional, friendly and focused on your wellbeing." />
+
+      <section className="about-why-block">
+        <div className="container-page about-split about-split-reverse">
+          <div className="about-split-copy">
+            <p className="eyebrow">Why ALLORA</p>
+            <h2>Why choose us</h2>
+            <p>Expertise, premium products and care at your place.</p>
+            <ul className="check-list">
+              {why.map((x) => (
+                <li key={x}><Check size={15} />{x}</li>
+              ))}
+            </ul>
+            <a className="btn-primary" href={site.whatsappUrl('Hello ALLORA, I would like to book now.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={16} />Book Now <ArrowRight size={15} /></a>
+          </div>
+          <div className="about-split-photo">
+            <Image src="/images/about/about-why.jpg" alt="ALLORA therapist preparing a clean spa setup" width={1152} height={864} sizes="(max-width:800px) 100vw, 480px" />
+          </div>
+        </div>
+      </section>
+
+      <section className="home-reviews about-reviews" aria-label="Reviews">
+        <div className="container-page">
+          <p className="eyebrow">Reviews</p>
+          <h2>What our clients say</h2>
+          <ReviewForm />
+        </div>
+      </section>
+    </div>
+  );
+}

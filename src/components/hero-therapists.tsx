@@ -1,15 +1,21 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
 import { site } from '@/lib/site-data';
-import { therapists } from '@/lib/therapists';
 
 const INTERVAL_MS = 3000;
 const SLIDE_MS = 800;
 
-const slides = therapists;
+const slides = [
+  { name: 'Spa Package', href: '/spa-packages', src: '/images/hero/svc-spa-package.jpg', alt: 'ALLORA therapist preparing towels, oils and orchids for a spa package' },
+  { name: 'Your Place', href: '/your-place', src: '/images/hero/svc-your-place.jpg', alt: 'ALLORA therapist giving a massage at the client’s home' },
+  { name: 'Event Service', href: '/event-services', src: '/images/hero/svc-event.jpg', alt: 'ALLORA therapist pampering a bride before her celebration' },
+  { name: 'Corporate', href: '/corporate', src: '/images/hero/svc-corporate.jpg', alt: 'ALLORA therapist giving a seated shoulder massage at the office' },
+  { name: 'Deep Tissue', href: '/deep-tissue', src: '/images/hero/svc-deep-tissue.jpg', alt: 'ALLORA therapist giving a firm deep tissue massage' },
+];
 
 export function HeroTherapists() {
   const [index, setIndex] = useState(0);
@@ -40,7 +46,7 @@ export function HeroTherapists() {
     <div
       className="hero-reel"
       aria-roledescription="carousel"
-      aria-label="Therapists and their services"
+      aria-label="Our main services"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -55,19 +61,20 @@ export function HeroTherapists() {
           {frames.map((slide, i) => (
             <article className={`hero-slide${i === index ? ' is-active' : ''}`} key={`${slide.src}-${i}`} aria-hidden={i !== index}>
               <div className="hero-slide-media">
-                <Image
-                  className="hero-slide-img"
-                  src={slide.src}
-                  alt={`ALLORA ${slide.role} with a client`}
-                  width={slide.width}
-                  height={slide.height}
-                  priority={i === 0}
-                  sizes="100vw"
-                  style={{ objectPosition: slide.position }}
-                />
+                <Link href={slide.href} tabIndex={-1} aria-hidden="true">
+                  <Image
+                    className="hero-slide-img"
+                    src={slide.src}
+                    alt={slide.alt}
+                    width={1024}
+                    height={1024}
+                    priority={i === 0}
+                    sizes="(max-width:800px) 92vw, 420px"
+                  />
+                </Link>
                 <div className="hero-slide-caption">
-                  <strong>{slide.service}</strong>
-                  <a className="btn-primary" href={site.whatsappUrl(`Hello ALLORA, I would like to book a ${slide.service}.`)} target="_blank" rel="noreferrer" tabIndex={i === index ? 0 : -1}><WhatsAppIcon size={15} />Book Now</a>
+                  <strong><Link href={slide.href} tabIndex={i === index ? 0 : -1}>{slide.name}</Link></strong>
+                  <a className="btn-primary" href={site.whatsappUrl(`Hello ALLORA, I would like to book the ${slide.name} service.`)} target="_blank" rel="noreferrer" tabIndex={i === index ? 0 : -1}><WhatsAppIcon size={15} />Book Now</a>
                 </div>
               </div>
             </article>
@@ -77,10 +84,10 @@ export function HeroTherapists() {
       <div className="hero-reel-dots">
         {slides.map((slide, i) => (
           <button
-            key={slide.src}
+            key={slide.href}
             type="button"
             className={i === index % slides.length ? 'is-active' : ''}
-            aria-label={`Show ${slide.role}`}
+            aria-label={`Show ${slide.name}`}
             onClick={() => {
               setAnimate(true);
               setIndex(i);

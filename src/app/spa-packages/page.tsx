@@ -1,2 +1,85 @@
-import Image from 'next/image';import Link from 'next/link';import {ArrowRight} from 'lucide-react';import {spaItems} from '@/lib/service-data';
-export default function SpaPackages(){return <><section className="page-hero"><Image src="/images/services/spa-premium.jpg" alt="Spa packages" fill className="page-hero-bg object-cover"/><div className="container-page page-hero-content"><p className="crumb">Home › Spa Package</p><p className="eyebrow">Relax · Rejuvenate · Revive</p><h1>Luxury Spa Packages in Dubai</h1><p className="text-white/80 max-w-xl">Choose a relaxing spa experience for yourself, your partner, your celebration or a special gift.</p></div></section><section className="section"><div className="container-page"><div className="service-list">{spaItems.map((x)=><article className="service-card" key={x.slug}><Image src={x.image} alt={x.name} width={800} height={600} sizes="(max-width:800px) 100vw, 360px"/><div className="service-card-body"><p className="eyebrow">SPA PACKAGE</p><h3>{x.name}</h3><p>{x.description}</p><div className="price-row"><span className="price">{x.price}</span><Link className="arrow-circle" href={`/spa-packages/${x.slug}`}><ArrowRight size={16}/></Link></div></div></article>)}</div></div></section></>}
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowRight, Check, Mail, ShieldCheck, Sparkles, UserRound } from 'lucide-react';
+import { WhatsAppIcon } from '@/components/whatsapp-icon';
+import { spaItems } from '@/lib/service-data';
+import { site } from '@/lib/site-data';
+
+const perks = [
+  { icon: UserRound, label: 'Trained female therapists' },
+  { icon: ShieldCheck, label: 'Hygienic, premium products' },
+  { icon: Sparkles, label: 'Home, hotel or venue' },
+];
+
+export default function SpaPackages() {
+  return (
+    <div className="pkg-page">
+      <section className="pkg-hero">
+        <div className="container-page pkg-hero-grid">
+          <div className="pkg-hero-copy">
+            <p className="crumb"><Link href="/">Home</Link> › Spa Package</p>
+            <p className="eyebrow">Relax · Rejuvenate · Revive</p>
+            <h1>Luxury Spa Packages <em>in Dubai</em></h1>
+            <p className="pkg-lede">Choose a relaxing spa experience for yourself, your partner, your celebration or a special gift. We bring everything to your place.</p>
+            <div className="pkg-hero-actions">
+              <a className="btn-primary" href={site.whatsappUrl('Hello ALLORA, I would like to book a spa package.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={16} />Book Now</a>
+              <a className="btn-outline" href={site.emailHref}><Mail size={16} />Email Us</a>
+            </div>
+            <ul className="pkg-perks">
+              {perks.map(({ icon: Icon, label }) => (
+                <li key={label}><Icon size={16} />{label}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="pkg-hero-collage" aria-hidden="true">
+            <Image className="pkg-collage-main" src="/images/packages/luxury.jpg" alt="" width={1152} height={864} priority sizes="(max-width:900px) 92vw, 520px" />
+            <Image className="pkg-collage-small pkg-collage-a" src="/images/packages/couples.jpg" alt="" width={1152} height={864} sizes="220px" />
+            <Image className="pkg-collage-small pkg-collage-b" src="/images/packages/bridal.jpg" alt="" width={1152} height={864} sizes="220px" />
+          </div>
+        </div>
+      </section>
+
+      <section className="pkg-list-section">
+        <div className="container-page">
+          <div className="pkg-list-head">
+            <p className="eyebrow">Our Packages</p>
+            <h2>Pick your perfect spa moment</h2>
+            <p>{spaItems.length} packages, each delivered by our own therapists.</p>
+          </div>
+          <div className="pkg-grid">
+            {spaItems.map((item) => (
+              <article className="pkg-card" key={item.slug}>
+                <Link className="pkg-card-media" href={`/spa-packages/${item.slug}`} tabIndex={-1} aria-hidden="true">
+                  <Image src={item.image} alt={item.name} width={1152} height={864} sizes="(max-width:600px) 92vw, (max-width:1000px) 46vw, 380px" />
+                </Link>
+                <div className="pkg-card-body">
+                  <h3><Link href={`/spa-packages/${item.slug}`}>{item.name}</Link></h3>
+                  <ul className="pkg-card-list">
+                    {item.highlights.map((h) => (
+                      <li key={h}><Check size={14} />{h}</li>
+                    ))}
+                  </ul>
+                  <div className="pkg-card-foot">
+                    <Link className="pkg-card-more" href={`/spa-packages/${item.slug}`}>View details <ArrowRight size={14} /></Link>
+                    <a className="btn-primary pkg-card-book" href={site.whatsappUrl(`Hello ALLORA, I would like to book the ${item.name}.`)} target="_blank" rel="noreferrer"><WhatsAppIcon size={14} />Book Now</a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="pkg-help">
+        <div className="container-page pkg-help-inner">
+          <div>
+            <p className="eyebrow">Need help choosing?</p>
+            <h2>Not sure which package is right for you?</h2>
+            <p>Tell us the occasion and we will suggest the best package for you.</p>
+          </div>
+          <a className="btn-primary" href={site.whatsappUrl('Hello ALLORA, please help me choose a spa package.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={16} />Ask on WhatsApp</a>
+        </div>
+      </section>
+    </div>
+  );
+}

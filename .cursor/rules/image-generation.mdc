@@ -1,0 +1,12 @@
+---
+description: Rules for generating therapist/spa images for the ALLORA site
+alwaysApply: true
+---
+
+# Generated images
+
+- Every therapist in any generated image wears the ALLORA uniform in **rose red** (slightly pinkish red, like `public/images/packages/voucher.jpg`). Never maroon, wine or burgundy.
+- Uniform: short-sleeve wrap tunic with cream piping and a beige sash belt.
+- Use the user's ladies (`public/images/hero/lady-1.jpg` … `lady-7.jpg`) as face references; use a different lady per image where possible.
+- Bright, milky-white settings. No gold or brass props, no text, no logos.
+- Never regenerate, overwrite or use `public/images/hero/role-1.jpg`.

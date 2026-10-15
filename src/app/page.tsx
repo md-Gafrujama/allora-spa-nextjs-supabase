@@ -10,6 +10,14 @@ import { WhatsAppIcon } from '@/components/whatsapp-icon';
 import { massageHref, massages } from '@/lib/massage-data';
 import { site } from '@/lib/site-data';
 
+const mainServices = [
+  ['Spa Package', '/spa-packages'],
+  ['Your Place', '/your-place'],
+  ['Event Service', '/event-services'],
+  ['Corporate', '/corporate'],
+  ['Deep Tissue', '/deep-tissue'],
+] as const;
+
 export default function HomePage() {
   return (
     <main className="home">
@@ -20,8 +28,7 @@ export default function HomePage() {
         <span className="home-hero-side" aria-hidden="true">Relax · Rejuvenate · Revive</span>
         <div className="home-hero-visual">
           <span className="home-hero-dots" aria-hidden="true" />
-          <HeroTherapists />
-        </div>
+          <HeroTherapists />        </div>
         <div className="home-hero-inner">
           <div className="home-hero-copy">
             <p className="home-hero-tag"><span aria-hidden="true" />Dubai · Home &amp; Hotel Spa</p>
@@ -36,12 +43,12 @@ export default function HomePage() {
       </section>
       </Reveal>
 
-      <nav className="home-marquee" aria-label="Massages">
+      <nav className="home-marquee" aria-label="Our services">
         <div className="home-marquee-track">
-          {[0, 1].map((copy) => (
-            <ul key={copy} aria-hidden={copy === 1 || undefined}>
-              {massages.map((m) => (
-                <li key={m.slug}><Link href={massageHref(m.slug)} tabIndex={copy === 1 ? -1 : undefined}>{m.name}</Link></li>
+          {[0, 1, 2, 3].map((copy) => (
+            <ul key={copy} aria-hidden={copy > 0 || undefined}>
+              {mainServices.map(([name, href]) => (
+                <li key={href}><Link href={href} tabIndex={copy > 0 ? -1 : undefined}>{name}</Link></li>
               ))}
             </ul>
           ))}
@@ -126,23 +133,6 @@ export default function HomePage() {
           <Link className="stat" href="/spa-packages"><CountUp to={50} suffix="+" /><span>Spa Packages</span></Link>
           <Link className="stat" href="/event-services"><CountUp to={10} suffix="+" /><span>Event Partnerships</span></Link>
           <Link className="stat" href="/about"><CountUp to={100} suffix="%" /><span>Client Satisfaction</span></Link>
-        </div>
-      </section>
-      </Reveal>
-
-      <Reveal>
-      <section className="home-feature home-feature-plain">
-        <div className="container-page home-feature-grid">
-          <div className="home-feature-photo is-square"><Image src="/images/home/ready-rose.jpg" alt="ALLORA therapist in a rose red uniform placing fresh towels on a spa bed" fill sizes="340px" className="object-contain" /><a href={site.whatsappUrl('Hello ALLORA, I would like to book now.')} target="_blank" rel="noreferrer" className="stretch-link" aria-label="Book now on WhatsApp" /></div>
-          <div className="feature-band-copy">
-            <p className="eyebrow">Book Today</p>
-            <h2 className="display-font">Ready to Relax?</h2>
-            <p>Book on WhatsApp or email.</p>
-            <div className="actions">
-              <a className="btn-primary" href={site.whatsappUrl('Hello ALLORA, I would like to book now.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={16} />Book Now <ArrowRight size={15} /></a>
-              <a className="btn-outline" href={site.emailHref}><Mail size={16} />Email Us</a>
-            </div>
-          </div>
         </div>
       </section>
       </Reveal>
