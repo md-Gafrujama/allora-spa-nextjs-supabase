@@ -69,7 +69,7 @@ export function HeroTherapists() {
                     width={1024}
                     height={1024}
                     priority={i === 0}
-                    sizes="(max-width:800px) 92vw, 420px"
+                    sizes="(max-width:800px) 92vw, 500px"
                   />
                 </Link>
                 <div className="hero-slide-caption">
