@@ -1523,12 +1523,12 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     backdrop-filter:none!important;
     -webkit-backdrop-filter:none!important;
   }
-  /* service name — image upper-center, clear of navbar */
+  /* service name — higher above head, dark red capitals */
   .home .hero-slide-caption strong,
   .home .hero-slide-caption strong a{
     position:absolute!important;
     left:50%!important;
-    top:12%!important;
+    top:2.5%!important;
     transform:translateX(-50%)!important;
     display:inline-flex!important;
     margin:0!important;
@@ -1537,7 +1537,7 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     border-radius:0!important;
     background:transparent!important;
     box-shadow:none!important;
-    color:#051650!important;
+    color:#6D0B12!important;
     font-size:15px!important;
     font-weight:700!important;
     letter-spacing:.22em!important;
@@ -1545,8 +1545,11 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     text-transform:uppercase!important;
     white-space:nowrap!important;
   }
-  /* Book Now — bottom, white bg + red text */
-  .home .hero-slide-caption .btn-primary{
+  /* Book Now — red bg + white text (force over global white-btn rules) */
+  .home .home-hero-visual .hero-slide-caption a.btn-primary,
+  .home .home-hero-visual .hero-slide-caption a.btn-primary:hover,
+  .home .home-hero-visual .hero-slide-caption a.btn-primary:focus,
+  .home .home-hero-visual .hero-slide-caption a.btn-primary:active{
     position:absolute!important;
     left:50%!important;
     bottom:48px!important;
@@ -1557,18 +1560,20 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     font-weight:700!important;
     padding:11px 22px!important;
     border-radius:999px!important;
-    background:#fff!important;
-    color:#7a1028!important;
-    border:1.5px solid #7a1028!important;
-    box-shadow:0 8px 20px rgba(5,22,80,.10)!important;
+    background:#6D0B12!important;
+    background-color:#6D0B12!important;
+    background-image:none!important;
+    color:#fff!important;
+    border:1.5px solid #6D0B12!important;
+    border-color:#6D0B12!important;
+    box-shadow:0 10px 24px rgba(109,11,18,.28)!important;
   }
-  .home .hero-slide-caption .btn-primary:hover{
-    background:#fff!important;
-    color:#7a1028!important;
-    border-color:#7a1028!important;
+  .home .home-hero-visual .hero-slide-caption a.btn-primary:before{
+    display:none!important;
   }
-  .home .hero-slide-caption .btn-primary svg{
-    color:#7a1028!important;
+  .home .home-hero-visual .hero-slide-caption a.btn-primary svg{
+    color:#fff!important;
+    fill:#fff!important;
   }
   .home .hero-reel-dots{
     left:50%!important;
@@ -1631,4 +1636,15 @@ html.is-navigating,html.is-navigating a{cursor:progress}
 }
 @media(max-width:800px) and (prefers-reduced-motion:reduce){
   .home .home-hero-visual:after{animation:none!important;opacity:.5}
+}
+
+/* Mobile Book Now — hard force red fill + white text */
+@media(max-width:800px){
+  .home .home-hero .hero-slide-caption > a.btn-primary{
+    background:#6D0B12!important;
+    background-color:#6D0B12!important;
+    color:#ffffff!important;
+    border-color:#6D0B12!important;
+  }
+  .home .home-hero .hero-slide-caption > a.btn-primary svg{color:#ffffff!important;fill:#ffffff!important}
 }
