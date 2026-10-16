@@ -1429,27 +1429,10 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     overflow:hidden!important;
     background:transparent!important;
   }
-  /* soft bottom veil — behind CTAs, no blur */
+  /* no white veil — was washing Book Now to pink/blur */
   .home .home-hero-visual:before{
-    content:''!important;
-    position:absolute!important;
-    z-index:3!important;
-    left:0!important;
-    right:0!important;
-    bottom:0!important;
-    top:auto!important;
-    width:100%!important;
-    height:36%!important;
-    border:0!important;
-    border-radius:0!important;
-    background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.4) 45%,rgba(255,255,255,.88) 100%)!important;
-    box-shadow:none!important;
-    pointer-events:none!important;
-    translate:none!important;
-    animation:none!important;
-    filter:none!important;
-    backdrop-filter:none!important;
-    -webkit-backdrop-filter:none!important;
+    content:none!important;
+    display:none!important;
   }
   /* scroll cue */
   .home .home-hero-visual:after{
@@ -1515,13 +1498,16 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     transform:none!important;
     display:block!important;
     padding:0!important;
-    z-index:5!important;
+    z-index:20!important;
+    isolation:isolate;
   }
   .home .hero-slide-caption,
   .home .hero-slide-caption *{
     filter:none!important;
     backdrop-filter:none!important;
     -webkit-backdrop-filter:none!important;
+    opacity:1!important;
+    mix-blend-mode:normal!important;
   }
   /* service name — higher above head, dark red capitals */
   .home .hero-slide-caption strong,
@@ -1545,7 +1531,7 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     text-transform:uppercase!important;
     white-space:nowrap!important;
   }
-  /* Book Now — Etisalat red bg + white text */
+  /* Book Now — solid clear Etisalat red + white text */
   .home .home-hero-visual .hero-slide-caption a.btn-primary,
   .home .home-hero-visual .hero-slide-caption a.btn-primary:hover,
   .home .home-hero-visual .hero-slide-caption a.btn-primary:focus,
@@ -1554,6 +1540,7 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     left:50%!important;
     bottom:48px!important;
     top:auto!important;
+    z-index:30!important;
     transform:translateX(-50%)!important;
     margin:0!important;
     font-size:14px!important;
@@ -1563,17 +1550,27 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     background:#E10801!important;
     background-color:#E10801!important;
     background-image:none!important;
-    color:#fff!important;
-    border:1.5px solid #E10801!important;
+    color:#ffffff!important;
+    border:0!important;
     border-color:#E10801!important;
-    box-shadow:0 10px 24px rgba(225,8,1,.28)!important;
+    box-shadow:none!important;
+    filter:none!important;
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
+    opacity:1!important;
+    isolation:isolate!important;
+    -webkit-font-smoothing:antialiased;
   }
-  .home .home-hero-visual .hero-slide-caption a.btn-primary:before{
+  .home .home-hero-visual .hero-slide-caption a.btn-primary:before,
+  .home .home-hero-visual .hero-slide-caption a.btn-primary:after{
+    content:none!important;
     display:none!important;
   }
   .home .home-hero-visual .hero-slide-caption a.btn-primary svg{
-    color:#fff!important;
-    fill:#fff!important;
+    color:#ffffff!important;
+    fill:#ffffff!important;
+    filter:none!important;
+    opacity:1!important;
   }
   .home .hero-reel-dots{
     left:50%!important;
@@ -1638,13 +1635,20 @@ html.is-navigating,html.is-navigating a{cursor:progress}
   .home .home-hero-visual:after{animation:none!important;opacity:.5}
 }
 
-/* Mobile Book Now — hard force Etisalat red fill + white text */
+/* Mobile Book Now — hard force solid Etisalat red + white text */
 @media(max-width:800px){
-  .home .home-hero .hero-slide-caption > a.btn-primary{
+  .home .home-hero .hero-slide-caption > a.btn-primary,
+  .home .home-hero .hero-slide-caption > a.btn-primary:hover,
+  .home .home-hero .hero-slide-caption > a.btn-primary:focus,
+  .home .home-hero .hero-slide-caption > a.btn-primary:active{
     background:#E10801!important;
     background-color:#E10801!important;
+    background-image:none!important;
     color:#ffffff!important;
-    border-color:#E10801!important;
+    border:0!important;
+    box-shadow:none!important;
+    filter:none!important;
+    opacity:1!important;
   }
-  .home .home-hero .hero-slide-caption > a.btn-primary svg{color:#ffffff!important;fill:#ffffff!important}
+  .home .home-hero .hero-slide-caption > a.btn-primary svg{color:#ffffff!important;fill:#ffffff!important;opacity:1!important}
 }
