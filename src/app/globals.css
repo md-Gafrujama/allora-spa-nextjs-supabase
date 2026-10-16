@@ -1537,7 +1537,7 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     border-radius:0!important;
     background:transparent!important;
     box-shadow:none!important;
-    color:#6D0B12!important;
+    color:#E10801!important;
     font-size:15px!important;
     font-weight:700!important;
     letter-spacing:.22em!important;
@@ -1545,7 +1545,7 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     text-transform:uppercase!important;
     white-space:nowrap!important;
   }
-  /* Book Now — red bg + white text (force over global white-btn rules) */
+  /* Book Now — Etisalat red bg + white text */
   .home .home-hero-visual .hero-slide-caption a.btn-primary,
   .home .home-hero-visual .hero-slide-caption a.btn-primary:hover,
   .home .home-hero-visual .hero-slide-caption a.btn-primary:focus,
@@ -1560,13 +1560,13 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     font-weight:700!important;
     padding:11px 22px!important;
     border-radius:999px!important;
-    background:#6D0B12!important;
-    background-color:#6D0B12!important;
+    background:#E10801!important;
+    background-color:#E10801!important;
     background-image:none!important;
     color:#fff!important;
-    border:1.5px solid #6D0B12!important;
-    border-color:#6D0B12!important;
-    box-shadow:0 10px 24px rgba(109,11,18,.28)!important;
+    border:1.5px solid #E10801!important;
+    border-color:#E10801!important;
+    box-shadow:0 10px 24px rgba(225,8,1,.28)!important;
   }
   .home .home-hero-visual .hero-slide-caption a.btn-primary:before{
     display:none!important;
@@ -1638,13 +1638,13 @@ html.is-navigating,html.is-navigating a{cursor:progress}
   .home .home-hero-visual:after{animation:none!important;opacity:.5}
 }
 
-/* Mobile Book Now — hard force red fill + white text */
+/* Mobile Book Now — hard force Etisalat red fill + white text */
 @media(max-width:800px){
   .home .home-hero .hero-slide-caption > a.btn-primary{
-    background:#6D0B12!important;
-    background-color:#6D0B12!important;
+    background:#E10801!important;
+    background-color:#E10801!important;
     color:#ffffff!important;
-    border-color:#6D0B12!important;
+    border-color:#E10801!important;
   }
   .home .home-hero .hero-slide-caption > a.btn-primary svg{color:#ffffff!important;fill:#ffffff!important}
 }
