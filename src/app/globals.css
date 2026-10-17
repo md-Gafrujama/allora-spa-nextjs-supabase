@@ -1509,7 +1509,7 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     opacity:1!important;
     mix-blend-mode:normal!important;
   }
-  /* service name — higher above head, dark red capitals */
+  /* service name — red pill like Book Now, white text, larger */
   .home .hero-slide-caption strong,
   .home .hero-slide-caption strong a{
     position:absolute!important;
@@ -1517,19 +1517,36 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     top:2.5%!important;
     transform:translateX(-50%)!important;
     display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
     margin:0!important;
-    padding:0!important;
+    padding:11px 20px!important;
     border:0!important;
-    border-radius:0!important;
-    background:transparent!important;
+    border-radius:999px!important;
+    background:#E10801!important;
+    background-color:#E10801!important;
+    background-image:none!important;
     box-shadow:none!important;
-    color:#E10801!important;
-    font-size:15px!important;
+    color:#ffffff!important;
+    font-size:18px!important;
     font-weight:700!important;
-    letter-spacing:.22em!important;
+    letter-spacing:.12em!important;
     line-height:1.2!important;
     text-transform:uppercase!important;
     white-space:nowrap!important;
+    filter:none!important;
+    opacity:1!important;
+  }
+  .home .hero-slide-caption strong a{
+    position:static!important;
+    left:auto!important;
+    top:auto!important;
+    transform:none!important;
+    padding:0!important;
+    background:transparent!important;
+    color:#ffffff!important;
+    font-size:inherit!important;
+    letter-spacing:inherit!important;
   }
   /* Book Now — solid clear Etisalat red + white text */
   .home .home-hero-visual .hero-slide-caption a.btn-primary,
