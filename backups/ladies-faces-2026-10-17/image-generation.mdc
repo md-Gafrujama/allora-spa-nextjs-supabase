@@ -1,0 +1,13 @@
+---
+description: Rules for generating therapist/spa images for the ALLORA site
+alwaysApply: true
+---
+
+# Generated images
+
+- Every therapist in any generated image wears the ALLORA uniform in **#6D0B12** (deep maroon red, same as the Qatar-style flight-attendant reference). Fabric should look shiny / lustrous / satin-like, not matte, pink, or cherry. Match this hex exactly — not lighter, not brighter crimson.
+- Uniform: short-sleeve wrap tunic with cream piping and a beige sash belt.
+- **Faces (required):** Always use the user's real team ladies as face references. Source panels: `public/images/hero/lady-1.jpg` … `lady-7.jpg` (and `assets/lady-face-*-head.jpg` / `assets/team-7-faces.jpg`). Pick any of the 7; rotate different ladies across images — do not invent random faces.
+- Face must be clearly visible (full head in frame, not cropped at the top). Keep natural skin tone — not overly brightened/pale.
+- Bright, milky-white settings / white backgrounds unless the user asks otherwise. No gold or brass props, no text, no logos, no name tags.
+- Never regenerate, overwrite or use `public/images/hero/role-1.jpg`.

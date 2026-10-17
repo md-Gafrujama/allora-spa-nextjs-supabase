@@ -690,8 +690,8 @@ a,button,.nav-link,.home-moment,.home-hero-types a,.pro-team-card{transition:col
 .home-explore-title{margin:0 0 22px;text-align:center;color:#051650;font-size:clamp(30px,3vw,42px);font-weight:600;line-height:1.1}
 .home-explore-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
 .home-explore-grid a{display:flex;flex-direction:column;align-items:flex-start;gap:0;min-height:0;padding:0 0 16px;overflow:hidden;border:1px solid #eceff3;border-radius:16px;background:#fff;box-shadow:0 10px 26px rgba(5,22,80,.06);color:#051650}
-.home-explore-photo{position:relative;display:block;width:100%;aspect-ratio:16/9;overflow:hidden;background:#fff;margin:0 0 12px}
-.home-explore-photo img{object-fit:cover;object-position:center}
+.home-explore-photo{position:relative;display:block;width:100%;aspect-ratio:1/1;overflow:hidden;background:#fff;margin:0 0 12px}
+.home-explore-photo img{object-fit:contain;object-position:center center}
 .home-explore-grid strong{margin:0 16px;font-family:var(--font-display),Georgia,serif;font-size:20px;font-weight:600;line-height:1.1;letter-spacing:-.02em}
 .home-explore-grid a > span:not(.home-explore-photo){margin:4px 16px 0;color:#3c342f;font-size:14.5px;line-height:1.4}
 .home-explore-grid em{margin:12px 16px 0;font-style:normal;font-size:13px;font-weight:700;letter-spacing:.04em;color:#7a1028}
@@ -775,7 +775,7 @@ a,button,.nav-link,.home-moment,.home-hero-types a,.pro-team-card{transition:col
 @media(max-width:1100px){.nav-link{font-size:13px;padding:8px 7px 10px}.book-btn{padding:10px 12px}}
 @media(max-width:800px){.nav-shell{height:68px}.mega-menu{display:none!important}.mobile-panel{border-top:1px solid #e6eaf0}.mobile-group{border-bottom:1px solid #eef1f5}.mobile-panel .book-btn,.mobile-book{display:inline-flex!important;width:calc(100% - 16px);justify-content:center;margin:8px}}
 .home .home-feature-photo,.home .home-feature-photo.is-square,.home .home-feature-photo.is-wide,.home .home-feature-photo img{border:0!important;border-radius:0!important;box-shadow:none!important;outline:0!important;background:transparent!important}
-.home-explore-photo img{object-fit:cover!important;object-position:center!important;width:100%!important;height:100%!important}
+.home-explore-photo img{object-fit:contain!important;object-position:center center!important;width:100%!important;height:100%!important}
 .nav-shell{gap:8px}
 .nav-link{font-size:13.5px;padding:8px 6px 10px}
 .book-btn{padding:10px 14px}
@@ -846,7 +846,7 @@ body{padding-top:74px}
 .footer .footer-line svg{color:#7a1028}
 .footer-bottom{display:flex;justify-content:space-between;gap:12px;width:min(1180px,calc(100% - 40px));margin:0 auto;padding:18px 0 28px;border-top:1px solid #eceff3;background:#fff;color:#6b645f;font-size:13px}
 .home-explore-lede{margin:-12px auto 28px;max-width:460px;text-align:center;color:#3c342f;font-size:16px;line-height:1.6}
-.home-explore-photo{aspect-ratio:4/3}
+.home-explore-photo{aspect-ratio:1/1}
 .home-treat{height:100%}
 .home-treat .actions{margin-top:auto}
 .home .feature-band-copy .eyebrow,.home .home-moments .eyebrow,.home .home-reviews .eyebrow{display:inline-flex;margin:0 0 12px;padding:6px 12px;border-radius:999px;background:#f3f5fa;color:#051650;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
@@ -888,7 +888,8 @@ body{padding-top:74px}
 .home-explore-grid em{margin-top:auto}
 .home-explore-grid em:after,.home-moment em:after{content:' \2192'}
 .home-explore-photo img,.home-treat-photo img{transition:transform .5s ease}
-.home-explore-grid a:hover .home-explore-photo img,.home-treat:hover .home-treat-photo img{transform:scale(1.04)}
+.home-explore-grid a:hover .home-explore-photo img{transform:none}
+.home-treat:hover .home-treat-photo img{transform:scale(1.04)}
 .home .stats{padding:36px 0}
 .home .stat span{letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:700}
 .home .home-moments .container-page{text-align:center}
@@ -1078,7 +1079,8 @@ body{padding-top:74px}
 
 .home-explore-photo:after{content:'\2192';position:absolute;z-index:2;right:12px;bottom:12px;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#fff;color:#7a1028;font-size:18px;font-weight:700;box-shadow:0 10px 24px rgba(5,22,80,.18);opacity:0;translate:0 12px;scale:.8;transition:opacity .35s ease,translate .45s cubic-bezier(.22,1,.36,1),scale .45s cubic-bezier(.22,1,.36,1)}
 .home-explore-grid a:hover .home-explore-photo:after{opacity:1;translate:0 0;scale:1}
-.home .home-explore-grid a:hover .home-explore-photo img,.home .home-treat:hover .home-treat-photo img,.mp-item:hover .mp-item-photo img,.mp-card:hover .mp-card-photo img{transform:scale(1.07)}
+.home .home-explore-grid a:hover .home-explore-photo img{transform:none}
+.home .home-treat:hover .home-treat-photo img,.mp-item:hover .mp-item-photo img,.mp-card:hover .mp-card-photo img{transform:scale(1.07)}
 .home-explore-photo img,.home-treat-photo img,.mp-item-photo img,.mp-card-photo img{transition:transform .8s cubic-bezier(.22,1,.36,1),filter .5s ease!important}
 .home .home-explore-grid a:hover strong,.mp-card:hover strong{color:#7a1028}
 .home .home-explore-grid strong,.mp-card strong{transition:color .3s ease}
@@ -1509,12 +1511,13 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     opacity:1!important;
     mix-blend-mode:normal!important;
   }
-  /* service name — red pill like Book Now, white text, larger */
+  /* Spa Package etc — red pill, white text (mobile style) */
   .home .hero-slide-caption strong,
   .home .hero-slide-caption strong a{
     position:absolute!important;
     left:50%!important;
     top:2.5%!important;
+    bottom:auto!important;
     transform:translateX(-50%)!important;
     display:inline-flex!important;
     align-items:center!important;
@@ -1527,15 +1530,14 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     background-color:#E10801!important;
     background-image:none!important;
     box-shadow:none!important;
-    color:#ffffff!important;
+    color:#fff!important;
     font-size:18px!important;
-    font-weight:700!important;
+    font-weight:800!important;
     letter-spacing:.12em!important;
     line-height:1.2!important;
     text-transform:uppercase!important;
     white-space:nowrap!important;
-    filter:none!important;
-    opacity:1!important;
+    -webkit-text-stroke:0;
   }
   .home .hero-slide-caption strong a{
     position:static!important;
@@ -1544,11 +1546,12 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     transform:none!important;
     padding:0!important;
     background:transparent!important;
-    color:#ffffff!important;
+    color:#fff!important;
     font-size:inherit!important;
+    font-weight:800!important;
     letter-spacing:inherit!important;
   }
-  /* Book Now — solid clear Etisalat red + white text */
+  /* Book Now — red bg, white text (mobile style) */
   .home .home-hero-visual .hero-slide-caption a.btn-primary,
   .home .home-hero-visual .hero-slide-caption a.btn-primary:hover,
   .home .home-hero-visual .hero-slide-caption a.btn-primary:focus,
@@ -1560,23 +1563,20 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     z-index:30!important;
     transform:translateX(-50%)!important;
     margin:0!important;
-    font-size:14px!important;
-    font-weight:700!important;
+    font-size:15px!important;
+    font-weight:800!important;
     padding:11px 22px!important;
     border-radius:999px!important;
     background:#E10801!important;
     background-color:#E10801!important;
     background-image:none!important;
-    color:#ffffff!important;
+    color:#fff!important;
     border:0!important;
     border-color:#E10801!important;
     box-shadow:none!important;
     filter:none!important;
-    backdrop-filter:none!important;
-    -webkit-backdrop-filter:none!important;
     opacity:1!important;
-    isolation:isolate!important;
-    -webkit-font-smoothing:antialiased;
+    -webkit-text-stroke:0;
   }
   .home .home-hero-visual .hero-slide-caption a.btn-primary:before,
   .home .home-hero-visual .hero-slide-caption a.btn-primary:after{
@@ -1584,8 +1584,8 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     display:none!important;
   }
   .home .home-hero-visual .hero-slide-caption a.btn-primary svg{
-    color:#ffffff!important;
-    fill:#ffffff!important;
+    color:#fff!important;
+    fill:#fff!important;
     filter:none!important;
     opacity:1!important;
   }
@@ -1652,7 +1652,7 @@ html.is-navigating,html.is-navigating a{cursor:progress}
   .home .home-hero-visual:after{animation:none!important;opacity:.5}
 }
 
-/* Mobile Book Now — hard force solid Etisalat red + white text */
+/* Mobile Book Now — red fill + white text only on mobile */
 @media(max-width:800px){
   .home .home-hero .hero-slide-caption > a.btn-primary,
   .home .home-hero .hero-slide-caption > a.btn-primary:hover,
@@ -1668,4 +1668,90 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     opacity:1!important;
   }
   .home .home-hero .hero-slide-caption > a.btn-primary svg{color:#ffffff!important;fill:#ffffff!important;opacity:1!important}
+}
+
+/* Desktop hero captions — same red + text as mobile, both lower */
+@media(min-width:801px){
+  .home .hero-slide-caption{
+    display:flex!important;
+    flex-direction:row!important;
+    flex-wrap:nowrap!important;
+    justify-content:center!important;
+    align-content:flex-end!important;
+    align-items:flex-end!important;
+    gap:10px!important;
+    padding:0 14px 8px!important;
+    background:none!important;
+  }
+  .home .hero-slide-caption strong,
+  .home .hero-slide-caption strong a{
+    position:static!important;
+    left:auto!important;
+    top:auto!important;
+    bottom:auto!important;
+    transform:none!important;
+    display:inline-flex!important;
+    align-items:center!important;
+    background:#E10801!important;
+    background-color:#E10801!important;
+    color:#fff!important;
+    border:0!important;
+    border-radius:999px!important;
+    box-shadow:0 8px 18px rgba(225,8,1,.2)!important;
+    text-transform:uppercase!important;
+    letter-spacing:.12em!important;
+    font-weight:800!important;
+    font-size:14px!important;
+    line-height:1.2!important;
+    padding:10px 16px!important;
+    white-space:nowrap!important;
+  }
+  .home .hero-slide-caption strong a{
+    background:transparent!important;
+    border:0!important;
+    box-shadow:none!important;
+    color:#fff!important;
+    padding:0!important;
+    font-size:inherit!important;
+    font-weight:800!important;
+    letter-spacing:inherit!important;
+  }
+  .home .home-hero-visual .hero-slide-caption a.btn-primary,
+  .home .home-hero-visual .hero-slide-caption a.btn-primary:hover,
+  .home .home-hero-visual .hero-slide-caption a.btn-primary:focus,
+  .home .home-hero-visual .hero-slide-caption a.btn-primary:active{
+    position:static!important;
+    left:auto!important;
+    top:auto!important;
+    bottom:auto!important;
+    transform:none!important;
+    background:#E10801!important;
+    background-color:#E10801!important;
+    background-image:none!important;
+    color:#fff!important;
+    border:0!important;
+    border-radius:999px!important;
+    box-shadow:0 8px 18px rgba(225,8,1,.2)!important;
+    font-size:14px!important;
+    font-weight:800!important;
+    padding:10px 16px!important;
+  }
+  .home .home-hero-visual .hero-slide-caption a.btn-primary svg{
+    color:#fff!important;
+    fill:#fff!important;
+  }
+  .home .home-hero-visual .hero-slide-caption a.btn-primary:before,
+  .home .home-hero-visual .hero-slide-caption a.btn-primary:after{
+    display:none!important;
+    content:none!important;
+  }
+  .home .hero-reel-dots{
+    bottom:58px!important;
+  }
+  .home .hero-reel-dots button.is-active{
+    background:#E10801!important;
+  }
+  .home .hero-reel-dots button.is-active:after{
+    background:#E10801!important;
+  }
 }
