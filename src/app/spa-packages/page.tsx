@@ -2,7 +2,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Check, Mail, ShieldCheck, Sparkles, UserRound } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
-import { spaItems } from '@/lib/service-data';
+import { getCatalog } from '@/lib/catalog';
+import { pageMeta } from '@/lib/seo';
+
+export const metadata = pageMeta({
+  title: 'Luxury Spa Packages in Dubai',
+  description: 'Luxury, couples, bridal, birthday and Moroccan bath spa packages delivered to your home or hotel in Dubai by ALLORA therapists.',
+  path: '/spa-packages',
+});
 import { site } from '@/lib/site-data';
 
 const perks = [
@@ -11,7 +18,8 @@ const perks = [
   { icon: Sparkles, label: 'Home, hotel or venue' },
 ];
 
-export default function SpaPackages() {
+export default async function SpaPackages() {
+  const spaItems = await getCatalog('spa');
   return (
     <div className="pkg-page">
       <section className="pkg-hero">

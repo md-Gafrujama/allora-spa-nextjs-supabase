@@ -2,14 +2,15 @@
 
 import { useEffect, useId, useState } from 'react';
 import { X } from 'lucide-react';
+import { useToast } from '@/components/toast';
 
 export function ReviewForm() {
   const titleId = useId();
   const [open, setOpen] = useState(false);
   const [rating, setRating] = useState(0);
   const [loading, setLoading] = useState(false);
+  const toast = useToast();
   const [done, setDone] = useState(false);
-  const [error, setError] = useState('');
 
   useEffect(() => {
     if (!open) return;
@@ -32,11 +33,10 @@ export function ReviewForm() {
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (rating < 1) {
-      setError('Please choose a star rating.');
+      toast.error('Please choose a star rating.', 'Review');
       return;
     }
     setLoading(true);
-    setError('');
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
     try {
@@ -49,8 +49,9 @@ export function ReviewForm() {
       setDone(true);
       form.reset();
       setRating(0);
+      toast.success('Your review has been sent to the team.', 'Review sent');
     } catch {
-      setError('Could not send right now. Please try again in a moment.');
+      toast.error('Could not send right now. Please try again in a moment.', 'Review');
     } finally {
       setLoading(false);
     }
@@ -59,7 +60,7 @@ export function ReviewForm() {
   return (
     <>
       <p className="home-reviews-lede">Tell us how your session felt.</p>
-      <button type="button" className="review-open" onClick={() => { setDone(false); setError(''); setOpen(true); }}>
+      <button type="button" className="review-open" onClick={() => { setDone(false); setOpen(true); }}>
         Write a review
       </button>
       {open && (
@@ -100,7 +101,6 @@ export function ReviewForm() {
                 <button disabled={loading} className="submit">
                   {loading ? 'Sending...' : 'Send review'}
                 </button>
-                {error && <p className="form-note form-note-error">{error}</p>}
               </form>
             )}
           </div>

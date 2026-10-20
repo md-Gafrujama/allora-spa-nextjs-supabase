@@ -8,11 +8,11 @@ export type Therapist = {
 };
 
 export const therapists: Therapist[] = [
-  { src: '/images/hero/role-1.jpg', width: 1024, height: 1024, position: 'center', role: 'Massage Expert', service: 'Deep tissue massage' },
-  { src: '/images/hero/role-2c.jpg', width: 1024, height: 1024, position: 'center', role: 'Facial Specialist', service: 'Cleansing facial care' },
-  { src: '/images/hero/role-3c.jpg', width: 1024, height: 1024, position: 'center', role: 'Wellness Expert', service: 'Head & scalp massage' },
-  { src: '/images/hero/role-4c.jpg', width: 1024, height: 1024, position: 'center', role: 'Beauty Specialist', service: 'Glow & beauty care' },
-  { src: '/images/hero/role-5c.jpg', width: 1024, height: 1024, position: 'center', role: 'Body Care Expert', service: 'Body scrub & polish' },
-  { src: '/images/hero/role-6c.jpg', width: 1024, height: 1024, position: 'center', role: 'Spa Therapist', service: 'Foot spa & massage' },
-  { src: '/images/hero/role-7d.jpg', width: 1024, height: 1024, position: 'center', role: 'Aromatherapy Expert', service: 'Aromatic oil therapy' },
+  { src: '/images/about/team-1.jpg', width: 1024, height: 1024, position: 'center', role: 'Massage Expert', service: 'Deep tissue massage' },
+  { src: '/images/about/team-2.jpg', width: 1024, height: 1024, position: 'center', role: 'Facial Specialist', service: 'Cleansing facial care' },
+  { src: '/images/about/team-3.jpg', width: 1024, height: 1024, position: 'center', role: 'Wellness Expert', service: 'Head & scalp massage' },
+  { src: '/images/about/team-4.jpg', width: 1024, height: 1024, position: 'center', role: 'Beauty Specialist', service: 'Glow & beauty care' },
+  { src: '/images/about/team-5.jpg', width: 1024, height: 1024, position: 'center', role: 'Body Care Expert', service: 'Body scrub & polish' },
+  { src: '/images/about/team-6.jpg', width: 1024, height: 1024, position: 'center', role: 'Spa Therapist', service: 'Foot spa & massage' },
+  { src: '/images/about/team-7.jpg', width: 1024, height: 1024, position: 'center', role: 'Aromatherapy Expert', service: 'Aromatic oil therapy' },
 ];

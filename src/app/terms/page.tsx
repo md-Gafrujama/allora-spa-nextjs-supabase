@@ -1,1 +1,3 @@
+import { pageMeta } from '@/lib/seo';
+export const metadata = pageMeta({ title: 'Terms and Conditions', description: 'Booking terms for ALLORA Spa & Wellness home, hotel and event services in Dubai.', path: '/terms' });
 export default function Terms(){return <section className="section"><div className="container-page"><p className="eyebrow">Legal</p><h1 className="display-font text-5xl">Terms & Conditions</h1><div className="legal-card mt-8"><p className="copy">Bookings are subject to availability and confirmation. Service prices, duration and inclusions may vary by location, package and event. Final details are confirmed with the ALLORA team on WhatsApp.</p></div></div></section>}

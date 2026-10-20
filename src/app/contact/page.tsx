@@ -1,6 +1,13 @@
 import Image from 'next/image';
 import { ArrowRight, Clock, Headphones, Heart, Mail, MapPin, Phone } from 'lucide-react';
+import { pageMeta } from '@/lib/seo';
 import { site } from '@/lib/site-data';
+
+export const metadata = pageMeta({
+  title: 'Contact ALLORA Spa in Dubai',
+  description: 'Book ALLORA by WhatsApp or email. Home, hotel and event spa across Dubai Marina, Jumeirah, Downtown and Business Bay.',
+  path: '/contact',
+});
 import { ContactForm } from '@/components/contact-form';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
 

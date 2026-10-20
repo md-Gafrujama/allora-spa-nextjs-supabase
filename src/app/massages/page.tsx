@@ -1,17 +1,20 @@
-import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
-import { massageHref, massages } from '@/lib/massage-data';
+import { getCatalog } from '@/lib/catalog';
+import { massageHref } from '@/lib/massage-data';
+import { pageMeta } from '@/lib/seo';
 import { site } from '@/lib/site-data';
 
-export const metadata: Metadata = {
-  title: 'Massages',
-  description: 'Thai, couple, hot stone, jacuzzi, deep tissue and lymphatic drainage massage at your home or hotel.',
-};
+export const metadata = pageMeta({
+  title: 'Massage at Home and Hotel in Dubai',
+  description: 'Thai, couples, hot stone, jacuzzi, deep tissue and lymphatic drainage massage at your home or hotel in Dubai.',
+  path: '/massages',
+});
 
-export default function Massages() {
+export default async function Massages() {
+  const massages = await getCatalog('massage');
   return (
     <div className="massage-page">
       <section className="mp-list">

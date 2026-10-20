@@ -2,6 +2,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Briefcase, Building2, Check, Mail, Users } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
+import { getCatalog } from '@/lib/catalog';
+import { pageMeta } from '@/lib/seo';
+
+export const metadata = pageMeta({
+  title: 'Corporate Massage in Dubai',
+  description: 'Chair, scalp, neck and shoulder massage at your office or workplace event in Dubai. Short sessions for teams.',
+  path: '/corporate',
+});
 import { site } from '@/lib/site-data';
 
 const perks = [
@@ -10,46 +18,9 @@ const perks = [
   { icon: Briefcase, label: 'Events & hotels' },
 ];
 
-const services = [
-  {
-    id: 'chair-massage',
-    name: 'Chair Massage',
-    image: '/images/corporate/chair.jpg',
-    highlights: ['Usually 10–30 minutes', 'At the desk or wellness corner', 'No change of clothes needed'],
-  },
-  {
-    id: 'back-neck-shoulder',
-    name: 'Back, Neck & Shoulder',
-    image: '/images/corporate/back-neck.jpg',
-    highlights: ['Desk-tension relief', 'Seated office-friendly', 'Short session format'],
-  },
-  {
-    id: 'head-scalp',
-    name: 'Head / Scalp Massage',
-    image: '/images/corporate/scalp.jpg',
-    highlights: ['Calms mental fatigue', 'Gentle scalp & temples', 'Quick workplace break'],
-  },
-  {
-    id: 'arm-hand',
-    name: 'Arm & Hand Massage',
-    image: '/images/corporate/arm-hand.jpg',
-    highlights: ['Typing & mouse strain relief', 'Forearm and hand focus', 'Fully clothed'],
-  },
-  {
-    id: 'seated-relaxation',
-    name: 'Seated Relaxation',
-    image: '/images/corporate/seated.jpg',
-    highlights: ['Upper-leg or seated format', 'Where appropriate', 'Modest & professional'],
-  },
-  {
-    id: 'work-stress',
-    name: 'Work-Stress Relief',
-    image: '/images/corporate/stress.jpg',
-    highlights: ['Muscle-tension release', 'Neck & shoulders focus', 'Employee wellness ready'],
-  },
-] as const;
-
-export default function Corporate() {
+export default async function Corporate() {
+  const saved = await getCatalog('corporate');
+  const services = saved.map((item) => ({ id: item.slug, name: item.name, image: item.image, highlights: item.highlights }));
   return (
     <div className="pkg-page corporate-page">
       <section className="pkg-hero">

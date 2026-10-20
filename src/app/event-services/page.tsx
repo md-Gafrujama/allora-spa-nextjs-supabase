@@ -2,7 +2,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Building2, Check, Mail, PartyPopper, Sparkles, Users } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
-import { eventItems } from '@/lib/service-data';
+import { getCatalog } from '@/lib/catalog';
+import { pageMeta } from '@/lib/seo';
+
+export const metadata = pageMeta({
+  title: 'Spa Event Services in Dubai',
+  description: 'Spa parties, bridal showers, hen parties and corporate wellness events with mobile therapists anywhere in Dubai.',
+  path: '/event-services',
+});
 import { site } from '@/lib/site-data';
 
 const perks = [
@@ -12,7 +19,8 @@ const perks = [
   { icon: Sparkles, label: 'Private group setups' },
 ];
 
-export default function EventServices() {
+export default async function EventServices() {
+  const eventItems = await getCatalog('event');
   return (
     <div className="pkg-page event-page">
       <section className="pkg-hero">

@@ -7,8 +7,16 @@ import { HeroTherapists } from '@/components/hero-therapists';
 import { Reveal } from '@/components/reveal';
 import { ReviewForm } from '@/components/review-form';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
-import { massageHref, massages } from '@/lib/massage-data';
+import { getCatalog } from '@/lib/catalog';
+import { massageHref } from '@/lib/massage-data';
+import { pageMeta } from '@/lib/seo';
 import { site } from '@/lib/site-data';
+
+export const metadata = pageMeta({
+  title: 'Luxury Spa and Wellness at Your Place in Dubai',
+  description: 'ALLORA brings trained female therapists to your home, hotel or event in Dubai. Book spa packages, massage, facials and corporate wellness.',
+  path: '/',
+});
 
 const mainServices = [
   ['Spa Package', '/spa-packages'],
@@ -18,7 +26,8 @@ const mainServices = [
   ['Deep Tissue', '/deep-tissue'],
 ] as const;
 
-export default function HomePage() {
+export default async function HomePage() {
+  const massages = await getCatalog('massage');
   return (
     <main className="home">
       <Reveal>

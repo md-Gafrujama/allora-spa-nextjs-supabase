@@ -6,10 +6,55 @@ create table if not exists public.event_services(id uuid primary key default gen
 create table if not exists public.contact_messages(id uuid primary key default gen_random_uuid(),name text not null,phone text,email text,service text,preferred_location text,message text,status text not null default 'new',created_at timestamptz not null default now());
 alter table public.profiles enable row level security;alter table public.spa_packages enable row level security;alter table public.services enable row level security;alter table public.event_services enable row level security;alter table public.contact_messages enable row level security;
 create or replace function public.is_admin() returns boolean language sql stable security definer set search_path=public as $$select exists(select 1 from public.profiles where id=auth.uid() and role='admin')$$;
-create policy "public active packages" on public.spa_packages for select using(is_active or public.is_admin());create policy "admin packages" on public.spa_packages for all using(public.is_admin()) with check(public.is_admin());
-create policy "public active services" on public.services for select using(is_active or public.is_admin());create policy "admin services" on public.services for all using(public.is_admin()) with check(public.is_admin());
-create policy "public active events" on public.event_services for select using(is_active or public.is_admin());create policy "admin events" on public.event_services for all using(public.is_admin()) with check(public.is_admin());
-create policy "public insert contact" on public.contact_messages for insert with check(true);create policy "admin read contact" on public.contact_messages for select using(public.is_admin());create policy "admin update contact" on public.contact_messages for update using(public.is_admin()) with check(public.is_admin());
+drop policy if exists "read own profile" on public.profiles;
+create policy "read own profile" on public.profiles for select using (id = auth.uid() or public.is_admin());
+drop policy if exists "public active packages" on public.spa_packages;
+drop policy if exists "admin packages" on public.spa_packages;
+create policy "public active packages" on public.spa_packages for select using(is_active or public.is_admin());
+create policy "admin packages" on public.spa_packages for all using(public.is_admin()) with check(public.is_admin());
+drop policy if exists "public active services" on public.services;
+drop policy if exists "admin services" on public.services;
+create policy "public active services" on public.services for select using(is_active or public.is_admin());
+create policy "admin services" on public.services for all using(public.is_admin()) with check(public.is_admin());
+drop policy if exists "public active events" on public.event_services;
+drop policy if exists "admin events" on public.event_services;
+create policy "public active events" on public.event_services for select using(is_active or public.is_admin());
+create policy "admin events" on public.event_services for all using(public.is_admin()) with check(public.is_admin());
+drop policy if exists "public insert contact" on public.contact_messages;
+drop policy if exists "admin read contact" on public.contact_messages;
+drop policy if exists "admin update contact" on public.contact_messages;
+create policy "public insert contact" on public.contact_messages for insert with check(true);
+create policy "admin read contact" on public.contact_messages for select using(public.is_admin());
+create policy "admin update contact" on public.contact_messages for update using(public.is_admin()) with check(public.is_admin());
 insert into public.spa_packages(slug,name,short_description,description,price,duration_minutes,sort_order) values('relaxation-package','Relaxation Package','De-stress and unwind with signature treatments.','A calm restorative experience designed for complete relaxation.',299,60,1),('couple-package','Couple Package','Relax and reconnect together.','A premium spa experience for two.',499,90,2),('premium-package','Premium Package','Luxury spa experience with premium treatments.','A full wellness experience with personalized care.',699,120,3) on conflict(slug) do nothing;
 insert into public.services(slug,name,category,short_description,sort_order) values('home-spa','Home Spa','home','Professional spa services at your home.',1),('hotel-spa','Hotel Spa','hotel','Relax in the comfort of your hotel.',2),('apartment-spa','Apartment Spa','apartment','Wellness treatments at your apartment.',3),('wellness-therapy','Wellness Therapy','wellness','Personalized wellness and relaxation services.',4) on conflict(slug) do nothing;
 insert into public.event_services(slug,name,short_description,sort_order) values('wedding-events','Wedding Events','Bridal and guest spa services.',1),('corporate-events','Corporate Events','On-site wellness for teams.',2),('private-events','Private Events','Spa experiences for birthdays and celebrations.',3) on conflict(slug) do nothing;
+insert into public.profiles(id, full_name, role)
+select id, 'Admin', 'admin' from auth.users where email = 'admin@gmail.com'
+on conflict (id) do update set full_name = 'Admin', role = 'admin';
+
+create table if not exists public.catalog_items (
+  id uuid primary key default gen_random_uuid(),
+  category text not null check (category in ('spa','place','event','massage','corporate')),
+  slug text not null,
+  name text not null,
+  description text,
+  short_text text,
+  price text,
+  duration text,
+  image_url text,
+  images jsonb not null default '[]'::jsonb,
+  highlights jsonb not null default '[]'::jsonb,
+  seo_title text,
+  seo_description text,
+  is_active boolean not null default true,
+  sort_order integer not null default 0,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  unique (category, slug)
+);
+alter table public.catalog_items enable row level security;
+drop policy if exists "public read catalog" on public.catalog_items;
+drop policy if exists "admin catalog" on public.catalog_items;
+create policy "public read catalog" on public.catalog_items for select using (is_active or public.is_admin());
+create policy "admin catalog" on public.catalog_items for all using (public.is_admin()) with check (public.is_admin());

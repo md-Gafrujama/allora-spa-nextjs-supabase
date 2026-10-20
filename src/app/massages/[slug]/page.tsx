@@ -4,24 +4,25 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowRight, Check, Mail } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
-import { findMassage, massageHref, massages } from '@/lib/massage-data';
+import { getCatalog, getCatalogItem } from '@/lib/catalog';
+import { massageHref } from '@/lib/massage-data';
+import { pageMeta } from '@/lib/seo';
 import { site } from '@/lib/site-data';
 
-export function generateStaticParams() {
-  return massages.map((m) => ({ slug: m.slug }));
-}
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const item = findMassage(slug);
+  const item = await getCatalogItem('massage', slug);
   if (!item) return {};
-  return { title: item.name, description: item.description };
+  return pageMeta({ title: item.seoTitle, description: item.seoDescription, path: item.url });
 }
 
 export default async function MassageDetail({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const item = findMassage(slug);
+  const item = await getCatalogItem('massage', slug);
   if (!item) notFound();
+  const massages = await getCatalog('massage');
   const others = massages.filter((m) => m.slug !== item.slug);
   const book = site.whatsappUrl(`Hello ALLORA, I would like to book a ${item.name}.`);
 

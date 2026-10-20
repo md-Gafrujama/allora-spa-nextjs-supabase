@@ -1,1 +1,3 @@
+import { pageMeta } from '@/lib/seo';
+export const metadata = pageMeta({ title: 'Privacy Policy', description: 'How ALLORA Spa & Wellness uses the details you send when you book a home, hotel or event spa in Dubai.', path: '/privacy' });
 export default function Privacy(){return <section className="section"><div className="container-page"><p className="eyebrow">Legal</p><h1 className="display-font text-5xl">Privacy Policy</h1><div className="legal-card mt-8"><p className="copy">ALLORA Spa & Wellness respects your privacy. Details you send through the contact form are used only to reply to your enquiry and arrange a booking. Phone numbers and email addresses are not published on this website. We do not sell personal information.</p></div></div></section>}

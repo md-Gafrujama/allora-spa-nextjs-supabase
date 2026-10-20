@@ -2,7 +2,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Check, Home, Hotel, Mail, MapPin, UserRound } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
-import { placeItems } from '@/lib/service-data';
+import { getCatalog } from '@/lib/catalog';
+import { pageMeta } from '@/lib/seo';
+
+export const metadata = pageMeta({
+  title: 'Spa at Your Place in Dubai',
+  description: 'Home spa, hotel room massage and apartment treatments across Dubai Marina, Jumeirah, Downtown and Business Bay.',
+  path: '/your-place',
+});
 import { site } from '@/lib/site-data';
 
 const perks = [
@@ -12,7 +19,8 @@ const perks = [
   { icon: MapPin, label: 'Across Dubai locations' },
 ];
 
-export default function YourPlace() {
+export default async function YourPlace() {
+  const placeItems = await getCatalog('place');
   return (
     <div className="pkg-page place-page">
       <section className="pkg-hero">

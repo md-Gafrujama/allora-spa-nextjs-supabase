@@ -2,7 +2,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Check, Mail, Sparkles, UserRound } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
+import { pageMeta } from '@/lib/seo';
 import { site } from '@/lib/site-data';
+
+export const metadata = pageMeta({
+  title: 'Deep Tissue Massage in Dubai',
+  description: 'Deep tissue, lymphatic drainage, hot stone, cellulite and medotherapy massage at your home or hotel in Dubai.',
+  path: '/deep-tissue',
+});
 
 const perks = [
   { icon: UserRound, label: 'Trained female therapists' },

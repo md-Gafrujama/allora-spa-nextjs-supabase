@@ -4,7 +4,14 @@ import { ArrowRight, Check, Mail } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
 import { ReviewForm } from '@/components/review-form';
 import { TherapistTeam } from '@/components/therapist-team';
+import { pageMeta } from '@/lib/seo';
 import { site } from '@/lib/site-data';
+
+export const metadata = pageMeta({
+  title: 'About ALLORA Spa and Wellness',
+  description: 'ALLORA is a Dubai home and hotel spa with trained female therapists for massage, beauty and wellness at your place.',
+  path: '/about',
+});
 
 const values = [
   ['Mission', 'Premium spa care with safety and personal attention.'],
