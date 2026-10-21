@@ -1,4 +1,4 @@
-import { massageHref, massages } from '@/lib/massage-data';
+import { baseCatalog } from '@/lib/catalog-base';
 
 export const site = {
   name: 'ALLORA Spa & Wellness',
@@ -30,61 +30,24 @@ export const site = {
   whatsappUrl: (message: string) => `https://wa.me/971509513634?text=${encodeURIComponent(message)}`,
 };
 
-const deepTissueNav = [
-  ['Deep Tissue', '/deep-tissue#deep-tissue'],
-  ['Lymphatic Drainage', '/deep-tissue#lymphatic-drainage'],
-  ['Hot Stone', '/deep-tissue#hot-stone'],
-  ['Cellulite', '/deep-tissue#cellulite'],
-  ['Medotherapy', '/deep-tissue#medotherapy'],
-];
+const menu = (category: Parameters<typeof baseCatalog>[0]) =>
+  baseCatalog(category).map((item) => [item.name, item.url] as [string, string]);
 
 export const navData = {
+  spa: menu('spa'),
+  place: menu('place'),
+  events: menu('event'),
+  corporate: menu('corporate'),
   massages: [
-    ...massages.map((m) => [m.name, massageHref(m.slug)]),
-    ...deepTissueNav.filter(([name]) => !massages.some((m) => m.name.startsWith(name))),
+    ...menu('massage'),
+    ['Cellulite', '/cellulite-dubai'] as [string, string],
+    ['Medotherapy', '/medotherapy-dubai'] as [string, string],
   ],
-  spa: [
-    ['Luxury Spa Package', '/spa-packages/luxury-spa-package-dubai/'],
-    ['Couples Spa Package', '/spa-packages/couples-spa-package-dubai/'],
-    ['Spa Day Package', '/spa-packages/spa-day-package-dubai/'],
-    ['Massage Package', '/spa-packages/massage-package-dubai/'],
-    ['Moroccan Bath Package', '/spa-packages/moroccan-bath-package-dubai/'],
-    ['Spa Gift Voucher', '/spa-packages/spa-gift-voucher-dubai/'],
-    ['Birthday Spa Package', '/spa-packages/birthday-spa-package-dubai/'],
-    ['Bridal Spa Package', '/spa-packages/bridal-spa-package-dubai/'],
-    ['Ladies Spa Package', '/spa-packages/ladies-spa-package-dubai/'],
-  ],
-  place: [
-    ['Home Spa', '/your-place/home-spa-dubai/'],
-    ['Home Massage', '/your-place/home-massage-service-dubai/'],
-    ['Hotel Room Spa', '/your-place/hotel-room-spa-service-dubai/'],
-    ['Apartment Spa', '/your-place/apartment-spa-service-dubai/'],
-    ['Couples Massage at Home', '/your-place/couples-massage-at-home-dubai/'],
-    ['Home Facial Service', '/your-place/home-facial-service-dubai/'],
-    ['Dubai Marina', '/your-place/home-spa-dubai-marina/'],
-    ['Jumeirah', '/your-place/home-spa-jumeirah/'],
-    ['Downtown Dubai', '/your-place/home-spa-downtown-dubai/'],
-    ['Business Bay', '/your-place/home-spa-business-bay/'],
-  ],
-  events: [
-    ['Spa Event Services', '/event-services/spa-event-services-dubai/'],
-    ['Spa Party', '/event-services/spa-party-dubai/'],
-    ['Birthday Spa Party', '/event-services/birthday-spa-party-dubai/'],
-    ['Bridal Shower Spa', '/event-services/bridal-shower-spa-dubai/'],
-    ['Hen Party Spa', '/event-services/hen-party-spa-dubai/'],
-    ['Corporate Wellness', '/event-services/corporate-wellness-spa-dubai/'],
-    ['Office Massage Events', '/event-services/office-massage-events-dubai/'],
-    ['Private Spa Events', '/event-services/private-spa-events-dubai/'],
-    ['Mobile Spa for Events', '/event-services/mobile-spa-for-events-dubai/'],
-    ['Group Spa Packages', '/event-services/group-spa-packages-dubai/'],
-  ],
-  corporate: [
-    ['Chair massage', '/corporate#chair-massage'],
-    ['Back, neck & shoulder massage', '/corporate#back-neck-shoulder'],
-    ['Head/scalp massage', '/corporate#head-scalp'],
-    ['Arm and hand massage', '/corporate#arm-hand'],
-    ['Upper-leg or seated relaxation massage', '/corporate#seated-relaxation'],
-    ['Work-stress and muscle-tension relief', '/corporate#work-stress'],
-  ],
-  deepTissue: deepTissueNav,
+  deepTissue: [
+    ['Deep Tissue', '/deep-tissue-massage-dubai'],
+    ['Lymphatic Drainage', '/lymphatic-drainage-dubai'],
+    ['Hot Stone', '/hot-stone-massage-dubai'],
+    ['Cellulite', '/cellulite-dubai'],
+    ['Medotherapy', '/medotherapy-dubai'],
+  ] as [string, string][],
 };

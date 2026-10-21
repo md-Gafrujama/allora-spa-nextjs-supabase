@@ -1,4 +1,6 @@
-import Image from 'next/image';import Link from 'next/link';import {ArrowLeft,ArrowRight,Check} from 'lucide-react';import {WhatsAppIcon} from '@/components/whatsapp-icon';import {getCatalogItem} from '@/lib/catalog';import {pageMeta} from '@/lib/seo';import {site} from '@/lib/site-data';
-export const dynamic='force-dynamic';
-export async function generateMetadata({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const item=await getCatalogItem('event',slug);if(!item)return {};return pageMeta({title:item.seoTitle,description:item.seoDescription,path:item.url});}
-export default async function EventDetail({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const item=await getCatalogItem('event',slug);if(!item)return <div className="section container-page"><h1>Event service not found</h1></div>;return <section className="section"><div className="container-page detail-layout"><div className="detail-image"><Image src={item.image} alt={item.name} fill priority sizes="(max-width:800px) 100vw,55vw"/></div><div className="detail-content"><Link href="/event-services" className="quick-link"><ArrowLeft size={15}/> All Event Services</Link><p className="eyebrow mt-6">EVENT SERVICE</p><h1>{item.name}</h1><p className="copy">{item.description}</p><div className="detail-meta"><span className="pill">{item.price}</span><span className="pill">Dubai-wide</span></div><h3 className="display-font text-2xl mt-8">Event highlights</h3><ul className="check-list">{item.highlights.map(x=><li key={x}><Check size={15}/>{x}</li>)}</ul><a className="btn-primary mt-5" href={site.whatsappUrl(`Hello ALLORA, I am interested in ${item.name}. Please share an event quote.`)} target="_blank" rel="noreferrer"><WhatsAppIcon size={17}/>Request on WhatsApp <ArrowRight size={15}/></a></div></div></section>}
+import { redirect } from 'next/navigation';
+
+export default async function OldEventUrl({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  redirect(`/${slug}`);
+}

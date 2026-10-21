@@ -30,22 +30,20 @@ export type CatalogItem = {
 };
 
 const corporate = [
-  { slug: 'chair-massage', name: 'Chair Massage', image: '/images/corporate/chair.jpg', highlights: ['Usually 10–30 minutes', 'At the desk or wellness corner', 'No change of clothes needed'] },
-  { slug: 'back-neck-shoulder', name: 'Back, Neck & Shoulder', image: '/images/corporate/back-neck.jpg', highlights: ['Desk-tension relief', 'Seated office-friendly', 'Short session format'] },
-  { slug: 'head-scalp', name: 'Head / Scalp Massage', image: '/images/corporate/scalp.jpg', highlights: ['Calms mental fatigue', 'Gentle scalp & temples', 'Quick workplace break'] },
-  { slug: 'arm-hand', name: 'Arm & Hand Massage', image: '/images/corporate/arm-hand.jpg', highlights: ['Typing & mouse strain relief', 'Forearm and hand focus', 'Fully clothed'] },
-  { slug: 'seated-relaxation', name: 'Seated Relaxation', image: '/images/corporate/seated.jpg', highlights: ['Upper-leg or seated format', 'Where appropriate', 'Modest & professional'] },
-  { slug: 'work-stress', name: 'Work-Stress Relief', image: '/images/corporate/stress.jpg', highlights: ['Muscle-tension release', 'Neck & shoulders focus', 'Employee wellness ready'] },
+  { slug: 'chair-massage-dubai', name: 'Chair Massage', image: '/images/corporate/chair.jpg', highlights: ['Usually 10–30 minutes', 'At the desk or wellness corner', 'No change of clothes needed'] },
+  { slug: 'back-neck-shoulder-dubai', name: 'Back, Neck & Shoulder', image: '/images/corporate/back-neck.jpg', highlights: ['Desk-tension relief', 'Seated office-friendly', 'Short session format'] },
+  { slug: 'head-scalp-dubai', name: 'Head / Scalp Massage', image: '/images/corporate/scalp.jpg', highlights: ['Calms mental fatigue', 'Gentle scalp & temples', 'Quick workplace break'] },
+  { slug: 'arm-hand-dubai', name: 'Arm & Hand Massage', image: '/images/corporate/arm-hand.jpg', highlights: ['Typing & mouse strain relief', 'Forearm and hand focus', 'Fully clothed'] },
+  { slug: 'seated-relaxation-dubai', name: 'Seated Relaxation', image: '/images/corporate/seated.jpg', highlights: ['Upper-leg or seated format', 'Where appropriate', 'Modest & professional'] },
+  { slug: 'work-stress-dubai', name: 'Work-Stress Relief', image: '/images/corporate/stress.jpg', highlights: ['Muscle-tension release', 'Neck & shoulders focus', 'Employee wellness ready'] },
 ];
 
 export function isCatalogCategory(value: string): value is CatalogCategory {
   return catalogCategories.some((category) => category.id === value);
 }
 
-export function catalogUrl(category: CatalogCategory, slug: string) {
-  if (category === 'corporate') return `/corporate#${slug}`;
-  const base = catalogCategories.find((categoryItem) => categoryItem.id === category)?.base ?? '';
-  return `${base}/${slug}`;
+export function catalogUrl(_category: CatalogCategory, slug: string) {
+  return `/${slug}`;
 }
 
 export function autoSeo(name: string, description: string, place = 'Dubai') {
@@ -115,5 +113,7 @@ export function baseCatalog(category: CatalogCategory): CatalogItem[] {
 }
 
 export function slugify(value: string) {
-  return value.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  const base = value.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  if (!base || base.endsWith('-dubai')) return base;
+  return `${base}-dubai`;
 }

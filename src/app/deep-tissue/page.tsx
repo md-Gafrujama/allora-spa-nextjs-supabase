@@ -85,25 +85,34 @@ export default function DeepTissue() {
             <p>{treatments.length} options for deeper relief and body care.</p>
           </div>
           <div className="pkg-grid">
-            {treatments.map((item) => (
+            {treatments.map((item) => {
+              const href = item.id === 'deep-tissue'
+                ? '/deep-tissue-massage-dubai'
+                : item.id === 'lymphatic-drainage'
+                  ? '/lymphatic-drainage-dubai'
+                  : item.id === 'hot-stone'
+                    ? '/hot-stone-massage-dubai'
+                    : `/${item.id}-dubai`;
+              return (
               <article className="pkg-card" id={item.id} key={item.id}>
-                <div className="pkg-card-media">
+                <Link className="pkg-card-media" href={href}>
                   <Image src={item.image} alt={item.name} width={1152} height={864} sizes="(max-width:600px) 92vw, (max-width:1000px) 46vw, 380px" />
-                </div>
+                </Link>
                 <div className="pkg-card-body">
-                  <h3>{item.name}</h3>
+                  <h3><Link href={href}>{item.name}</Link></h3>
                   <ul className="pkg-card-list">
                     {item.highlights.map((h) => (
                       <li key={h}><Check size={14} />{h}</li>
                     ))}
                   </ul>
                   <div className="pkg-card-foot">
-                    <span className="pkg-card-more" aria-hidden="true">At your place</span>
+                    <Link className="pkg-card-more" href={href}>View details <ArrowRight size={14} /></Link>
                     <a className="btn-primary pkg-card-book" href={site.whatsappUrl(`Hello ALLORA, I would like to book ${item.name}.`)} target="_blank" rel="noreferrer"><WhatsAppIcon size={14} />Book Now</a>
                   </div>
                 </div>
               </article>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

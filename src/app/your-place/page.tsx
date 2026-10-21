@@ -58,18 +58,18 @@ export default async function YourPlace() {
           <div className="pkg-grid">
             {placeItems.map((item) => (
               <article className="pkg-card" key={item.slug}>
-                <Link className="pkg-card-media" href={`/your-place/${item.slug}`} tabIndex={-1} aria-hidden="true">
+                <Link className="pkg-card-media" href={item.url} tabIndex={-1} aria-hidden="true">
                   <Image src={item.image} alt={item.name} width={1152} height={864} sizes="(max-width:600px) 92vw, (max-width:1000px) 46vw, 380px" />
                 </Link>
                 <div className="pkg-card-body">
-                  <h3><Link href={`/your-place/${item.slug}`}>{item.name}</Link></h3>
+                  <h3><Link href={item.url}>{item.name}</Link></h3>
                   <ul className="pkg-card-list">
                     {item.highlights.map((h) => (
                       <li key={h}><Check size={14} />{h}</li>
                     ))}
                   </ul>
                   <div className="pkg-card-foot">
-                    <Link className="pkg-card-more" href={`/your-place/${item.slug}`}>View details <ArrowRight size={14} /></Link>
+                    <Link className="pkg-card-more" href={item.url}>View details <ArrowRight size={14} /></Link>
                     <a className="btn-primary pkg-card-book" href={site.whatsappUrl(`Hello ALLORA, I would like to book ${item.name}.`)} target="_blank" rel="noreferrer"><WhatsAppIcon size={14} />Book Now</a>
                   </div>
                 </div>
