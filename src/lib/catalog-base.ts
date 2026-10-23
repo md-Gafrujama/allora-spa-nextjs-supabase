@@ -1,4 +1,5 @@
 import { massages } from '@/lib/massage-data';
+import { publicSlug } from '@/lib/public-slugs';
 import { serviceItems } from '@/lib/service-data';
 
 export const catalogCategories = [
@@ -64,8 +65,9 @@ function item(partial: Omit<CatalogItem, 'url' | 'seoTitle' | 'seoDescription' |
     image: partial.image || images[0] || '',
     seoTitle: partial.seoTitle || seo.seoTitle,
     seoDescription: partial.seoDescription || seo.seoDescription,
-    url: catalogUrl(partial.category, partial.slug),
     source: partial.source ?? 'json',
+    slug: publicSlug(partial.slug),
+    url: catalogUrl(partial.category, publicSlug(partial.slug)),
   };
 }
 

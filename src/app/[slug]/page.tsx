@@ -1,26 +1,27 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { ArrowLeft, ArrowRight, Check, Mail } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
 import { getCatalog, getCatalogItem } from '@/lib/catalog';
 import { catalogCategories, type CatalogCategory, type CatalogItem } from '@/lib/catalog-base';
 import { pageMeta } from '@/lib/seo';
-import { displayName, site } from '@/lib/site-data';
+import { displayName, publicSlug } from '@/lib/public-slugs';
+import { site } from '@/lib/site-data';
 
 export const dynamic = 'force-dynamic';
 
 const extras = [
   {
-    slug: 'cellulite-dubai',
+    slug: publicSlug('cellulite-dubai'),
     name: 'Cellulite',
     image: '/images/massages/cellulite.jpg',
     description: 'Targeted body kneading that focuses on circulation and smoother-feeling skin, delivered at your home or hotel in Dubai.',
     highlights: ['Targeted body kneading', 'Circulation-focused care', 'At your place'],
   },
   {
-    slug: 'medotherapy-dubai',
+    slug: publicSlug('medotherapy-dubai'),
     name: 'Medotherapy',
     image: '/images/massages/medotherapy.jpg',
     description: 'A focused, medical-style wellness session with professional setup at your home, hotel or event in Dubai.',
@@ -46,9 +47,10 @@ async function findService(slug: string) {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const item = await findService(slug);
+  const canonical = publicSlug(slug);
+  const item = await findService(canonical);
   if (item) return pageMeta({ title: `${displayName(item.slug, item.name)} in Dubai`, description: item.seoDescription, path: item.url });
-  const extra = extras.find((entry) => entry.slug === slug);
+  const extra = extras.find((entry) => entry.slug === canonical);
   if (!extra) return {};
   return pageMeta({ title: `${displayName(extra.slug, extra.name)} in Dubai`, description: extra.description, path: `/${extra.slug}` });
 }
@@ -125,6 +127,8 @@ async function MassageDetail({ item }: { item: CatalogItem }) {
 
 export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  const canonical = publicSlug(slug);
+  if (canonical !== slug) redirect(`/${canonical}`);
   const item = await findService(slug);
   if (item) return item.category === 'massage' ? <MassageDetail item={item} /> : <StandardDetail item={item} />;
 

@@ -27,8 +27,6 @@ export function Footer() {
           <h4>Company</h4>
           <Link href="/about">About Us</Link>
           <Link href="/contact">Contact Us</Link>
-          <Link href="/privacy">Privacy Policy</Link>
-          <Link href="/terms">Terms & Conditions</Link>
         </div>
         <div className="footer-card">
           <h4>Visit & Book</h4>

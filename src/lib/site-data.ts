@@ -1,4 +1,5 @@
 import { baseCatalog } from '@/lib/catalog-base';
+import { displayName, publicSlug } from '@/lib/public-slugs';
 
 export const site = {
   name: 'ALLORA Spa & Wellness',
@@ -30,57 +31,10 @@ export const site = {
   whatsappUrl: (message: string) => `https://wa.me/971509513634?text=${encodeURIComponent(message)}`,
 };
 
-const menuNames: Record<string, string> = {
-  'luxury-spa-package-dubai': 'Luxury Ritual',
-  'couples-spa-package-dubai': 'Couples Ritual',
-  'spa-day-package-dubai': 'Spa Day',
-  'massage-package-dubai': 'Massage Session',
-  'moroccan-bath-package-dubai': 'Moroccan Bath',
-  'spa-gift-voucher-dubai': 'Gift Voucher',
-  'birthday-spa-package-dubai': 'Birthday Celebration',
-  'bridal-spa-package-dubai': 'Bridal Preparation',
-  'ladies-spa-package-dubai': 'Ladies Wellness',
-  'home-spa-dubai': 'Private Residence',
-  'home-massage-service-dubai': 'Massage Visit',
-  'hotel-room-spa-service-dubai': 'Hotel Room',
-  'apartment-spa-service-dubai': 'Apartment Visit',
-  'couples-massage-at-home-dubai': 'Couples Massage',
-  'home-facial-service-dubai': 'Facial Care',
-  'home-spa-marina-dubai': 'Dubai Marina',
-  'home-spa-jumeirah-dubai': 'Jumeirah',
-  'home-spa-downtown-dubai': 'Downtown Dubai',
-  'home-spa-business-bay-dubai': 'Business Bay',
-  'spa-event-services-dubai': 'Private Celebrations',
-  'spa-party-dubai': 'Spa Party',
-  'birthday-spa-party-dubai': 'Birthday Party',
-  'bridal-shower-spa-dubai': 'Bridal Shower',
-  'hen-party-spa-dubai': 'Hen Party',
-  'corporate-wellness-spa-dubai': 'Team Wellness',
-  'office-massage-events-dubai': 'Office Sessions',
-  'private-spa-events-dubai': 'Private Gathering',
-  'mobile-spa-for-events-dubai': 'Mobile Spa',
-  'group-spa-packages-dubai': 'Group Booking',
-  'chair-massage-dubai': 'Chair Massage',
-  'back-neck-shoulder-dubai': 'Back, Neck & Shoulder',
-  'head-scalp-dubai': 'Head & Scalp',
-  'arm-hand-dubai': 'Arm & Hand',
-  'seated-relaxation-dubai': 'Seated Relaxation',
-  'work-stress-dubai': 'Work-Stress Relief',
-  'thai-massage-dubai': 'Thai Massage',
-  'couple-massage-dubai': 'Couple Massage',
-  'hot-stone-massage-dubai': 'Hot Stone',
-  'jacuzzi-massage-dubai': 'Jacuzzi Massage',
-  'deep-tissue-massage-dubai': 'Deep Tissue',
-  'cellulite-dubai': 'Cellulite Care',
-  'medotherapy-dubai': 'Medotherapy',
-};
-
 const menu = (category: Parameters<typeof baseCatalog>[0]) =>
-  baseCatalog(category).map((item) => [menuNames[item.slug] ?? item.name, item.url] as [string, string]);
+  baseCatalog(category).map((item) => [displayName(item.slug, item.name), item.url] as [string, string]);
 
-export function displayName(slug: string, fallback = '') {
-  return menuNames[slug] || fallback;
-}
+export { displayName };
 
 export const navData = {
   spa: menu('spa'),
@@ -89,14 +43,14 @@ export const navData = {
   corporate: menu('corporate'),
   massages: [
     ...menu('massage'),
-    ['Cellulite Care', '/cellulite-dubai'] as [string, string],
-    ['Medotherapy', '/medotherapy-dubai'] as [string, string],
+    ['Cellulite Care', `/${publicSlug('cellulite-dubai')}`] as [string, string],
+    ['Medotherapy', `/${publicSlug('medotherapy-dubai')}`] as [string, string],
   ],
   deepTissue: [
-    ['Deep Tissue', '/deep-tissue-massage-dubai'],
-    ['Lymphatic Drainage', '/lymphatic-drainage-dubai'],
-    ['Hot Stone', '/hot-stone-massage-dubai'],
-    ['Cellulite', '/cellulite-dubai'],
-    ['Medotherapy', '/medotherapy-dubai'],
+    ['Deep Tissue', `/${publicSlug('deep-tissue-massage-dubai')}`],
+    ['Lymphatic Drainage', `/${publicSlug('lymphatic-drainage-dubai')}`],
+    ['Hot Stone', `/${publicSlug('hot-stone-massage-dubai')}`],
+    ['Cellulite Care', `/${publicSlug('cellulite-dubai')}`],
+    ['Medotherapy', `/${publicSlug('medotherapy-dubai')}`],
   ] as [string, string][],
 };

@@ -9,6 +9,7 @@ import { ReviewForm } from '@/components/review-form';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
 import { getCatalog } from '@/lib/catalog';
 import { massageHref } from '@/lib/massage-data';
+import { publicSlug } from '@/lib/public-slugs';
 import { pageMeta } from '@/lib/seo';
 import { displayName, site } from '@/lib/site-data';
 
@@ -153,22 +154,22 @@ export default async function HomePage() {
           <h2>For the moments that matter</h2>
           <p className="home-moments-lede">Home, hotel or a celebration.</p>
           <div className="home-moments-grid">
-            <Link className="home-moment" href="/your-place/home-spa-dubai/">
+            <Link className="home-moment" href={`/${publicSlug('home-spa-dubai')}`}>
               <strong>An evening at home</strong>
               <span>Care at home.</span>
               <em>Explore</em>
             </Link>
-            <Link className="home-moment" href="/your-place/hotel-room-spa-service-dubai/">
+            <Link className="home-moment" href={`/${publicSlug('hotel-room-spa-service-dubai')}`}>
               <strong>A hotel stay</strong>
               <span>Care in your room.</span>
               <em>Explore</em>
             </Link>
-            <Link className="home-moment" href="/event-services/bridal-shower-spa-dubai/">
+            <Link className="home-moment" href={`/${publicSlug('bridal-shower-spa-dubai')}`}>
               <strong>Bridal and celebrations</strong>
               <span>Before the big day.</span>
               <em>Explore</em>
             </Link>
-            <Link className="home-moment" href="/event-services/private-spa-events-dubai/">
+            <Link className="home-moment" href={`/${publicSlug('private-spa-events-dubai')}`}>
               <strong>A private gathering</strong>
               <span>For friends and family.</span>
               <em>Explore</em>

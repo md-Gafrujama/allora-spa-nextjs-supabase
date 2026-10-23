@@ -2404,3 +2404,22 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
 .mobile-panel,.mobile-subs{background:#fff!important}
 .mobile-panel .mobile-subs .mobile-sub{color:#051650!important;border-radius:8px}
 .mobile-panel .mobile-subs .mobile-sub:hover{background:#fff}
+
+/* Nav labels use the home page font and navy theme */
+.nav-link,
+.mobile-parent,
+.mobile-panel > a,
+.mega-item,
+.mega-item b,
+.mobile-panel .mobile-subs .mobile-sub{
+  font-family:var(--font-display),Georgia,'Times New Roman',serif!important;
+  font-weight:600!important;
+  color:#051650!important;
+  letter-spacing:-.01em;
+}
+.nav-link svg,.mobile-parent svg{color:#051650!important}
+.nav-link:hover,.nav-link.active,.mobile-parent:hover,.mobile-panel > a:hover,.mega-item:hover,.mega-item:hover b,.mega-item:focus,.mega-item:focus b,.mobile-panel .mobile-subs .mobile-sub:hover{
+  color:#7a1028!important;
+  background:#fff!important;
+}
+.nav-link.active,.nav-link:hover{border-bottom-color:#7a1028!important}

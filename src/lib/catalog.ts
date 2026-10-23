@@ -1,5 +1,6 @@
 import { createClient } from '@/lib/supabase/server';
 import { autoSeo, baseCatalog, catalogUrl, type CatalogCategory, type CatalogItem } from '@/lib/catalog-base';
+import { publicSlug } from '@/lib/public-slugs';
 
 type Row = {
   category: CatalogCategory;
@@ -35,7 +36,8 @@ function fromRow(row: Row): CatalogItem {
     seoTitle: row.seo_title || seo.seoTitle,
     seoDescription: row.seo_description || seo.seoDescription,
     alt: row.name,
-    url: catalogUrl(row.category, row.slug),
+    url: catalogUrl(row.category, publicSlug(row.slug)),
+    slug: publicSlug(row.slug),
     source: 'supabase',
   };
 }
@@ -54,9 +56,9 @@ async function rowsFor(category: CatalogCategory) {
 export async function getCatalog(category: CatalogCategory): Promise<CatalogItem[]> {
   const base = baseCatalog(category);
   const rows = await rowsFor(category);
-  const bySlug = new Map(rows.map((row) => [row.slug, fromRow(row)]));
+  const bySlug = new Map(rows.map((row) => [publicSlug(row.slug), fromRow(row)]));
   const merged = base.map((entry) => bySlug.get(entry.slug) ?? entry);
-  const extras = rows.filter((row) => !base.some((entry) => entry.slug === row.slug)).map(fromRow);
+  const extras = rows.filter((row) => !base.some((entry) => entry.slug === publicSlug(row.slug))).map(fromRow);
   return [...merged, ...extras];
 }
 

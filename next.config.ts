@@ -1,4 +1,6 @@
 import type { NextConfig } from 'next';
+import { legacyRedirects } from './src/lib/public-slugs';
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
@@ -12,6 +14,11 @@ const nextConfig: NextConfig = {
       { source: '/corporate/:slug', destination: '/:slug', permanent: false },
       { source: '/massages/:slug', destination: '/:slug', permanent: false },
       { source: '/deep-tissue/:slug', destination: '/:slug', permanent: false },
+      ...legacyRedirects().map(({ from, to }) => ({
+        source: `/${from}`,
+        destination: `/${to}`,
+        permanent: false,
+      })),
     ];
   },
 };

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, Check, Mail, Sparkles, UserRound } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
 import { pageMeta } from '@/lib/seo';
+import { publicSlug } from '@/lib/public-slugs';
 import { displayName, site } from '@/lib/site-data';
 
 export const metadata = pageMeta({
@@ -86,13 +87,12 @@ export default function DeepTissue() {
           </div>
           <div className="pkg-grid">
             {treatments.map((item) => {
-              const href = item.id === 'deep-tissue'
-                ? '/deep-tissue-massage-dubai'
-                : item.id === 'lymphatic-drainage'
-                  ? '/lymphatic-drainage-dubai'
-                  : item.id === 'hot-stone'
-                    ? '/hot-stone-massage-dubai'
-                    : `/${item.id}-dubai`;
+              const legacy = item.id === 'deep-tissue'
+                ? 'deep-tissue-massage-dubai'
+                : item.id === 'hot-stone'
+                  ? 'hot-stone-massage-dubai'
+                  : `${item.id}-dubai`;
+              const href = `/${publicSlug(legacy)}`;
               return (
               <article className="pkg-card" id={item.id} key={item.id}>
                 <Link className="pkg-card-media" href={href}>
