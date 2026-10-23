@@ -7,7 +7,7 @@ import { WhatsAppIcon } from '@/components/whatsapp-icon';
 import { getCatalog, getCatalogItem } from '@/lib/catalog';
 import { catalogCategories, type CatalogCategory, type CatalogItem } from '@/lib/catalog-base';
 import { pageMeta } from '@/lib/seo';
-import { site } from '@/lib/site-data';
+import { displayName, site } from '@/lib/site-data';
 
 export const dynamic = 'force-dynamic';
 
@@ -29,11 +29,11 @@ const extras = [
 ];
 
 const labels: Record<CatalogCategory, { href: string; back: string; eyebrow: string }> = {
-  spa: { href: '/spa-packages', back: 'All Spa Packages', eyebrow: 'SPA PACKAGE' },
-  place: { href: '/your-place', back: 'All Your Place Services', eyebrow: 'YOUR PLACE' },
-  event: { href: '/event-services', back: 'All Event Services', eyebrow: 'EVENT SERVICE' },
-  corporate: { href: '/corporate', back: 'All Corporate Services', eyebrow: 'CORPORATE' },
-  massage: { href: '/massages', back: 'All massages', eyebrow: 'MASSAGE' },
+  spa: { href: '/spa-packages', back: 'Spa Package', eyebrow: 'SPA PACKAGE' },
+  place: { href: '/your-place', back: 'Your Place', eyebrow: 'YOUR PLACE' },
+  event: { href: '/event-services', back: 'Event Service', eyebrow: 'EVENT SERVICE' },
+  corporate: { href: '/corporate', back: 'Corporate', eyebrow: 'CORPORATE' },
+  massage: { href: '/massages', back: 'Massages', eyebrow: 'MASSAGE' },
 };
 
 async function findService(slug: string) {
@@ -47,10 +47,10 @@ async function findService(slug: string) {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const item = await findService(slug);
-  if (item) return pageMeta({ title: item.seoTitle, description: item.seoDescription, path: item.url });
+  if (item) return pageMeta({ title: `${displayName(item.slug, item.name)} in Dubai`, description: item.seoDescription, path: item.url });
   const extra = extras.find((entry) => entry.slug === slug);
   if (!extra) return {};
-  return pageMeta({ title: `${extra.name} in Dubai`, description: extra.description, path: `/${extra.slug}` });
+  return pageMeta({ title: `${displayName(extra.slug, extra.name)} in Dubai`, description: extra.description, path: `/${extra.slug}` });
 }
 
 function StandardDetail({ item }: { item: CatalogItem }) {
@@ -62,7 +62,7 @@ function StandardDetail({ item }: { item: CatalogItem }) {
         <div className="detail-content">
           <Link href={label.href} className="quick-link"><ArrowLeft size={15} /> {label.back}</Link>
           <p className="eyebrow mt-6">{label.eyebrow}</p>
-          <h1>{item.name}</h1>
+          <h1>{displayName(item.slug, item.name)}</h1>
           <p className="copy">{item.description}</p>
           <div className="detail-meta">
             {item.price ? <span className="pill">{item.price}</span> : null}
@@ -89,9 +89,9 @@ async function MassageDetail({ item }: { item: CatalogItem }) {
             <Image src={item.image} alt={item.alt} fill priority sizes="(max-width:800px) 100vw, 560px" />
           </div>
           <div className="mp-copy">
-            <Link href="/massages" className="mp-back"><ArrowLeft size={15} />All massages</Link>
+            <Link href="/massages" className="mp-back"><ArrowLeft size={15} />Massages</Link>
             <p className="eyebrow">Massage</p>
-            <h1 className="display-font">{item.name}</h1>
+            <h1 className="display-font">{displayName(item.slug, item.name)}</h1>
             <p className="mp-lede">{item.description}</p>
             <div className="actions">
               <a className="btn-primary" href={book} target="_blank" rel="noreferrer"><WhatsAppIcon size={16} />Book Now <ArrowRight size={15} /></a>
@@ -111,7 +111,7 @@ async function MassageDetail({ item }: { item: CatalogItem }) {
             {others.map((entry) => (
               <Link className="mp-card" href={entry.url} key={entry.slug}>
                 <span className="mp-card-photo"><Image src={entry.image} alt={entry.alt} fill sizes="(max-width:800px) 50vw, 230px" /></span>
-                <strong>{entry.name}</strong>
+                <strong>{displayName(entry.slug, entry.name)}</strong>
                 <span>{entry.short}</span>
                 <em>View</em>
               </Link>
@@ -135,9 +135,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <div className="container-page detail-layout">
         <div className="detail-image"><Image src={extra.image} alt={extra.name} fill priority sizes="(max-width:800px) 100vw,55vw" /></div>
         <div className="detail-content">
-          <Link href="/deep-tissue" className="quick-link"><ArrowLeft size={15} /> All Deep Tissue Treatments</Link>
+          <Link href="/deep-tissue" className="quick-link"><ArrowLeft size={15} /> Deep Tissue</Link>
           <p className="eyebrow mt-6">DEEP TISSUE</p>
-          <h1>{extra.name}</h1>
+          <h1>{displayName(extra.slug, extra.name)}</h1>
           <p className="copy">{extra.description}</p>
           <h3 className="display-font text-2xl mt-8">Treatment highlights</h3>
           <ul className="check-list">{extra.highlights.map((line) => <li key={line}><Check size={15} />{line}</li>)}</ul>

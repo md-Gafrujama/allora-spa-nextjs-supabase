@@ -10,7 +10,7 @@ export const metadata = pageMeta({
   description: 'Spa parties, bridal showers, hen parties and corporate wellness events with mobile therapists anywhere in Dubai.',
   path: '/event-services',
 });
-import { site } from '@/lib/site-data';
+import { displayName, site } from '@/lib/site-data';
 
 const perks = [
   { icon: PartyPopper, label: 'Birthdays & celebrations' },
@@ -62,7 +62,7 @@ export default async function EventServices() {
                   <Image src={item.image} alt={item.name} width={1152} height={864} sizes="(max-width:600px) 92vw, (max-width:1000px) 46vw, 380px" />
                 </Link>
                 <div className="pkg-card-body">
-                  <h3><Link href={item.url}>{item.name}</Link></h3>
+                  <h3><Link href={item.url}>{displayName(item.slug, item.name)}</Link></h3>
                   <ul className="pkg-card-list">
                     {item.highlights.map((h) => (
                       <li key={h}><Check size={14} />{h}</li>

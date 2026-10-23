@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, Check, Mail, Sparkles, UserRound } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
 import { pageMeta } from '@/lib/seo';
-import { site } from '@/lib/site-data';
+import { displayName, site } from '@/lib/site-data';
 
 export const metadata = pageMeta({
   title: 'Deep Tissue Massage in Dubai',
@@ -99,7 +99,7 @@ export default function DeepTissue() {
                   <Image src={item.image} alt={item.name} width={1152} height={864} sizes="(max-width:600px) 92vw, (max-width:1000px) 46vw, 380px" />
                 </Link>
                 <div className="pkg-card-body">
-                  <h3><Link href={href}>{item.name}</Link></h3>
+                  <h3><Link href={href}>{displayName(href.slice(1), item.name)}</Link></h3>
                   <ul className="pkg-card-list">
                     {item.highlights.map((h) => (
                       <li key={h}><Check size={14} />{h}</li>

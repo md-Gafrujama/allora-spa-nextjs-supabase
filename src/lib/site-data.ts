@@ -71,11 +71,16 @@ const menuNames: Record<string, string> = {
   'hot-stone-massage-dubai': 'Hot Stone',
   'jacuzzi-massage-dubai': 'Jacuzzi Massage',
   'deep-tissue-massage-dubai': 'Deep Tissue',
-  'lymphatic-drainage-dubai': 'Lymphatic Drainage',
+  'cellulite-dubai': 'Cellulite Care',
+  'medotherapy-dubai': 'Medotherapy',
 };
 
 const menu = (category: Parameters<typeof baseCatalog>[0]) =>
   baseCatalog(category).map((item) => [menuNames[item.slug] ?? item.name, item.url] as [string, string]);
+
+export function displayName(slug: string, fallback = '') {
+  return menuNames[slug] || fallback;
+}
 
 export const navData = {
   spa: menu('spa'),

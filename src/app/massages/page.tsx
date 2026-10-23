@@ -5,7 +5,7 @@ import { WhatsAppIcon } from '@/components/whatsapp-icon';
 import { getCatalog } from '@/lib/catalog';
 import { massageHref } from '@/lib/massage-data';
 import { pageMeta } from '@/lib/seo';
-import { site } from '@/lib/site-data';
+import { displayName, site } from '@/lib/site-data';
 
 export const metadata = pageMeta({
   title: 'Massage at Home and Hotel in Dubai',
@@ -26,7 +26,7 @@ export default async function Massages() {
             {massages.map((m) => (
               <article className="mp-item" key={m.slug}>
                 <Link href={massageHref(m.slug)} className="mp-item-photo" tabIndex={-1} aria-hidden="true"><Image src={m.image} alt={m.alt} fill sizes="(max-width:800px) 100vw, 380px" /></Link>
-                <h2 className="display-font"><Link href={massageHref(m.slug)} className="stretch-link">{m.name}</Link></h2>
+                <h2 className="display-font"><Link href={massageHref(m.slug)} className="stretch-link">{displayName(m.slug, m.name)}</Link></h2>
                 <p>{m.short}</p>
                 <div className="actions">
                   <Link className="btn-outline" href={massageHref(m.slug)}>View <ArrowRight size={15} /></Link>

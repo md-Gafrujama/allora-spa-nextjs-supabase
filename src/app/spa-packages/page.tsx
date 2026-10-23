@@ -10,7 +10,7 @@ export const metadata = pageMeta({
   description: 'Luxury, couples, bridal, birthday and Moroccan bath spa packages delivered to your home or hotel in Dubai by ALLORA therapists.',
   path: '/spa-packages',
 });
-import { site } from '@/lib/site-data';
+import { displayName, site } from '@/lib/site-data';
 
 const perks = [
   { icon: UserRound, label: 'Trained female therapists' },
@@ -61,7 +61,7 @@ export default async function SpaPackages() {
                   <Image src={item.image} alt={item.name} width={1152} height={864} sizes="(max-width:600px) 92vw, (max-width:1000px) 46vw, 380px" />
                 </Link>
                 <div className="pkg-card-body">
-                  <h3><Link href={item.url}>{item.name}</Link></h3>
+                  <h3><Link href={item.url}>{displayName(item.slug, item.name)}</Link></h3>
                   <ul className="pkg-card-list">
                     {item.highlights.map((h) => (
                       <li key={h}><Check size={14} />{h}</li>
