@@ -2362,3 +2362,45 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
   .admin-panel li{grid-template-columns:1fr auto}
   .admin-panel time{display:none}
 }
+
+/* Home backgrounds stay white — no blue wash */
+.home,.home .home-hero,.home .home-explore,.home .home-about,.home .home-luxury,.home .stats,.home .home-moments,.home .home-reviews,.home-marquee{background:#fff!important;background-image:none!important}
+.home .home-hero:before{background:none!important}
+.home .home-about:before{background:#fff!important}
+.home .home-explore-grid a,.home .home-treat,.home .home-moment,.home .home-moment + .home-moment,.home .home-about-points li,.home .stats-grid,.home .home-reviews .container-page,.home .home-explore-photo,.home .home-treat-photo,.home .home-about-main,.home .home-about-pair div,.home .home-about-points li > span{background:#fff!important}
+
+/* Dropdown — plain, bright, no side panel */
+@media(min-width:1180px){
+  .mega-menu{display:block!important}
+}
+.mega-menu{
+  width:min(520px,calc(100vw - 36px))!important;
+  padding:8px!important;
+  border:1px solid #e6eef8!important;
+  border-radius:14px!important;
+  background:#fff!important;
+  background-image:none!important;
+  box-shadow:0 14px 36px rgba(5,22,80,.08)!important;
+}
+.nav-dropdown:before{width:min(520px,calc(100vw - 36px))!important}
+.mega-list{
+  display:grid!important;
+  grid-template-columns:1fr 1fr!important;
+  gap:2px!important;
+  padding:0!important;
+  background:#fff!important;
+}
+.mega-item{
+  display:flex!important;
+  align-items:center!important;
+  min-height:40px;
+  padding:8px 12px!important;
+  border:0!important;
+  border-radius:8px!important;
+  background:transparent!important;
+}
+.mega-item b{font-size:14.5px!important;font-weight:600!important;color:#051650!important}
+.mega-item:hover,.mega-item:hover b,.mega-item:focus,.mega-item:focus b{background:#fff!important;color:#051650!important}
+.mobile-panel,.mobile-subs{background:#fff!important}
+.mobile-panel .mobile-subs .mobile-sub{color:#051650!important;border-radius:8px}
+.mobile-panel .mobile-subs .mobile-sub:hover{background:#fff}

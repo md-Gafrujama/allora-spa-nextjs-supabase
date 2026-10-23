@@ -30,8 +30,52 @@ export const site = {
   whatsappUrl: (message: string) => `https://wa.me/971509513634?text=${encodeURIComponent(message)}`,
 };
 
+const menuNames: Record<string, string> = {
+  'luxury-spa-package-dubai': 'Luxury Ritual',
+  'couples-spa-package-dubai': 'Couples Ritual',
+  'spa-day-package-dubai': 'Spa Day',
+  'massage-package-dubai': 'Massage Session',
+  'moroccan-bath-package-dubai': 'Moroccan Bath',
+  'spa-gift-voucher-dubai': 'Gift Voucher',
+  'birthday-spa-package-dubai': 'Birthday Celebration',
+  'bridal-spa-package-dubai': 'Bridal Preparation',
+  'ladies-spa-package-dubai': 'Ladies Wellness',
+  'home-spa-dubai': 'Private Residence',
+  'home-massage-service-dubai': 'Massage Visit',
+  'hotel-room-spa-service-dubai': 'Hotel Room',
+  'apartment-spa-service-dubai': 'Apartment Visit',
+  'couples-massage-at-home-dubai': 'Couples Massage',
+  'home-facial-service-dubai': 'Facial Care',
+  'home-spa-marina-dubai': 'Dubai Marina',
+  'home-spa-jumeirah-dubai': 'Jumeirah',
+  'home-spa-downtown-dubai': 'Downtown Dubai',
+  'home-spa-business-bay-dubai': 'Business Bay',
+  'spa-event-services-dubai': 'Private Celebrations',
+  'spa-party-dubai': 'Spa Party',
+  'birthday-spa-party-dubai': 'Birthday Party',
+  'bridal-shower-spa-dubai': 'Bridal Shower',
+  'hen-party-spa-dubai': 'Hen Party',
+  'corporate-wellness-spa-dubai': 'Team Wellness',
+  'office-massage-events-dubai': 'Office Sessions',
+  'private-spa-events-dubai': 'Private Gathering',
+  'mobile-spa-for-events-dubai': 'Mobile Spa',
+  'group-spa-packages-dubai': 'Group Booking',
+  'chair-massage-dubai': 'Chair Massage',
+  'back-neck-shoulder-dubai': 'Back, Neck & Shoulder',
+  'head-scalp-dubai': 'Head & Scalp',
+  'arm-hand-dubai': 'Arm & Hand',
+  'seated-relaxation-dubai': 'Seated Relaxation',
+  'work-stress-dubai': 'Work-Stress Relief',
+  'thai-massage-dubai': 'Thai Massage',
+  'couple-massage-dubai': 'Couple Massage',
+  'hot-stone-massage-dubai': 'Hot Stone',
+  'jacuzzi-massage-dubai': 'Jacuzzi Massage',
+  'deep-tissue-massage-dubai': 'Deep Tissue',
+  'lymphatic-drainage-dubai': 'Lymphatic Drainage',
+};
+
 const menu = (category: Parameters<typeof baseCatalog>[0]) =>
-  baseCatalog(category).map((item) => [item.name, item.url] as [string, string]);
+  baseCatalog(category).map((item) => [menuNames[item.slug] ?? item.name, item.url] as [string, string]);
 
 export const navData = {
   spa: menu('spa'),
@@ -40,7 +84,7 @@ export const navData = {
   corporate: menu('corporate'),
   massages: [
     ...menu('massage'),
-    ['Cellulite', '/cellulite-dubai'] as [string, string],
+    ['Cellulite Care', '/cellulite-dubai'] as [string, string],
     ['Medotherapy', '/medotherapy-dubai'] as [string, string],
   ],
   deepTissue: [

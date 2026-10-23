@@ -2,19 +2,14 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { ChevronDown, Menu, X, ArrowUpRight } from 'lucide-react';
+import { ChevronDown, Menu, X } from 'lucide-react';
 import { navData, site } from '@/lib/site-data';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
 import { Logo } from '@/components/logo';
 
-const MenuPanel = ({ title, href, items }: {title:string;href:string;items:string[][]}) => (
+const MenuPanel = ({ items }: {items:string[][]}) => (
   <div className="mega-menu">
-    <div className="mega-head">
-      <p>ALLORA</p>
-      <h3 className="display-font">{title}</h3>
-      <Link href={href} className="mega-explore">Explore <ArrowUpRight size={14}/></Link>
-    </div>
-    <div className="mega-list">{items.map(([label,url])=><Link href={url} key={url} className="mega-item"><span><b>{label}</b></span><ArrowUpRight size={15}/></Link>)}</div>
+    <div className="mega-list">{items.map(([label,url])=><Link href={url} key={url} className="mega-item"><b>{label}</b></Link>)}</div>
   </div>
 );
 
@@ -49,11 +44,11 @@ export function Header(){
       <Link href="/" className="brand-link" aria-label="ALLORA Spa & Wellness"><Logo alt="" /></Link>
       <nav className="desktop-nav">
         <Link href="/" className={on('/')}>Home</Link>
-        <div className="nav-dropdown"><Link href="/spa-packages" className={on('/spa-packages')}>Spa Package <ChevronDown size={14}/></Link><MenuPanel title="Spa Package" href="/spa-packages" items={navData.spa}/></div>
-        <div className="nav-dropdown"><Link href="/your-place" className={on('/your-place')}>Your Place <ChevronDown size={14}/></Link><MenuPanel title="Your Place" href="/your-place" items={navData.place}/></div>
-        <div className="nav-dropdown"><Link href="/event-services" className={on('/event-services')}>Event Service <ChevronDown size={14}/></Link><MenuPanel title="Event Service" href="/event-services" items={navData.events}/></div>
-        <div className="nav-dropdown"><Link href="/corporate" className={on('/corporate')}>Corporate <ChevronDown size={14}/></Link><MenuPanel title="Corporate" href="/corporate" items={navData.corporate}/></div>
-        <div className="nav-dropdown"><Link href="/massages" className={on('/massages')}>Massages <ChevronDown size={14}/></Link><MenuPanel title="Massages" href="/massages" items={navData.massages}/></div>
+        <div className="nav-dropdown"><Link href="/spa-packages" className={on('/spa-packages')}>Spa Package <ChevronDown size={14}/></Link><MenuPanel items={navData.spa}/></div>
+        <div className="nav-dropdown"><Link href="/your-place" className={on('/your-place')}>Your Place <ChevronDown size={14}/></Link><MenuPanel items={navData.place}/></div>
+        <div className="nav-dropdown"><Link href="/event-services" className={on('/event-services')}>Event Service <ChevronDown size={14}/></Link><MenuPanel items={navData.events}/></div>
+        <div className="nav-dropdown"><Link href="/corporate" className={on('/corporate')}>Corporate <ChevronDown size={14}/></Link><MenuPanel items={navData.corporate}/></div>
+        <div className="nav-dropdown"><Link href="/massages" className={on('/massages')}>Massages <ChevronDown size={14}/></Link><MenuPanel items={navData.massages}/></div>
         <Link href="/about" className={on('/about')}>About Us</Link><Link href="/contact" className={on('/contact')}>Contact Us</Link>
       </nav>
       <a href={site.whatsappUrl('Hello ALLORA, I would like to book an appointment.')} target="_blank" rel="noreferrer" className="book-btn"><WhatsAppIcon size={16}/> Book Now</a>
