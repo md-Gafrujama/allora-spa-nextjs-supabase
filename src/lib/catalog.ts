@@ -24,7 +24,6 @@ function fromRow(row: Row): CatalogItem {
   const seo = autoSeo(row.name, description);
   return {
     category: row.category,
-    slug: row.slug,
     name: row.name,
     description,
     short: row.short_text || description,

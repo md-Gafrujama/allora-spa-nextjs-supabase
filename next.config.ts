@@ -1,6 +1,7 @@
 import type { NextConfig } from 'next';
 import { legacyRedirects } from './src/lib/public-slugs';
 
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
