@@ -60,8 +60,8 @@ export function CatalogEditor({ item, isNew }: { item: CatalogItem; isNew?: bool
             <label>Short line<input name="short" defaultValue={item.short} /></label>
             <label>Description<textarea name="description" rows={4} defaultValue={item.description} /></label>
             <div className="cat-pair">
-              <label>Price<input name="price" defaultValue={item.price} /></label>
-              <label>Duration<input name="duration" defaultValue={item.duration} /></label>
+              <label>Price<input name="price" defaultValue={item.price} placeholder="Shown on the site after you save" /></label>
+              <label>Duration<input name="duration" defaultValue={item.duration} placeholder="Shown on the site after you save" /></label>
             </div>
             <label>Highlights <small>one per line</small><textarea name="highlights" rows={4} defaultValue={item.highlights.join('\n')} /></label>
             <label>SEO title<input name="seoTitle" defaultValue={item.seoTitle} /></label>

@@ -17,6 +17,12 @@ type Row = {
   seo_description: string | null;
 };
 
+function published(value: string | null) {
+  const clean = (value || '').trim();
+  if (!clean || /^[.\s…-]+$/.test(clean) || clean.toLowerCase() === 'on request') return '';
+  return clean;
+}
+
 function fromRow(row: Row): CatalogItem {
   const images = Array.isArray(row.images) ? row.images.filter(Boolean) : [];
   const image = row.image_url || images[0] || '';
@@ -27,8 +33,8 @@ function fromRow(row: Row): CatalogItem {
     name: row.name,
     description,
     short: row.short_text || description,
-    price: row.price || '',
-    duration: row.duration || '',
+    price: published(row.price),
+    duration: published(row.duration),
     image,
     images: images.filter((src) => src !== image),
     highlights: Array.isArray(row.highlights) ? row.highlights : [],

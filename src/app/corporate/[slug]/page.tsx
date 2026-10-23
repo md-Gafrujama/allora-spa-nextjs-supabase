@@ -1,6 +1,12 @@
-import { redirect } from 'next/navigation';
+import type { Metadata } from 'next';
+import { ServiceScreen, serviceMetadata } from '@/components/service-screen';
 
-export default async function OldCorporateUrl({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  redirect(`/${slug}`);
+  return serviceMetadata('corporate', slug);
+}
+
+export default async function CorporateService({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  return <ServiceScreen category="corporate" slug={slug} />;
 }

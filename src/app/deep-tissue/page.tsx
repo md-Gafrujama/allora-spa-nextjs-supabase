@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, Check, Mail, Sparkles, UserRound } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
 import { pageMeta } from '@/lib/seo';
-import { publicSlug } from '@/lib/public-slugs';
+import { publicPath } from '@/lib/public-slugs';
 import { displayName, site } from '@/lib/site-data';
 
 export const metadata = pageMeta({
@@ -92,14 +92,14 @@ export default function DeepTissue() {
                 : item.id === 'hot-stone'
                   ? 'hot-stone-massage-dubai'
                   : `${item.id}-dubai`;
-              const href = `/${publicSlug(legacy)}`;
+              const href = publicPath(legacy);
               return (
               <article className="pkg-card" id={item.id} key={item.id}>
                 <Link className="pkg-card-media" href={href}>
                   <Image src={item.image} alt={item.name} width={1152} height={864} sizes="(max-width:600px) 92vw, (max-width:1000px) 46vw, 380px" />
                 </Link>
                 <div className="pkg-card-body">
-                  <h3><Link href={href}>{displayName(href.slice(1), item.name)}</Link></h3>
+                  <h3><Link href={href}>{displayName(legacy, item.name)}</Link></h3>
                   <ul className="pkg-card-list">
                     {item.highlights.map((h) => (
                       <li key={h}><Check size={14} />{h}</li>

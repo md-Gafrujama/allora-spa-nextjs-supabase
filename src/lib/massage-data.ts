@@ -67,4 +67,4 @@ export const massages: Massage[] = [
 
 export const findMassage = (slug: string) => massages.find((m) => m.slug === slug);
 
-export const massageHref = (slug: string) => `/${slug}`;
+export const massageHref = (slug: string) => `/massages/${slug}`;

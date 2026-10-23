@@ -1,5 +1,5 @@
 import { baseCatalog } from '@/lib/catalog-base';
-import { displayName, publicSlug } from '@/lib/public-slugs';
+import { displayName, publicPath } from '@/lib/public-slugs';
 
 export const site = {
   name: 'ALLORA Spa & Wellness',
@@ -43,14 +43,14 @@ export const navData = {
   corporate: menu('corporate'),
   massages: [
     ...menu('massage'),
-    ['Cellulite Care', `/${publicSlug('cellulite-dubai')}`] as [string, string],
-    ['Medotherapy', `/${publicSlug('medotherapy-dubai')}`] as [string, string],
+    ['Cellulite Care', publicPath('cellulite-dubai')] as [string, string],
+    ['Medotherapy', publicPath('medotherapy-dubai')] as [string, string],
   ],
   deepTissue: [
-    ['Deep Tissue', `/${publicSlug('deep-tissue-massage-dubai')}`],
-    ['Lymphatic Drainage', `/${publicSlug('lymphatic-drainage-dubai')}`],
-    ['Hot Stone', `/${publicSlug('hot-stone-massage-dubai')}`],
-    ['Cellulite Care', `/${publicSlug('cellulite-dubai')}`],
-    ['Medotherapy', `/${publicSlug('medotherapy-dubai')}`],
+    ['Deep Tissue', publicPath('deep-tissue-massage-dubai')],
+    ['Lymphatic Drainage', publicPath('lymphatic-drainage-dubai')],
+    ['Hot Stone', publicPath('hot-stone-massage-dubai')],
+    ['Cellulite Care', publicPath('cellulite-dubai')],
+    ['Medotherapy', publicPath('medotherapy-dubai')],
   ] as [string, string][],
 };

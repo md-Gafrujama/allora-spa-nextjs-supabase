@@ -1,48 +1,50 @@
-const labels: Record<string, string> = {
-  'luxury-spa-package-dubai': 'Luxury',
-  'couples-spa-package-dubai': 'Couples',
-  'spa-day-package-dubai': 'Day Spa',
-  'massage-package-dubai': 'Massage Session',
-  'moroccan-bath-package-dubai': 'Moroccan Bath',
-  'spa-gift-voucher-dubai': 'Gift Voucher',
-  'birthday-spa-package-dubai': 'Birthday Celebration',
-  'bridal-spa-package-dubai': 'Bridal Preparation',
-  'ladies-spa-package-dubai': 'Ladies Wellness',
-  'home-spa-dubai': 'Private Residence',
-  'home-massage-service-dubai': 'Massage Visit',
-  'hotel-room-spa-service-dubai': 'Hotel Room',
-  'apartment-spa-service-dubai': 'Apartment Visit',
-  'couples-massage-at-home-dubai': 'Couples Massage',
-  'home-facial-service-dubai': 'Facial Care',
-  'home-spa-marina-dubai': 'Dubai Marina',
-  'home-spa-jumeirah-dubai': 'Jumeirah',
-  'home-spa-downtown-dubai': 'Downtown Dubai',
-  'home-spa-business-bay-dubai': 'Business Bay',
-  'spa-event-services-dubai': 'Private Celebrations',
-  'spa-party-dubai': 'Spa Party',
-  'birthday-spa-party-dubai': 'Birthday Party',
-  'bridal-shower-spa-dubai': 'Bridal Shower',
-  'hen-party-spa-dubai': 'Hen Party',
-  'corporate-wellness-spa-dubai': 'Team Wellness',
-  'office-massage-events-dubai': 'Office Sessions',
-  'private-spa-events-dubai': 'Private Gathering',
-  'mobile-spa-for-events-dubai': 'Mobile Spa',
-  'group-spa-packages-dubai': 'Group Booking',
-  'chair-massage-dubai': 'Chair Massage',
-  'back-neck-shoulder-dubai': 'Back, Neck & Shoulder',
-  'head-scalp-dubai': 'Head & Scalp',
-  'arm-hand-dubai': 'Arm & Hand',
-  'seated-relaxation-dubai': 'Seated Relaxation',
-  'work-stress-dubai': 'Work-Stress Relief',
-  'thai-massage-dubai': 'Thai Massage',
-  'couple-massage-dubai': 'Couple Massage',
-  'hot-stone-massage-dubai': 'Hot Stone',
-  'jacuzzi-massage-dubai': 'Jacuzzi Massage',
-  'deep-tissue-massage-dubai': 'Deep Tissue',
-  'lymphatic-drainage-dubai': 'Lymphatic Drainage',
-  'cellulite-dubai': 'Cellulite Care',
-  'medotherapy-dubai': 'Medotherapy',
-};
+type Row = { from: string; name: string; base: string; aliases?: string[] };
+
+const rows: Row[] = [
+  ['luxury-spa-package-dubai', 'Luxury', '/spa-packages'],
+  ['couples-spa-package-dubai', 'Couples', '/spa-packages'],
+  ['spa-day-package-dubai', 'Day Spa', '/spa-packages'],
+  ['massage-package-dubai', 'Massage Session', '/spa-packages'],
+  ['moroccan-bath-package-dubai', 'Moroccan Bath', '/spa-packages'],
+  ['spa-gift-voucher-dubai', 'Gift Voucher', '/spa-packages'],
+  ['birthday-spa-package-dubai', 'Birthday Celebration', '/spa-packages'],
+  ['bridal-spa-package-dubai', 'Bridal Preparation', '/spa-packages'],
+  ['ladies-spa-package-dubai', 'Ladies Wellness', '/spa-packages'],
+  ['home-spa-dubai', 'Private Residence', '/your-place'],
+  ['home-massage-service-dubai', 'Massage', '/your-place', ['massage-visit-dubai']],
+  ['hotel-room-spa-service-dubai', 'Hotels', '/your-place', ['hotel-room-dubai']],
+  ['apartment-spa-service-dubai', 'Apartment', '/your-place', ['apartment-visit-dubai']],
+  ['couples-massage-at-home-dubai', 'Couples Massage', '/your-place'],
+  ['home-facial-service-dubai', 'Facial Care', '/your-place'],
+  ['home-spa-marina-dubai', 'Dubai Marina', '/your-place'],
+  ['home-spa-jumeirah-dubai', 'Jumeirah', '/your-place'],
+  ['home-spa-downtown-dubai', 'Downtown Dubai', '/your-place'],
+  ['home-spa-business-bay-dubai', 'Business Bay', '/your-place'],
+  ['spa-event-services-dubai', 'Private Celebrations', '/event-services'],
+  ['spa-party-dubai', 'Spa Party', '/event-services'],
+  ['birthday-spa-party-dubai', 'Birthday Party', '/event-services'],
+  ['bridal-shower-spa-dubai', 'Bridal Shower', '/event-services'],
+  ['hen-party-spa-dubai', 'Hen Party', '/event-services'],
+  ['corporate-wellness-spa-dubai', 'Team Wellness', '/event-services'],
+  ['office-massage-events-dubai', 'Office Sessions', '/event-services'],
+  ['private-spa-events-dubai', 'Private Gathering', '/event-services'],
+  ['mobile-spa-for-events-dubai', 'Mobile Spa', '/event-services'],
+  ['group-spa-packages-dubai', 'Group Booking', '/event-services'],
+  ['chair-massage-dubai', 'Chair Massage', '/corporate'],
+  ['back-neck-shoulder-dubai', 'Back, Neck & Shoulder', '/corporate'],
+  ['head-scalp-dubai', 'Head & Scalp', '/corporate'],
+  ['arm-hand-dubai', 'Arm & Hand', '/corporate'],
+  ['seated-relaxation-dubai', 'Seated Relaxation', '/corporate'],
+  ['work-stress-dubai', 'Work-Stress Relief', '/corporate'],
+  ['thai-massage-dubai', 'Thai Massage', '/massages'],
+  ['couple-massage-dubai', 'Couple Massage', '/massages'],
+  ['hot-stone-massage-dubai', 'Hot Stone', '/massages'],
+  ['jacuzzi-massage-dubai', 'Jacuzzi Massage', '/massages'],
+  ['deep-tissue-massage-dubai', 'Deep Tissue', '/massages'],
+  ['lymphatic-drainage-dubai', 'Lymphatic Drainage', '/massages'],
+  ['cellulite-dubai', 'Cellulite Care', '/deep-tissue'],
+  ['medotherapy-dubai', 'Medotherapy', '/deep-tissue'],
+].map(([from, name, base, aliases]) => ({ from, name, base, aliases }));
 
 function toSlug(label: string) {
   const base = label.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -50,19 +52,41 @@ function toSlug(label: string) {
   return `${base}-dubai`;
 }
 
-const byPublic = new Map(Object.entries(labels).map(([, name]) => [toSlug(name), name]));
+const resolved = rows.map((row) => ({ ...row, to: toSlug(row.name) }));
+
+function find(slug: string) {
+  return resolved.find((row) => row.from === slug || row.to === slug || row.aliases?.includes(slug));
+}
 
 export function publicSlug(slug: string) {
-  const label = labels[slug];
-  return label ? toSlug(label) : slug;
+  return find(slug)?.to ?? slug;
 }
 
 export function displayName(slug: string, fallback = '') {
-  return labels[slug] || byPublic.get(slug) || byPublic.get(publicSlug(slug)) || fallback;
+  return find(slug)?.name || fallback;
 }
 
+export function publicPath(slug: string) {
+  const hit = find(slug);
+  return hit ? `${hit.base}/${hit.to}` : '';
+}
+
+const sections = ['spa-packages', 'your-place', 'event-services', 'corporate', 'massages', 'deep-tissue'];
+
 export function legacyRedirects() {
-  return Object.entries(labels)
-    .map(([from, name]) => ({ from, to: toSlug(name) }))
-    .filter((row) => row.from !== row.to);
+  const seen = new Set<string>();
+  const out: { from: string; to: string }[] = [];
+  for (const row of resolved) {
+    const dest = `${row.base}/${row.to}`.replace(/^\//, '');
+    const sources = new Set<string>([row.from, row.to, ...(row.aliases ?? [])]);
+    for (const section of sections) {
+      for (const slug of [row.from, row.to, ...(row.aliases ?? [])]) sources.add(`${section}/${slug}`);
+    }
+    for (const from of sources) {
+      if (from === dest || seen.has(from)) continue;
+      seen.add(from);
+      out.push({ from, to: dest });
+    }
+  }
+  return out;
 }

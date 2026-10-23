@@ -8,19 +8,12 @@ const nextConfig: NextConfig = {
   compress: true,
   images: { formats: ['image/avif', 'image/webp'], remotePatterns: [{ protocol: 'https', hostname: '**' }] },
   async redirects() {
-    return [
-      { source: '/spa-packages/:slug', destination: '/:slug', permanent: false },
-      { source: '/your-place/:slug', destination: '/:slug', permanent: false },
-      { source: '/event-services/:slug', destination: '/:slug', permanent: false },
-      { source: '/corporate/:slug', destination: '/:slug', permanent: false },
-      { source: '/massages/:slug', destination: '/:slug', permanent: false },
-      { source: '/deep-tissue/:slug', destination: '/:slug', permanent: false },
-      ...legacyRedirects().map(({ from, to }) => ({
-        source: `/${from}`,
-        destination: `/${to}`,
-        permanent: false,
-      })),
-    ];
+    // Old public slugs redirect into the section URL.
+    return legacyRedirects().map(({ from, to }) => ({
+      source: `/${from}`,
+      destination: `/${to}`,
+      permanent: false,
+    }));
   },
 };
 export default nextConfig;

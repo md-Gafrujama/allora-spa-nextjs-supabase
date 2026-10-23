@@ -43,8 +43,9 @@ export function isCatalogCategory(value: string): value is CatalogCategory {
   return catalogCategories.some((category) => category.id === value);
 }
 
-export function catalogUrl(_category: CatalogCategory, slug: string) {
-  return `/${slug}`;
+export function catalogUrl(category: CatalogCategory, slug: string) {
+  const base = catalogCategories.find((entry) => entry.id === category)?.base ?? '';
+  return `${base}/${slug}`;
 }
 
 export function autoSeo(name: string, description: string, place = 'Dubai') {
@@ -67,6 +68,8 @@ function item(partial: Omit<CatalogItem, 'url' | 'seoTitle' | 'seoDescription' |
     seoDescription: partial.seoDescription || seo.seoDescription,
     source: partial.source ?? 'json',
     slug: publicSlug(partial.slug),
+    price: '',
+    duration: '',
     url: catalogUrl(partial.category, publicSlug(partial.slug)),
   };
 }

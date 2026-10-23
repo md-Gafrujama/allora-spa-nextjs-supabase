@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getCatalog } from '@/lib/catalog';
 import { catalogCategories, isCatalogCategory } from '@/lib/catalog-base';
+import { displayName } from '@/lib/public-slugs';
 
 export const dynamic = 'force-dynamic';
 
@@ -34,7 +35,7 @@ export default async function CatalogCategoryPage({ params }: { params: Promise<
             <li key={item.slug}>
               <img src={item.image || '/images/logo-allora.png'} alt="" />
               <div>
-                <b>{item.name}</b>
+                <b>{displayName(item.slug, item.name)}</b>
                 <a href={item.url} target="_blank" rel="noreferrer">{item.url}</a>
                 <small>{item.seoTitle}</small>
               </div>
