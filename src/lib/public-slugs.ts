@@ -1,6 +1,6 @@
 type Row = { from: string; name: string; base: string; aliases?: string[] };
 
-const rows: Row[] = [
+const rows: Row[] = ([
   ['luxury-spa-package-dubai', 'Luxury', '/spa-packages'],
   ['couples-spa-package-dubai', 'Couples', '/spa-packages'],
   ['spa-day-package-dubai', 'Day Spa', '/spa-packages'],
@@ -44,7 +44,7 @@ const rows: Row[] = [
   ['lymphatic-drainage-dubai', 'Lymphatic Drainage', '/massages'],
   ['cellulite-dubai', 'Cellulite Care', '/deep-tissue'],
   ['medotherapy-dubai', 'Medotherapy', '/deep-tissue'],
-].map(([from, name, base, aliases]) => ({ from, name, base, aliases }));
+] as [string, string, string, string[]?][]).map(([from, name, base, aliases]) => ({ from, name, base, aliases }));
 
 function toSlug(label: string) {
   const base = label.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
