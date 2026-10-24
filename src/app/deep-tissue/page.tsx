@@ -39,7 +39,7 @@ const treatments = [
   {
     id: 'cellulite',
     name: 'Cellulite',
-    image: '/images/massages/cellulite.jpg',
+    image: '/images/massages/cellulite-v2.jpg',
     highlights: ['Targeted body kneading', 'Circulation-focused care', 'At your place'],
   },
   {

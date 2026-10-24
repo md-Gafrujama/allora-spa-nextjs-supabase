@@ -2423,3 +2423,21 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
   background:#fff!important;
 }
 .nav-link.active,.nav-link:hover{border-bottom-color:#7a1028!important}
+
+.pkg-card-media img,
+.mp-item-photo img,
+.mp-photo img,
+.mp-card-photo img,
+.home-treat-photo img{
+  object-fit:contain!important;
+  object-position:center!important;
+  background:#fff!important;
+  transform:none!important;
+}
+.pkg-card:hover .pkg-card-media img,
+.mp-item:hover .mp-item-photo img,
+.mp-card:hover .mp-card-photo img,
+.mp-photo:hover img,
+.home .home-treat:hover .home-treat-photo img{
+  transform:none!important;
+}

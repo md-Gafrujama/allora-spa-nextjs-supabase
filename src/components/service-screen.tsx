@@ -14,7 +14,7 @@ const extras = [
   {
     slug: publicSlug('cellulite-dubai'),
     name: 'Cellulite',
-    image: '/images/massages/cellulite.jpg',
+    image: '/images/massages/cellulite-v2.jpg',
     description: 'Targeted body kneading that focuses on circulation and smoother-feeling skin, delivered at your home or hotel in Dubai.',
     highlights: ['Targeted body kneading', 'Circulation-focused care', 'At your place'],
   },
