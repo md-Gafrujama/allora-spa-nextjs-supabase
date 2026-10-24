@@ -41,7 +41,7 @@ export const massages: Massage[] = [
     name: 'Jacuzzi Massage',
     short: 'Warm water and a calming massage.',
     description: 'A warm water soak paired with a soothing neck and shoulder massage to help you fully unwind.',
-    image: '/images/massages/jacuzzi.jpg',
+    image: '/images/massages/jacuzzi-v3.jpg',
     alt: "Therapist massaging a client's shoulders while her feet are in a jacuzzi",
     highlights: ['Warm water soak', 'Neck and shoulder massage', 'Calming aromatic oils', 'Perfect for a hotel stay'],
   },
