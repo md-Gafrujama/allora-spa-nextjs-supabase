@@ -21,7 +21,7 @@ const treatments = [
   {
     id: 'deep-tissue',
     name: 'Deep Tissue',
-    image: '/images/massages/deep-tissue.jpg',
+    image: '/images/massages/deep-tissue-v2.jpg',
     highlights: ['Firm, focused pressure', 'Targets knots and stiffness', 'Home or hotel'],
   },
   {
@@ -71,7 +71,7 @@ export default function DeepTissue() {
             </ul>
           </div>
           <div className="pkg-hero-collage" aria-hidden="true">
-            <Image className="pkg-collage-main" src="/images/massages/deep-tissue.jpg" alt="" width={1152} height={864} priority sizes="(max-width:900px) 92vw, 520px" />
+            <Image className="pkg-collage-main" src="/images/massages/deep-tissue-v2.jpg" alt="" width={1152} height={864} priority sizes="(max-width:900px) 92vw, 520px" />
             <Image className="pkg-collage-small pkg-collage-a" src="/images/massages/hot-stone.jpg" alt="" width={1152} height={864} sizes="220px" />
             <Image className="pkg-collage-small pkg-collage-b" src="/images/massages/lymphatic.jpg" alt="" width={1152} height={864} sizes="220px" />
           </div>

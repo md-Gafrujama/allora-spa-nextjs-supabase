@@ -76,7 +76,7 @@ export default async function HomePage() {
             <Link href="/your-place"><span className="home-explore-photo"><Image src="/images/hero/svc-your-place.jpg" alt="ALLORA therapist massage at your place" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Your Place</strong><span>Home or hotel.</span><em>Explore</em></Link>
             <Link href="/event-services"><span className="home-explore-photo"><Image src="/images/hero/svc-event.jpg" alt="ALLORA therapist for event service" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Event Service</strong><span>For a celebration.</span><em>Explore</em></Link>
             <Link href="/corporate"><span className="home-explore-photo"><Image src="/images/hero/svc-corporate.jpg" alt="ALLORA therapist corporate massage" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Corporate</strong><span>Wellness at work.</span><em>Explore</em></Link>
-            <Link href="/deep-tissue"><span className="home-explore-photo"><Image src="/images/hero/svc-deep-tissue.jpg" alt="ALLORA therapist deep tissue massage" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Deep Tissue</strong><span>Firm, focused care.</span><em>Explore</em></Link>
+            <Link href="/deep-tissue"><span className="home-explore-photo"><Image src="/images/massages/deep-tissue-v2.jpg" alt="ALLORA therapist deep tissue massage" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Deep Tissue</strong><span>Firm, focused care.</span><em>Explore</em></Link>
           </div>
         </div>
       </section>
