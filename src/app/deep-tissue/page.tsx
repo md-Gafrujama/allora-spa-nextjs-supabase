@@ -27,7 +27,7 @@ const treatments = [
   {
     id: 'lymphatic-drainage',
     name: 'Lymphatic Drainage',
-    image: '/images/massages/lymphatic.jpg',
+    image: '/images/massages/lymphatic-v2.jpg',
     highlights: ['Gentle, rhythmic strokes', 'Helps ease puffiness', 'Light and relaxing'],
   },
   {
@@ -73,7 +73,7 @@ export default function DeepTissue() {
           <div className="pkg-hero-collage" aria-hidden="true">
             <Image className="pkg-collage-main" src="/images/massages/deep-tissue-v2.jpg" alt="" width={1152} height={864} priority sizes="(max-width:900px) 92vw, 520px" />
             <Image className="pkg-collage-small pkg-collage-a" src="/images/massages/hot-stone.jpg" alt="" width={1152} height={864} sizes="220px" />
-            <Image className="pkg-collage-small pkg-collage-b" src="/images/massages/lymphatic.jpg" alt="" width={1152} height={864} sizes="220px" />
+            <Image className="pkg-collage-small pkg-collage-b" src="/images/massages/lymphatic-v2.jpg" alt="" width={1152} height={864} sizes="220px" />
           </div>
         </div>
       </section>

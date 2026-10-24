@@ -59,7 +59,7 @@ export const massages: Massage[] = [
     name: 'Lymphatic Drainage',
     short: 'Light strokes to ease heaviness.',
     description: 'Light, rhythmic strokes that help ease puffiness and leave the body feeling lighter.',
-    image: '/images/massages/lymphatic.jpg',
+    image: '/images/massages/lymphatic-v2.jpg',
     alt: "Therapist gliding both hands along a client's arm",
     highlights: ['Gentle, rhythmic strokes', 'Helps ease puffiness', 'Light and relaxing', 'At your home or hotel'],
   },
