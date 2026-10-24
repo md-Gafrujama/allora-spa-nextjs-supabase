@@ -72,8 +72,8 @@ export default async function HomePage() {
           <h2 className="display-font home-explore-title">Explore Spa Services</h2>
           <p className="home-explore-lede">Home, hotel, events or the workplace.</p>
           <div className="home-explore-grid">
-            <Link href="/spa-packages"><span className="home-explore-photo"><Image src="/images/hero/svc-spa-package.jpg" alt="ALLORA therapist for spa package" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Spa Package</strong><span>Treatments for you.</span><em>Explore</em></Link>
-            <Link href="/your-place"><span className="home-explore-photo"><Image src="/images/hero/svc-your-place.jpg" alt="ALLORA therapist massage at your place" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Your Place</strong><span>Home or hotel.</span><em>Explore</em></Link>
+            <Link href="/spa-packages"><span className="home-explore-photo"><Image src="/images/hero/svc-spa-package-v3.jpg" alt="ALLORA therapist for spa package" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Spa Package</strong><span>Treatments for you.</span><em>Explore</em></Link>
+            <Link href="/your-place"><span className="home-explore-photo"><Image src="/images/hero/svc-your-place-v2.jpg" alt="ALLORA therapist massage at your place" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Your Place</strong><span>Home or hotel.</span><em>Explore</em></Link>
             <Link href="/event-services"><span className="home-explore-photo"><Image src="/images/hero/svc-event.jpg" alt="ALLORA therapist for event service" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Event Service</strong><span>For a celebration.</span><em>Explore</em></Link>
             <Link href="/corporate"><span className="home-explore-photo"><Image src="/images/hero/svc-corporate.jpg" alt="ALLORA therapist corporate massage" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Corporate</strong><span>Wellness at work.</span><em>Explore</em></Link>
             <Link href="/deep-tissue"><span className="home-explore-photo"><Image src="/images/massages/deep-tissue-v2.jpg" alt="ALLORA therapist deep tissue massage" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Deep Tissue</strong><span>Firm, focused care.</span><em>Explore</em></Link>
@@ -101,12 +101,12 @@ export default async function HomePage() {
           </div>
           <div className="home-about-photos">
             <div className="home-about-main">
-              <Image src="/images/home/about-care.jpg" alt="ALLORA therapist giving a hand massage" fill sizes="(max-width:800px) 100vw, 460px" />
+              <Image src="/images/home/about-care-v2.jpg" alt="ALLORA therapist massaging a shoulder" fill sizes="(max-width:800px) 100vw, 460px" />
               <Link href="/about" className="stretch-link" aria-label="About ALLORA" />
             </div>
             <div className="home-about-pair">
-              <div><Image src="/images/hero/role-2c.jpg" alt="ALLORA facial specialist" fill sizes="220px" /><Link href="/spa-packages" className="stretch-link" aria-label="Spa packages" /></div>
-              <div><Image src="/images/hero/role-6c.jpg" alt="ALLORA spa therapist giving a foot massage" fill sizes="220px" /><Link href="/your-place" className="stretch-link" aria-label="Spa at your place" /></div>
+              <div><Image src="/images/home/about-hands-v2.jpg" alt="ALLORA therapist massaging a hand" fill sizes="220px" /><Link href="/spa-packages" className="stretch-link" aria-label="Spa packages" /></div>
+              <div><Image src="/images/home/about-calf-v2.jpg" alt="ALLORA therapist massaging a calf" fill sizes="220px" /><Link href="/your-place" className="stretch-link" aria-label="Spa at your place" /></div>
             </div>
           </div>
         </div>
