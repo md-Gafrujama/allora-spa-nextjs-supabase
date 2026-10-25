@@ -1256,11 +1256,10 @@ html.is-navigating,html.is-navigating a{cursor:progress}
 .pkg-list-head h2{margin:0 0 10px;font-size:clamp(28px,3.2vw,40px);line-height:1.1}
 .pkg-list-head p{margin:0;color:#6f6862}
 .pkg-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
-.pkg-card{display:flex;flex-direction:column;background:#fff;border:1px solid #efe6e9;border-radius:22px;overflow:hidden;box-shadow:0 14px 34px -20px rgba(5,22,80,.18);transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s ease,border-color .35s ease}
-.pkg-card:hover{transform:translateY(-6px);border-color:#e3cdd4;box-shadow:0 28px 50px -24px rgba(122,16,40,.28)}
-.pkg-card-media{position:relative;display:block;overflow:hidden;aspect-ratio:4/3;background:#fff}
-.pkg-card-media img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.22,.61,.36,1)}
-.pkg-card:hover .pkg-card-media img{transform:scale(1.05)}
+.pkg-card{display:flex;flex-direction:column;background:#fff;border:0;border-radius:22px;overflow:hidden;box-shadow:0 14px 34px -20px rgba(5,22,80,.18);transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s ease}
+.pkg-card:hover{transform:translateY(-6px);box-shadow:0 28px 50px -24px rgba(122,16,40,.28)}
+.pkg-card-media{position:relative;display:block;overflow:hidden;background:#fff;padding:0}
+.pkg-card-media img{width:100%;height:auto;display:block;object-fit:contain;object-position:center;border-radius:0;background:#fff;border:0}
 .pkg-card-time{position:absolute;left:14px;bottom:14px;display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.94);color:#7a1028;font-size:12px;font-weight:700;letter-spacing:.04em;box-shadow:0 6px 16px rgba(5,22,80,.12)}
 .pkg-card-body{display:flex;flex-direction:column;flex:1;padding:22px 22px 20px}
 .pkg-card h3{margin:0 0 8px;font-size:24px;line-height:1.15}
@@ -2429,6 +2428,8 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
 .mp-photo img,
 .mp-card-photo img,
 .home-treat-photo img{
+  width:100%!important;
+  height:auto!important;
   object-fit:contain!important;
   object-position:center!important;
   background:#fff!important;
