@@ -23,7 +23,7 @@ export const massages: Massage[] = [
     name: 'Couple Massage',
     short: 'Side-by-side care for two.',
     description: 'Two therapists, one session. Relax side by side with your partner, each with your own pressure.',
-    image: '/images/massages/couple-v2.jpg',
+    image: '/images/massages/couple-v3.jpg',
     alt: 'Two therapists massaging a woman and a man side by side',
     highlights: ['Two therapists at the same time', 'Choose your own pressure each', 'Lovely for anniversaries and gifts', 'At your home or hotel'],
   },

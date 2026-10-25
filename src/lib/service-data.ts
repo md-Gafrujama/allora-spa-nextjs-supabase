@@ -8,6 +8,7 @@ export type ServiceItem = {
   duration: string;
   image: string;
   highlights: string[];
+  
 };
 
 const spaImage = '/images/services/spa-relax.jpg';
