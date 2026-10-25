@@ -14,8 +14,8 @@ export const massages: Massage[] = [
     name: 'Thai Massage',
     short: 'Gentle stretches to ease tight muscles.',
     description: 'Assisted stretches and rhythmic pressure that loosen tight muscles and help you move more freely.',
-    image: '/images/massages/thai-v2.jpg',
-    alt: "Therapist lifting and stretching a client's leg",
+    image: '/images/massages/thai-v3.jpg',
+    alt: "Therapist massaging a client's legs during Thai massage",
     highlights: ['Assisted, yoga-style stretches', 'Rhythmic palm and thumb pressure', 'Done in loose, comfortable clothing', 'At your home or hotel'],
   },
   {

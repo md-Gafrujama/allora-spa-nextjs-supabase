@@ -41,7 +41,7 @@ export default async function YourPlace() {
             </ul>
           </div>
           <div className="pkg-hero-collage" aria-hidden="true">
-            <Image className="pkg-collage-main" src="/images/place/home-spa.jpg" alt="" width={1152} height={864} priority sizes="(max-width:900px) 92vw, 520px" />
+            <Image className="pkg-collage-main" src="/images/place/home-spa-v2.jpg" alt="" width={1152} height={864} priority sizes="(max-width:900px) 92vw, 520px" />
             <Image className="pkg-collage-small pkg-collage-a" src="/images/place/hotel.jpg" alt="" width={1152} height={864} sizes="220px" />
             <Image className="pkg-collage-small pkg-collage-b" src="/images/place/facial.jpg" alt="" width={1152} height={864} sizes="220px" />
           </div>

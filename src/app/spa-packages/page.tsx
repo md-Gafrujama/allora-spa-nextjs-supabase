@@ -40,7 +40,7 @@ export default async function SpaPackages() {
             </ul>
           </div>
           <div className="pkg-hero-collage" aria-hidden="true">
-            <Image className="pkg-collage-main" src="/images/packages/luxury-v2.jpg" alt="" width={1152} height={864} priority sizes="(max-width:900px) 92vw, 520px" />
+            <Image className="pkg-collage-main" src="/images/packages/luxury-v3.jpg" alt="" width={1152} height={864} priority sizes="(max-width:900px) 92vw, 520px" />
             <Image className="pkg-collage-small pkg-collage-a" src="/images/packages/couples-v2.jpg" alt="" width={1152} height={864} sizes="220px" />
             <Image className="pkg-collage-small pkg-collage-b" src="/images/packages/bridal-v2.jpg" alt="" width={1152} height={864} sizes="220px" />
           </div>
