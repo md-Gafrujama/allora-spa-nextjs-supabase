@@ -106,7 +106,7 @@ export default async function HomePage() {
             </div>
             <div className="home-about-pair">
               <div><Image src="/images/home/about-hands-v2.jpg" alt="ALLORA therapist massaging a hand" fill sizes="220px" /><Link href="/spa-packages" className="stretch-link" aria-label="Spa packages" /></div>
-              <div><Image src="/images/home/about-calf-v2.jpg" alt="ALLORA therapist massaging a calf" fill sizes="220px" /><Link href="/your-place" className="stretch-link" aria-label="Spa at your place" /></div>
+              <div><Image src="/images/home/about-calf-v3.jpg" alt="ALLORA therapist massaging a calf" fill sizes="220px" /><Link href="/your-place" className="stretch-link" aria-label="Spa at your place" /></div>
             </div>
           </div>
         </div>
