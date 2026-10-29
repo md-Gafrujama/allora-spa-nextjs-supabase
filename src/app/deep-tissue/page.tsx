@@ -22,7 +22,7 @@ const treatments = [
   {
     id: 'deep-tissue',
     name: 'Deep Tissue',
-    image: '/images/massages/deep-tissue-v2.jpg',
+    image: '/images/massages/deep-tissue-v4.jpg',
     highlights: ['Firm, focused pressure', 'Targets knots and stiffness', 'Home or hotel'],
   },
   {
@@ -56,10 +56,9 @@ export default function DeepTissue() {
     <div className="pkg-page deep-page">
       <PageMobileHero
         title="Deep Tissue"
-        image="/images/massages/deep-tissue-v2.jpg"
+        image="/images/massages/deep-tissue-v4.jpg"
         alt="ALLORA therapist giving a deep tissue massage"
         bookMessage="Hello ALLORA, I would like to book a deep tissue treatment."
-        labelLow
       />
 
       <section className="pkg-hero">
@@ -79,7 +78,7 @@ export default function DeepTissue() {
             </ul>
           </div>
           <div className="pkg-hero-collage" aria-hidden="true">
-            <Image className="pkg-collage-main" src="/images/massages/deep-tissue-v2.jpg" alt="" width={1152} height={864} priority sizes="(max-width:900px) 92vw, 520px" />
+            <Image className="pkg-collage-main" src="/images/massages/deep-tissue-v4.jpg" alt="" width={1152} height={864} priority sizes="(max-width:900px) 92vw, 520px" />
             <Image className="pkg-collage-small pkg-collage-a" src="/images/massages/hot-stone-v2.jpg" alt="" width={1152} height={864} sizes="220px" />
             <Image className="pkg-collage-small pkg-collage-b" src="/images/massages/lymphatic-v3.jpg" alt="" width={1152} height={864} sizes="220px" />
           </div>

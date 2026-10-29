@@ -25,10 +25,9 @@ export default async function SpaPackages() {
     <div className="pkg-page spa-page">
       <PageMobileHero
         title="Spa Package"
-        image="/images/hero/svc-spa-package-v9.jpg"
+        image="/images/hero/svc-spa-package-v14.jpg"
         alt="ALLORA therapist for spa package"
         bookMessage="Hello ALLORA, I would like to book a spa package."
-        labelLow
       />
       <section className="pkg-hero">
         <div className="container-page pkg-hero-grid">

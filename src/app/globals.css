@@ -2506,19 +2506,20 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
     min-width:100%!important;
     width:100%!important;
     height:100%!important;
-    overflow:hidden!important;
+    overflow:visible!important;
     background:#fff!important;
   }
-  .home .home-hero-visual .hero-slide .hero-slide-media .hero-slide-img{
+  .home .home-hero-visual .hero-slide .hero-slide-media .hero-slide-img,
+  .home .home-hero-visual .hero-slide .hero-slide-media img{
     position:absolute!important;
     inset:0!important;
     width:100%!important;
     height:100%!important;
-    padding:0 0 64px!important;
+    padding:0!important;
     margin:0!important;
     box-sizing:border-box!important;
     object-fit:contain!important;
-    object-position:center bottom!important;
+    object-position:center center!important;
     border-radius:0!important;
     box-shadow:none!important;
     background:#fff!important;
@@ -2566,37 +2567,16 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
     color:inherit!important;
     font:inherit!important;
   }
-  .home .hero-slide-book-wrap{
+  .home .home-hero-visual .hero-slide-caption a.btn-primary,
+  .home .home-hero-visual .hero-slide-caption a.btn-primary:hover,
+  .home .home-hero-visual .hero-slide-caption a.btn-primary:focus,
+  .home .home-hero-visual .hero-slide-caption a.btn-primary:active{
     position:absolute!important;
     left:50%!important;
     bottom:18px!important;
     top:auto!important;
     z-index:6!important;
     transform:translateX(-50%)!important;
-    display:flex!important;
-    flex-direction:column!important;
-    align-items:center!important;
-    gap:8px!important;
-    pointer-events:none!important;
-  }
-  .home .hero-slide-brand{
-    font-family:var(--font-display),Georgia,serif!important;
-    font-size:15px!important;
-    font-weight:800!important;
-    letter-spacing:.22em!important;
-    color:#051650!important;
-    text-shadow:0 1px 0 rgba(255,255,255,.9)!important;
-  }
-  .home .home-hero-visual .hero-slide-caption a.btn-primary,
-  .home .home-hero-visual .hero-slide-caption a.btn-primary:hover,
-  .home .home-hero-visual .hero-slide-caption a.btn-primary:focus,
-  .home .home-hero-visual .hero-slide-caption a.btn-primary:active{
-    position:static!important;
-    left:auto!important;
-    bottom:auto!important;
-    top:auto!important;
-    z-index:6!important;
-    transform:none!important;
     margin:0!important;
     padding:11px 20px!important;
     border:0!important;
@@ -2606,20 +2586,25 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
     box-shadow:0 6px 18px rgba(5,22,80,.14)!important;
     font-size:14px!important;
     font-weight:800!important;
-    pointer-events:auto!important;
   }
   .home .hero-reel-dots{display:none!important}
-  .home .home-hero-visual .hero-slide .hero-slide-media .hero-slide-img{
-    padding:0 0 88px!important;
-    object-position:center bottom!important;
+  .home .home-hero-visual,
+  .home .home-hero-visual .hero-reel,
+  .home .home-hero-visual .hero-reel-window,
+  .home .home-hero-visual .hero-slide,
+  .home .home-hero-visual .hero-slide-media{
+    overflow:visible!important;
+  }
+  .home .home-hero-visual .hero-slide .hero-slide-media .hero-slide-img,
+  .home .home-hero-visual .hero-slide .hero-slide-media img{
+    padding:0!important;
+    object-fit:contain!important;
+    object-position:center center!important;
   }
   /* Only Spa Package + Deep Tissue — label a bit lower near the head */
   .home .hero-slide-label-low .hero-slide-caption strong,
   .home .hero-slide-label-low .hero-slide-caption strong a{
-    top:22%!important;
-  }
-  .home .hero-slide-label-low .hero-slide-media .hero-slide-img{
-    object-position:center 35%!important;
+    top:22px!important;
   }
   .home .home-hero-inner{
     order:1!important;
@@ -2632,11 +2617,12 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
   }
 }
 
-/* Page mobile hero — first screen = ONLY image (like home). Copy starts after scroll. */
+/* Service pages (Event / Corporate / Spa / Deep…) — full first-screen height + ALLORA above Book Now */
 .page-mobile-hero{display:none}
 @media(max-width:800px){
   .page-mobile-hero{
-    display:block;
+    display:flex;
+    flex-direction:column;
     --hero-h:100svh;
     position:relative;
     z-index:1;
@@ -2655,17 +2641,16 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
   }
   .page-mobile-hero-media{
     position:relative;
+    flex:1 1 auto;
     width:100%;
-    height:100%;
-    overflow:hidden;
+    min-height:0;
     background:#fff;
   }
-  /* contain = full photo, no crop (Corporate / Spa / etc.) */
-  .page-mobile-hero-img{
+  .page-mobile-hero-img,
+  .page-mobile-hero-media > span,
+  .page-mobile-hero-media img{
     object-fit:contain!important;
     object-position:center center!important;
-    padding:0 0 88px!important;
-    box-sizing:border-box;
   }
   .page-mobile-hero-caption{
     position:absolute;
@@ -2677,8 +2662,7 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
   .page-mobile-hero-caption strong{
     position:absolute;
     left:50%;
-    top:28px;
-    bottom:auto;
+    top:18px;
     transform:translateX(-50%);
     z-index:6;
     margin:0;
@@ -2694,13 +2678,10 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
     text-transform:uppercase;
     white-space:nowrap;
   }
-  .page-mobile-hero-label-low .page-mobile-hero-caption strong{
-    top:28px;
-  }
   .page-mobile-hero-book{
     position:absolute;
     left:50%;
-    bottom:18px;
+    bottom:20px;
     transform:translateX(-50%);
     z-index:6;
     display:flex;
@@ -2710,23 +2691,20 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
     pointer-events:none;
   }
   .page-mobile-hero-brand{
+    display:block;
     font-family:var(--font-display),Georgia,serif;
-    font-size:15px;
+    font-size:16px;
     font-weight:800;
     letter-spacing:.22em;
     color:#051650;
-    text-shadow:0 1px 0 rgba(255,255,255,.9);
+    line-height:1;
   }
-  .page-mobile-hero-caption .btn-primary,
-  .page-mobile-hero-caption .btn-primary:hover,
-  .page-mobile-hero-caption .btn-primary:focus,
-  .page-mobile-hero-caption .btn-primary:active{
+  .page-mobile-hero-book .btn-primary,
+  .page-mobile-hero-book .btn-primary:hover,
+  .page-mobile-hero-book .btn-primary:focus,
+  .page-mobile-hero-book .btn-primary:active{
     position:static!important;
-    left:auto!important;
-    bottom:auto!important;
-    top:auto!important;
     transform:none!important;
-    z-index:6;
     margin:0!important;
     padding:11px 20px!important;
     border:0!important;
@@ -2738,8 +2716,7 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
     font-weight:800!important;
     pointer-events:auto;
   }
-  .page-mobile-hero-caption .btn-primary svg{color:#E10801!important;fill:#E10801!important}
-  /* Collage off; title/copy only after full-screen hero */
+  .page-mobile-hero-book .btn-primary svg{color:#E10801!important;fill:#E10801!important}
   .pkg-page .pkg-hero-collage{display:none!important}
   .pkg-page .pkg-hero{
     padding:28px 0 36px!important;

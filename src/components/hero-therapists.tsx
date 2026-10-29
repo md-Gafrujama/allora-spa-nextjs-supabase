@@ -10,11 +10,11 @@ const INTERVAL_MS = 3000;
 const SLIDE_MS = 800;
 
 const slides = [
-  { name: 'Spa Package', href: '/spa-packages', src: '/images/hero/svc-spa-package-v9.jpg', alt: 'ALLORA therapist giving a spa package massage', labelLow: true },
+  { name: 'Spa Package', href: '/spa-packages', src: '/images/hero/svc-spa-package-v14.jpg', alt: 'ALLORA therapist giving a spa package massage' },
   { name: 'Your Place', href: '/your-place', src: '/images/hero/svc-your-place-v4.jpg', alt: 'ALLORA therapist giving a massage at your place' },
   { name: 'Event Service', href: '/event-services', src: '/images/hero/svc-event.jpg', alt: 'ALLORA therapist pampering a bride before her celebration' },
   { name: 'Corporate', href: '/corporate', src: '/images/hero/svc-corporate.jpg', alt: 'ALLORA therapist giving a seated shoulder massage at the office' },
-  { name: 'Deep Tissue', href: '/deep-tissue', src: '/images/massages/deep-tissue-v2.jpg', alt: 'ALLORA therapist giving a firm deep tissue massage', labelLow: true },
+  { name: 'Deep Tissue', href: '/deep-tissue', src: '/images/massages/deep-tissue-v4.jpg', alt: 'ALLORA therapist giving a firm deep tissue massage' },
 ];
 
 export function HeroTherapists() {
@@ -79,7 +79,7 @@ export function HeroTherapists() {
           }}
         >
           {frames.map((slide, i) => (
-            <article className={`hero-slide${i === index ? ' is-active' : ''}${slide.labelLow ? ' hero-slide-label-low' : ''}`} key={`${slide.src}-${i}`} aria-hidden={i !== index}>
+            <article className={`hero-slide${i === index ? ' is-active' : ''}`} key={`${slide.src}-${i}`} aria-hidden={i !== index}>
               <div className="hero-slide-media">
                 <Link href={slide.href} tabIndex={-1} aria-hidden="true">
                   <Image
@@ -90,14 +90,12 @@ export function HeroTherapists() {
                     height={1024}
                     priority={i <= 1}
                     sizes="(max-width:800px) 100vw, 500px"
+                    style={{ objectFit: 'contain', objectPosition: 'center center' }}
                   />
                 </Link>
                 <div className="hero-slide-caption">
                   <strong><Link href={slide.href} tabIndex={i === index ? 0 : -1}>{slide.name}</Link></strong>
-                  <div className="hero-slide-book-wrap">
-                    <span className="hero-slide-brand">ALLORA</span>
-                    <a className="btn-primary" href={site.whatsappUrl(`Hello ALLORA, I would like to book the ${slide.name} service.`)} target="_blank" rel="noreferrer" tabIndex={i === index ? 0 : -1}><WhatsAppIcon size={15} />Book Now</a>
-                  </div>
+                  <a className="btn-primary" href={site.whatsappUrl(`Hello ALLORA, I would like to book the ${slide.name} service.`)} target="_blank" rel="noreferrer" tabIndex={i === index ? 0 : -1}><WhatsAppIcon size={15} />Book Now</a>
                 </div>
               </div>
             </article>

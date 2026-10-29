@@ -7,12 +7,11 @@ type Props = {
   image: string;
   alt: string;
   bookMessage: string;
-  labelLow?: boolean;
 };
 
-export function PageMobileHero({ title, image, alt, bookMessage, labelLow }: Props) {
+export function PageMobileHero({ title, image, alt, bookMessage }: Props) {
   return (
-    <section className={`page-mobile-hero${labelLow ? ' page-mobile-hero-label-low' : ''}`} aria-label={title}>
+    <section className="page-mobile-hero" aria-label={title}>
       <div className="page-mobile-hero-media">
         <Image
           className="page-mobile-hero-img"
@@ -21,6 +20,7 @@ export function PageMobileHero({ title, image, alt, bookMessage, labelLow }: Pro
           fill
           priority
           sizes="100vw"
+          style={{ objectFit: 'contain', objectPosition: 'center center' }}
         />
         <div className="page-mobile-hero-caption">
           <strong>{title}</strong>
