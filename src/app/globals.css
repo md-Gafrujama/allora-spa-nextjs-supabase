@@ -2044,12 +2044,13 @@ html.is-navigating,html.is-navigating a{cursor:progress}
   .pkg-hero > .container-page{width:min(1180px,calc(100% - 40px))}
 }
 
-/* ===== Home hero — compact, no card (final) ===== */
+/* ===== Home hero — taller cards so label / ALLORA / Book Now don't touch photo ===== */
 @media(min-width:801px){
   .home .home-hero{
-    --hw:min(340px,28vw)!important;
-    height:420px!important;
-    min-height:400px!important;
+    --hw:min(360px,28vw)!important;
+    --hh:min(460px,calc(100% - 48px))!important;
+    height:520px!important;
+    min-height:500px!important;
     background:#fff!important;
     overflow:hidden!important;
   }
@@ -2060,13 +2061,13 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     top:50%!important;
     right:48px!important;
     width:var(--hw)!important;
-    height:min(360px,calc(100% - 40px))!important;
+    height:var(--hh)!important;
     transform:translateY(-50%)!important;
     border-radius:28px!important;
     border:1px solid #f0e4e8!important;
     box-shadow:0 18px 44px -18px rgba(5,22,80,.22)!important;
     background:#fff!important;
-    padding:10px!important;
+    padding:40px 12px 72px!important;
     box-sizing:border-box!important;
     object-fit:contain!important;
     object-position:center center!important;
@@ -2075,12 +2076,30 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     top:50%!important;
     right:48px!important;
     width:var(--hw)!important;
-    height:min(360px,calc(100% - 40px))!important;
+    height:var(--hh)!important;
     transform:translateY(-50%)!important;
     padding:0!important;
     gap:0!important;
     border-radius:28px!important;
     overflow:hidden!important;
+  }
+  .home .hero-slide-caption strong,
+  .home .hero-slide-caption strong a{
+    top:14px!important;
+    padding:10px 18px!important;
+    font-size:14px!important;
+  }
+  .home .hero-slide-book-wrap{
+    bottom:20px!important;
+    gap:10px!important;
+  }
+  .home .hero-slide-brand{font-size:16px!important}
+  .home .home-hero-visual .hero-slide-caption a.btn-primary,
+  .home .home-hero-visual .hero-slide-caption a.btn-primary:hover,
+  .home .home-hero-visual .hero-slide-caption a.btn-primary:focus,
+  .home .home-hero-visual .hero-slide-caption a.btn-primary:active{
+    padding:11px 20px!important;
+    font-size:14px!important;
   }
   .home .hero-reel-dots{
     right:48px!important;
@@ -2124,22 +2143,13 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     padding:10px 18px!important;
     font-size:13.5px!important;
   }
-  .home .hero-slide-caption strong,
-  .home .hero-slide-caption strong a,
-  .home .home-hero-visual .hero-slide-caption a.btn-primary{
-    font-size:13px!important;
-    padding:8px 14px!important;
-  }
 }
 @media(min-width:1101px){
   .home .home-hero{
-    --hw:min(380px,30vw)!important;
-    height:440px!important;
-    min-height:420px!important;
-  }
-  .home .home-hero-visual .hero-slide .hero-slide-media .hero-slide-img,
-  .home .hero-slide-caption{
-    height:min(380px,calc(100% - 36px))!important;
+    --hw:min(390px,30vw)!important;
+    --hh:min(500px,calc(100% - 40px))!important;
+    height:560px!important;
+    min-height:540px!important;
   }
   .home .home-hero-copy h1,
   .home .home-hero-copy h1 span{
@@ -2148,8 +2158,9 @@ html.is-navigating,html.is-navigating a{cursor:progress}
 }
 @media(min-width:1441px){
   .home .home-hero{
-    --hw:min(400px,28vw)!important;
-    height:460px!important;
+    --hw:min(410px,28vw)!important;
+    --hh:min(520px,calc(100% - 40px))!important;
+    height:580px!important;
   }
   .home .home-hero-visual .hero-slide .hero-slide-media .hero-slide-img{right:64px!important}
   .home .hero-slide-caption{right:64px!important}
@@ -2158,14 +2169,15 @@ html.is-navigating,html.is-navigating a{cursor:progress}
 @media(min-width:801px) and (max-width:1100px){
   .home .home-hero{
     --hw:min(300px,32vw)!important;
-    height:380px!important;
-    min-height:360px!important;
+    --hh:min(420px,calc(100% - 36px))!important;
+    height:480px!important;
+    min-height:460px!important;
   }
   .home .home-hero-visual .hero-slide .hero-slide-media .hero-slide-img,
   .home .hero-slide-caption{
     right:24px!important;
     width:var(--hw)!important;
-    height:min(320px,calc(100% - 32px))!important;
+    height:var(--hh)!important;
   }
   .home .hero-reel-dots{right:24px!important;width:var(--hw)!important}
   .home .home-hero-copy{
@@ -2791,7 +2803,7 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
   .pkg-page .pkg-hero-copy{order:0!important}
 }
 
-/* Desktop home — phone-matching card on every slide */
+/* Desktop home — taller card + inner pad so text sits in clear space */
 @media(min-width:801px){
   .home .home-hero-visual .hero-slide .hero-slide-media .hero-slide-img,
   .home .home-hero-visual .hero-slide .hero-slide-media img.hero-slide-img{
@@ -2799,7 +2811,7 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
     border:1px solid #f0e4e8!important;
     background:#fff!important;
     box-shadow:0 18px 44px -18px rgba(5,22,80,.22)!important;
-    padding:10px!important;
+    padding:40px 12px 72px!important;
     box-sizing:border-box!important;
     object-fit:contain!important;
     object-position:center center!important;
@@ -2807,6 +2819,10 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
   .home .hero-slide-caption{
     border-radius:28px!important;
     overflow:hidden!important;
+  }
+  .home .hero-slide-book-wrap{
+    bottom:20px!important;
+    gap:10px!important;
   }
   .pkg-page .pkg-collage-main{
     border-radius:28px!important;
