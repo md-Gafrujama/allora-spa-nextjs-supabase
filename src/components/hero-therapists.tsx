@@ -6,22 +6,22 @@ import { useEffect, useRef, useState } from 'react';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
 import { site } from '@/lib/site-data';
 
-const INTERVAL_MS = 3000;
-const SLIDE_MS = 800;
+const INTERVAL_MS = 5500;
+const SLIDE_MS = 700;
 
 const slides = [
-  { name: 'Spa Package', href: '/spa-packages', src: '/images/hero/svc-spa-package-v14.jpg', alt: 'ALLORA therapist giving a spa package massage' },
+  { name: 'Spa Package', href: '/spa-packages', src: '/images/hero/svc-spa-package-v17.jpg', alt: 'ALLORA therapist giving a spa package massage' },
   { name: 'Your Place', href: '/your-place', src: '/images/hero/svc-your-place-v4.jpg', alt: 'ALLORA therapist giving a massage at your place' },
   { name: 'Event Service', href: '/event-services', src: '/images/hero/svc-event.jpg', alt: 'ALLORA therapist pampering a bride before her celebration' },
   { name: 'Corporate', href: '/corporate', src: '/images/hero/svc-corporate.jpg', alt: 'ALLORA therapist giving a seated shoulder massage at the office' },
-  { name: 'Deep Tissue', href: '/deep-tissue', src: '/images/massages/deep-tissue-v4.jpg', alt: 'ALLORA therapist giving a firm deep tissue massage' },
+  { name: 'Deep Tissue', href: '/deep-tissue', src: '/images/massages/deep-tissue-v8.jpg', alt: 'ALLORA therapist giving a firm deep tissue massage' },
 ];
 
 export function HeroTherapists() {
   const [index, setIndex] = useState(0);
   const [animate, setAnimate] = useState(true);
   const [paused, setPaused] = useState(false);
-  const touchX = useRef<number | null>(null);
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
   const frames = [...slides, slides[0]];
 
   useEffect(() => {
@@ -55,18 +55,22 @@ export function HeroTherapists() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onTouchStart={(e) => {
-        touchX.current = e.touches[0]?.clientX ?? null;
+        const t = e.touches[0];
+        touchStart.current = t ? { x: t.clientX, y: t.clientY } : null;
         setPaused(true);
       }}
       onTouchEnd={(e) => {
-        const start = touchX.current;
-        touchX.current = null;
-        setPaused(false);
+        const start = touchStart.current;
+        touchStart.current = null;
+        window.setTimeout(() => setPaused(false), 1200);
         if (start == null) return;
-        const delta = e.changedTouches[0].clientX - start;
-        if (Math.abs(delta) < 40) return;
+        const t = e.changedTouches[0];
+        const dx = t.clientX - start.x;
+        const dy = t.clientY - start.y;
+        // Only change slide on clear horizontal swipe — ignore page scroll
+        if (Math.abs(dx) < 70 || Math.abs(dx) < Math.abs(dy) * 1.2) return;
         const current = index % slides.length;
-        if (delta < 0) goTo(current === slides.length - 1 ? slides.length : current + 1);
+        if (dx < 0) goTo(current === slides.length - 1 ? slides.length : current + 1);
         else goTo(current === 0 ? slides.length - 1 : current - 1);
       }}
     >
