@@ -10,11 +10,11 @@ const INTERVAL_MS = 5500;
 const SLIDE_MS = 700;
 
 const slides = [
-  { name: 'Spa Package', href: '/spa-packages', src: '/images/hero/svc-spa-package-v17.jpg', alt: 'ALLORA therapist giving a spa package massage' },
+  { name: 'Spa Package', href: '/spa-packages', src: '/images/hero/svc-spa-package-v18.jpg', alt: 'ALLORA therapist giving a spa package massage' },
   { name: 'Your Place', href: '/your-place', src: '/images/hero/svc-your-place-v4.jpg', alt: 'ALLORA therapist giving a massage at your place' },
   { name: 'Event Service', href: '/event-services', src: '/images/hero/svc-event.jpg', alt: 'ALLORA therapist pampering a bride before her celebration' },
   { name: 'Corporate', href: '/corporate', src: '/images/hero/svc-corporate.jpg', alt: 'ALLORA therapist giving a seated shoulder massage at the office' },
-  { name: 'Deep Tissue', href: '/deep-tissue', src: '/images/massages/deep-tissue-v8.jpg', alt: 'ALLORA therapist giving a firm deep tissue massage' },
+  { name: 'Deep Tissue', href: '/deep-tissue', src: '/images/massages/deep-tissue-v9.jpg', alt: 'ALLORA therapist giving a firm deep tissue massage' },
 ];
 
 export function HeroTherapists() {
