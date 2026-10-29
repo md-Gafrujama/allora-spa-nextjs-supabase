@@ -10,7 +10,7 @@ const INTERVAL_MS = 3000;
 const SLIDE_MS = 800;
 
 const slides = [
-  { name: 'Spa Package', href: '/spa-packages', src: '/images/hero/svc-spa-package-v7.jpg', alt: 'ALLORA therapist giving a spa package massage', labelLow: true },
+  { name: 'Spa Package', href: '/spa-packages', src: '/images/hero/svc-spa-package-v9.jpg', alt: 'ALLORA therapist giving a spa package massage', labelLow: true },
   { name: 'Your Place', href: '/your-place', src: '/images/hero/svc-your-place-v4.jpg', alt: 'ALLORA therapist giving a massage at your place' },
   { name: 'Event Service', href: '/event-services', src: '/images/hero/svc-event.jpg', alt: 'ALLORA therapist pampering a bride before her celebration' },
   { name: 'Corporate', href: '/corporate', src: '/images/hero/svc-corporate.jpg', alt: 'ALLORA therapist giving a seated shoulder massage at the office' },
@@ -94,7 +94,10 @@ export function HeroTherapists() {
                 </Link>
                 <div className="hero-slide-caption">
                   <strong><Link href={slide.href} tabIndex={i === index ? 0 : -1}>{slide.name}</Link></strong>
-                  <a className="btn-primary" href={site.whatsappUrl(`Hello ALLORA, I would like to book the ${slide.name} service.`)} target="_blank" rel="noreferrer" tabIndex={i === index ? 0 : -1}><WhatsAppIcon size={15} />Book Now</a>
+                  <div className="hero-slide-book-wrap">
+                    <span className="hero-slide-brand">ALLORA</span>
+                    <a className="btn-primary" href={site.whatsappUrl(`Hello ALLORA, I would like to book the ${slide.name} service.`)} target="_blank" rel="noreferrer" tabIndex={i === index ? 0 : -1}><WhatsAppIcon size={15} />Book Now</a>
+                  </div>
                 </div>
               </div>
             </article>

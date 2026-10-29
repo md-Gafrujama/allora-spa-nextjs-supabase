@@ -1,16 +1,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Building2, Check, Mail, PartyPopper, Sparkles, Users } from 'lucide-react';
+import { PageMobileHero } from '@/components/page-mobile-hero';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
 import { getCatalog } from '@/lib/catalog';
 import { pageMeta } from '@/lib/seo';
+import { displayName, site } from '@/lib/site-data';
 
 export const metadata = pageMeta({
   title: 'Spa Event Services in Dubai',
   description: 'Spa parties, bridal showers, hen parties and corporate wellness events with mobile therapists anywhere in Dubai.',
   path: '/event-services',
 });
-import { displayName, site } from '@/lib/site-data';
 
 const perks = [
   { icon: PartyPopper, label: 'Birthdays & celebrations' },
@@ -23,10 +24,15 @@ export default async function EventServices() {
   const eventItems = await getCatalog('event');
   return (
     <div className="pkg-page event-page">
+      <PageMobileHero
+        title="Event Service"
+        image="/images/hero/svc-event.jpg"
+        alt="ALLORA event spa service"
+        bookMessage="Hello ALLORA, I would like to book spa care for an event."
+      />
       <section className="pkg-hero">
         <div className="container-page pkg-hero-grid">
           <div className="pkg-hero-copy">
-            <p className="crumb"><Link href="/">Home</Link> › Event Service</p>
             <p className="eyebrow">Events · Groups · Corporate</p>
             <h1>Make Your Event <em>More Memorable</em></h1>
             <p className="pkg-lede">Mobile spa and wellness for birthdays, bridal events, corporate activations and private celebrations across Dubai.</p>

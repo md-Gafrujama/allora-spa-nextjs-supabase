@@ -1,16 +1,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Check, Mail, ShieldCheck, Sparkles, UserRound } from 'lucide-react';
+import { PageMobileHero } from '@/components/page-mobile-hero';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
 import { getCatalog } from '@/lib/catalog';
 import { pageMeta } from '@/lib/seo';
+import { displayName, site } from '@/lib/site-data';
 
 export const metadata = pageMeta({
   title: 'Luxury Spa Packages in Dubai',
   description: 'Luxury, couples, bridal, birthday and Moroccan bath spa packages delivered to your home or hotel in Dubai by ALLORA therapists.',
   path: '/spa-packages',
 });
-import { displayName, site } from '@/lib/site-data';
 
 const perks = [
   { icon: UserRound, label: 'Trained female therapists' },
@@ -21,11 +22,17 @@ const perks = [
 export default async function SpaPackages() {
   const spaItems = await getCatalog('spa');
   return (
-    <div className="pkg-page">
+    <div className="pkg-page spa-page">
+      <PageMobileHero
+        title="Spa Package"
+        image="/images/hero/svc-spa-package-v9.jpg"
+        alt="ALLORA therapist for spa package"
+        bookMessage="Hello ALLORA, I would like to book a spa package."
+        labelLow
+      />
       <section className="pkg-hero">
         <div className="container-page pkg-hero-grid">
           <div className="pkg-hero-copy">
-            <p className="crumb"><Link href="/">Home</Link> › Spa Package</p>
             <p className="eyebrow">Relax · Rejuvenate · Revive</p>
             <h1>Luxury Spa Packages <em>in Dubai</em></h1>
             <p className="pkg-lede">Choose a relaxing spa experience for yourself, your partner, your celebration or a special gift. We bring everything to your place.</p>

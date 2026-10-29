@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Check, Mail, Sparkles, UserRound } from 'lucide-react';
+import { PageMobileHero } from '@/components/page-mobile-hero';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
 import { pageMeta } from '@/lib/seo';
 import { publicPath } from '@/lib/public-slugs';
@@ -53,10 +54,17 @@ const treatments = [
 export default function DeepTissue() {
   return (
     <div className="pkg-page deep-page">
+      <PageMobileHero
+        title="Deep Tissue"
+        image="/images/massages/deep-tissue-v2.jpg"
+        alt="ALLORA therapist giving a deep tissue massage"
+        bookMessage="Hello ALLORA, I would like to book a deep tissue treatment."
+        labelLow
+      />
+
       <section className="pkg-hero">
         <div className="container-page pkg-hero-grid">
           <div className="pkg-hero-copy">
-            <p className="crumb"><Link href="/">Home</Link> › Deep Tissue</p>
             <p className="eyebrow">Deep Tissue</p>
             <h1>Deep Tissue <em>Care</em></h1>
             <p className="pkg-lede">Firm, focused body care at your home, hotel or event — including lymphatic, hot stone, cellulite and Medotherapy.</p>

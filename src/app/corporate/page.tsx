@@ -1,16 +1,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Briefcase, Building2, Check, Mail, Users } from 'lucide-react';
+import { PageMobileHero } from '@/components/page-mobile-hero';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
 import { getCatalog } from '@/lib/catalog';
 import { pageMeta } from '@/lib/seo';
+import { displayName, site } from '@/lib/site-data';
 
 export const metadata = pageMeta({
   title: 'Corporate Massage in Dubai',
   description: 'Chair, scalp, neck and shoulder massage at your office or workplace event in Dubai. Short sessions for teams.',
   path: '/corporate',
 });
-import { displayName, site } from '@/lib/site-data';
 
 const perks = [
   { icon: Building2, label: 'Office & workplace visits' },
@@ -22,10 +23,15 @@ export default async function Corporate() {
   const services = await getCatalog('corporate');
   return (
     <div className="pkg-page corporate-page">
+      <PageMobileHero
+        title="Corporate"
+        image="/images/hero/svc-corporate.jpg"
+        alt="ALLORA corporate massage"
+        bookMessage="Hello ALLORA, I would like to book a corporate massage service."
+      />
       <section className="pkg-hero">
         <div className="container-page pkg-hero-grid">
           <div className="pkg-hero-copy">
-            <p className="crumb"><Link href="/">Home</Link> › Corporate</p>
             <p className="eyebrow">Corporate Service</p>
             <h1>Corporate Massage <em>at Work</em></h1>
             <p className="pkg-lede">Short, convenient wellness sessions at the office, workplace event or hotel — for stress and muscle tension relief.</p>

@@ -1,16 +1,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Check, Home, Hotel, Mail, MapPin, UserRound } from 'lucide-react';
+import { PageMobileHero } from '@/components/page-mobile-hero';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
 import { getCatalog } from '@/lib/catalog';
 import { pageMeta } from '@/lib/seo';
+import { displayName, site } from '@/lib/site-data';
 
 export const metadata = pageMeta({
   title: 'Spa at Your Place in Dubai',
   description: 'Home spa, hotel room massage and apartment treatments across Dubai Marina, Jumeirah, Downtown and Business Bay.',
   path: '/your-place',
 });
-import { displayName, site } from '@/lib/site-data';
 
 const perks = [
   { icon: UserRound, label: 'Trained female therapists' },
@@ -23,10 +24,15 @@ export default async function YourPlace() {
   const placeItems = await getCatalog('place');
   return (
     <div className="pkg-page place-page">
+      <PageMobileHero
+        title="Your Place"
+        image="/images/hero/svc-your-place-v4.jpg"
+        alt="ALLORA therapist massage at your place"
+        bookMessage="Hello ALLORA, I would like to book a spa at my place."
+      />
       <section className="pkg-hero">
         <div className="container-page pkg-hero-grid">
           <div className="pkg-hero-copy">
-            <p className="crumb"><Link href="/">Home</Link> › Your Place</p>
             <p className="eyebrow">At Your Doorstep</p>
             <h1>Professional Spa <em>At Your Place</em></h1>
             <p className="pkg-lede">Home, hotel, apartment and location-based spa care with trained female therapists. We bring everything to you.</p>
