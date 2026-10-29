@@ -5,9 +5,10 @@ import { getSupabasePublicEnv } from '@/lib/supabase/env';
 export async function middleware(req: NextRequest) {
   const path = req.nextUrl.pathname;
   const isAdmin = path === '/admin' || path.startsWith('/admin/');
+  if (!isAdmin) return NextResponse.next();
+
   const env = getSupabasePublicEnv();
   if (!env) {
-    if (!isAdmin) return NextResponse.next();
     const url = req.nextUrl.clone();
     url.pathname = '/login';
     url.searchParams.set('error', 'config');
@@ -28,7 +29,7 @@ export async function middleware(req: NextRequest) {
 
   try {
     const { data: { user } } = await supabase.auth.getUser();
-    if (isAdmin && !user) {
+    if (!user) {
       const url = req.nextUrl.clone();
       url.pathname = '/login';
       url.searchParams.set('next', path);
@@ -44,5 +45,5 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)'],
+  matcher: ['/admin', '/admin/:path*'],
 };
