@@ -1124,7 +1124,7 @@ body{padding-top:74px}
 #services{scroll-margin-top:90px}
 .home-hero-mark,.home-hero-dots{display:none}
 @media(min-width:801px){
-  .home .home-hero-mark{display:block;position:absolute;z-index:0;left:max(8px,calc((100% - 1200px) / 2));bottom:-34px;font-family:var(--font-display),Georgia,serif;font-size:clamp(150px,15vw,220px);font-weight:600;line-height:1;letter-spacing:.06em;color:rgba(5,22,80,.035);white-space:nowrap;pointer-events:none;user-select:none;translate:calc(var(--mx,0) * -30px) calc(var(--my,0) * -12px);transition:translate .6s cubic-bezier(.22,1,.36,1)}
+  .home .home-hero-mark{display:block;position:absolute;z-index:0;left:max(8px,calc((100% - 1200px) / 2));bottom:0;font-family:var(--font-display),Georgia,serif;font-size:clamp(150px,15vw,220px);font-weight:600;line-height:1;letter-spacing:.06em;color:rgba(5,22,80,.035);white-space:nowrap;pointer-events:none;user-select:none;translate:calc(var(--mx,0) * -30px) calc(var(--my,0) * -12px);transition:translate .6s cubic-bezier(.22,1,.36,1)}
   .home .home-hero-dots{display:block;position:absolute;z-index:0;top:4px;right:calc(48px + var(--hw) - 80px);width:150px;height:150px;background-image:radial-gradient(#e2c6ce 1.6px,transparent 1.8px)!important;background-size:15px 15px;opacity:.9;pointer-events:none;translate:calc(var(--mx,0) * -18px) calc(var(--my,0) * -18px);transition:translate .6s cubic-bezier(.22,1,.36,1)}
   .home .home-hero-visual .hero-reel{translate:calc(var(--mx,0) * 8px) calc(var(--my,0) * 6px);transition:translate .6s cubic-bezier(.22,1,.36,1)}
 }
@@ -1723,8 +1723,9 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     pointer-events:none!important;
   }
   .home .hero-slide-caption a{pointer-events:auto!important}
-  .home .hero-slide-caption strong,
-  .home .hero-slide-caption strong a{
+  /* SPA PACKAGE (etc.) — web only, top of card */
+  .home .hero-slide-caption > strong{
+    display:block!important;
     position:absolute!important;
     left:50%!important;
     top:14px!important;
@@ -1746,6 +1747,7 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     white-space:nowrap!important;
   }
   .home .hero-slide-caption strong a{
+    display:inline!important;
     position:static!important;
     left:auto!important;
     top:auto!important;
@@ -2092,10 +2094,10 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     font-size:14px!important;
   }
   .home .hero-slide-book-wrap{
-    bottom:20px!important;
-    gap:10px!important;
+    bottom:16px!important;
+    gap:8px!important;
   }
-  .home .hero-slide-brand{font-size:16px!important}
+  .home .hero-slide-brand{display:block!important;font-size:16px!important}
   .home .home-hero-visual .hero-slide-caption a.btn-primary,
   .home .home-hero-visual .hero-slide-caption a.btn-primary:hover,
   .home .home-hero-visual .hero-slide-caption a.btn-primary:focus,
@@ -2578,8 +2580,9 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
     pointer-events:none!important;
   }
   .home .hero-slide-caption a{pointer-events:auto!important}
-  .home .hero-slide-caption strong,
-  .home .hero-slide-caption strong a{
+  /* SPA PACKAGE (etc.) — red pill at top on mobile too */
+  .home .hero-slide-caption > strong{
+    display:block!important;
     position:absolute!important;
     left:50%!important;
     top:12px!important;
@@ -2601,29 +2604,27 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
   }
   .home .hero-slide-caption strong a{
     position:static!important;
-    left:auto!important;
-    top:auto!important;
-    transform:none!important;
-    padding:0!important;
-    background:transparent!important;
-    box-shadow:none!important;
     color:inherit!important;
     font:inherit!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    padding:0!important;
   }
   .home .hero-slide-book-wrap{
     position:absolute!important;
     left:50%!important;
-    bottom:18px!important;
+    bottom:12px!important;
     top:auto!important;
     z-index:6!important;
     transform:translateX(-50%)!important;
     display:flex!important;
     flex-direction:column!important;
     align-items:center!important;
-    gap:8px!important;
+    gap:6px!important;
     pointer-events:none!important;
   }
   .home .hero-slide-brand{
+    display:block!important;
     font-family:var(--font-display),Georgia,serif!important;
     font-size:16px!important;
     font-weight:800!important;
@@ -2670,7 +2671,7 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
   }
   .home .home-hero-visual .hero-slide .hero-slide-media .hero-slide-img,
   .home .home-hero-visual .hero-slide .hero-slide-media img{
-    padding:10px!important;
+    padding:36px 10px 78px!important;
     object-fit:contain!important;
     object-position:center center!important;
   }
@@ -2736,7 +2737,9 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
     pointer-events:none;
   }
   .page-mobile-hero-caption a{pointer-events:auto}
+  /* SPA PACKAGE — red pill at top */
   .page-mobile-hero-caption strong{
+    display:block!important;
     position:absolute;
     left:50%;
     top:12px;
@@ -2755,16 +2758,17 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
     text-transform:uppercase;
     white-space:nowrap;
   }
+  /* ALLORA + Book Now — bottom */
   .page-mobile-hero-book{
     position:absolute;
     left:50%;
-    bottom:18px;
+    bottom:12px;
     transform:translateX(-50%);
     z-index:6;
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:8px;
+    gap:6px;
     pointer-events:none;
   }
   .page-mobile-hero-brand{
@@ -2773,7 +2777,7 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
     font-size:16px;
     font-weight:800;
     letter-spacing:.22em;
-    margin-right:-.22em; /* cancel trailing letter-spacing so it centers with Book Now */
+    margin-right:-.22em;
     text-align:center;
     color:#051650;
     line-height:1;
@@ -2808,7 +2812,7 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
   }
   .pkg-page .pkg-hero-copy{order:0!important}
 
-  /* Spa Package — full-width flyer, show complete image */
+  /* Spa Package — full-width flyer; bottom pad so ALLORA sits below maroon bar */
   .spa-page .page-mobile-hero{
     padding-left:0!important;
     padding-right:0!important;
@@ -2823,10 +2827,14 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
   .spa-page .page-mobile-hero-img,
   .spa-page .page-mobile-hero-media > span,
   .spa-page .page-mobile-hero-media img{
-    padding:0!important;
+    padding:8px 0 88px!important;
     object-fit:contain!important;
-    object-position:center center!important;
+    object-position:center top!important;
     transform:none;
+  }
+  .spa-page .page-mobile-hero-book{
+    bottom:14px!important;
+    gap:8px!important;
   }
 }
 
@@ -2847,9 +2855,15 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
     border-radius:28px!important;
     overflow:hidden!important;
   }
+  /* ALLORA + Book Now — bottom of card (web) */
   .home .hero-slide-book-wrap{
-    bottom:20px!important;
-    gap:10px!important;
+    bottom:16px!important;
+    gap:8px!important;
+  }
+  .home .hero-slide-brand{
+    display:block!important;
+    position:relative!important;
+    z-index:7!important;
   }
   .pkg-page .pkg-collage-main{
     border-radius:28px!important;
