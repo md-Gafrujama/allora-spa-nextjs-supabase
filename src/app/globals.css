@@ -2801,6 +2801,15 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
     gap:0!important;
   }
   .pkg-page .pkg-hero-copy{order:0!important}
+
+  /* Spa Package — slightly larger hero photo on mobile */
+  .spa-page .page-mobile-hero-img,
+  .spa-page .page-mobile-hero-media > span,
+  .spa-page .page-mobile-hero-media img{
+    padding:0!important;
+    transform:scale(1.14);
+    object-position:center 46%!important;
+  }
 }
 
 /* Desktop home — taller card + inner pad so text sits in clear space */
