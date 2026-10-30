@@ -1776,6 +1776,8 @@ html.is-navigating,html.is-navigating a{cursor:progress}
     font-size:16px!important;
     font-weight:800!important;
     letter-spacing:.22em!important;
+    margin-right:-.22em!important;
+    text-align:center!important;
     color:#051650!important;
     line-height:1!important;
   }
@@ -2626,6 +2628,8 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
     font-size:16px!important;
     font-weight:800!important;
     letter-spacing:.22em!important;
+    margin-right:-.22em!important;
+    text-align:center!important;
     color:#051650!important;
     line-height:1!important;
   }
@@ -2769,6 +2773,8 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
     font-size:16px;
     font-weight:800;
     letter-spacing:.22em;
+    margin-right:-.22em; /* cancel trailing letter-spacing so it centers with Book Now */
+    text-align:center;
     color:#051650;
     line-height:1;
   }
@@ -2802,13 +2808,25 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
   }
   .pkg-page .pkg-hero-copy{order:0!important}
 
-  /* Spa Package — slightly larger hero photo on mobile */
+  /* Spa Package — full-width flyer, show complete image */
+  .spa-page .page-mobile-hero{
+    padding-left:0!important;
+    padding-right:0!important;
+  }
+  .spa-page .page-mobile-hero-media{
+    max-width:none;
+    width:100%;
+    border-radius:0;
+    border:0;
+    box-shadow:none;
+  }
   .spa-page .page-mobile-hero-img,
   .spa-page .page-mobile-hero-media > span,
   .spa-page .page-mobile-hero-media img{
     padding:0!important;
-    transform:scale(1.14);
-    object-position:center 46%!important;
+    object-fit:contain!important;
+    object-position:center center!important;
+    transform:none;
   }
 }
 
