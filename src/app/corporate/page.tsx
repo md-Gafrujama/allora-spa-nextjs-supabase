@@ -25,7 +25,7 @@ export default async function Corporate() {
     <div className="pkg-page corporate-page">
       <PageMobileHero
         title="Corporate"
-        image="/images/hero/svc-corporate.jpg"
+        image="/images/hero/svc-corporate-v3.jpg"
         alt="ALLORA corporate massage"
         bookMessage="Hello ALLORA, I would like to book a corporate massage service."
       />
@@ -46,7 +46,7 @@ export default async function Corporate() {
             </ul>
           </div>
           <div className="pkg-hero-collage" aria-hidden="true">
-            <Image className="pkg-collage-main" src="/images/hero/svc-corporate.jpg" alt="" width={1024} height={1024} priority sizes="(max-width:900px) 92vw, 520px" />
+            <Image className="pkg-collage-main" src="/images/hero/svc-corporate-v3.jpg" alt="" width={771} height={1024} priority sizes="(max-width:900px) 92vw, 520px" />
             <Image className="pkg-collage-small pkg-collage-a" src="/images/corporate/chair.jpg" alt="" width={1152} height={864} sizes="220px" />
             <Image className="pkg-collage-small pkg-collage-b" src="/images/corporate/scalp.jpg" alt="" width={1152} height={864} sizes="220px" />
           </div>

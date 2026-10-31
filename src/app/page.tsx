@@ -73,10 +73,10 @@ export default async function HomePage() {
           <p className="home-explore-lede">Home, hotel, events or the workplace.</p>
           <div className="home-explore-grid">
             <Link href="/spa-packages"><span className="home-explore-photo"><Image src="/images/hero/svc-spa-package-v20.jpg" alt="ALLORA therapist for spa package" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Spa Package</strong><span>Treatments for you.</span><em>Explore</em></Link>
-            <Link href="/your-place"><span className="home-explore-photo"><Image src="/images/hero/svc-your-place-v4.jpg" alt="ALLORA therapist massage at your place" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Your Place</strong><span>Home or hotel.</span><em>Explore</em></Link>
-            <Link href="/event-services"><span className="home-explore-photo"><Image src="/images/hero/svc-event.jpg" alt="ALLORA therapist for event service" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Event Service</strong><span>For a celebration.</span><em>Explore</em></Link>
-            <Link href="/corporate"><span className="home-explore-photo"><Image src="/images/hero/svc-corporate.jpg" alt="ALLORA therapist corporate massage" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Corporate</strong><span>Wellness at work.</span><em>Explore</em></Link>
-            <Link href="/deep-tissue"><span className="home-explore-photo"><Image src="/images/massages/deep-tissue-v9.jpg" alt="ALLORA therapist deep tissue massage" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Deep Tissue</strong><span>Firm, focused care.</span><em>Explore</em></Link>
+            <Link href="/your-place"><span className="home-explore-photo"><Image src="/images/hero/svc-your-place-v5.jpg" alt="ALLORA therapist massage at your place" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Your Place</strong><span>Home or hotel.</span><em>Explore</em></Link>
+            <Link href="/event-services"><span className="home-explore-photo"><Image src="/images/hero/svc-event-v2.jpg" alt="ALLORA therapist for event service" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Event Service</strong><span>For a celebration.</span><em>Explore</em></Link>
+            <Link href="/corporate"><span className="home-explore-photo"><Image src="/images/hero/svc-corporate-v3.jpg" alt="ALLORA therapist corporate massage" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Corporate</strong><span>Wellness at work.</span><em>Explore</em></Link>
+            <Link href="/deep-tissue"><span className="home-explore-photo"><Image src="/images/hero/svc-deep-tissue-v2.jpg" alt="ALLORA therapist deep tissue massage" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Deep Tissue</strong><span>Firm, focused care.</span><em>Explore</em></Link>
           </div>
         </div>
       </section>
