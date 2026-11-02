@@ -50,7 +50,7 @@ export const massages: Massage[] = [
     name: 'Deep Tissue Massage',
     short: 'Firm pressure for tight muscles.',
     description: 'Slow, firm pressure that works into deep muscle knots and long-held tension.',
-    image: '/images/hero/svc-deep-tissue-v2.jpg',
+    image: '/images/massages/deep-tissue-v10.jpg',
     alt: 'ALLORA therapist giving a firm deep tissue massage',
     highlights: ['Firm, focused pressure', 'Targets knots and stiffness', 'Pressure adjusted to you', 'At your home or hotel'],
   },

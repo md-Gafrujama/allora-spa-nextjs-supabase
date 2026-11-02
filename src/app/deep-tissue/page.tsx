@@ -22,7 +22,7 @@ const treatments = [
   {
     id: 'deep-tissue',
     name: 'Deep Tissue',
-    image: '/images/hero/svc-deep-tissue-v2.jpg',
+    image: '/images/massages/deep-tissue-v10.jpg',
     highlights: ['Firm, focused pressure', 'Targets knots and stiffness', 'Home or hotel'],
   },
   {
