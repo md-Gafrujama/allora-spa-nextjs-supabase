@@ -66,7 +66,7 @@ export default async function EventServices() {
             {eventItems.map((item) => (
               <article className="pkg-card" key={item.slug}>
                 <Link className="pkg-card-media" href={item.url} tabIndex={-1} aria-hidden="true">
-                  <Image src={item.image} alt={item.name} width={1152} height={864} sizes="(max-width:600px) 92vw, (max-width:1000px) 46vw, 380px" />
+                  <Image src={item.image} alt={item.name} width={864} height={1152} sizes="(max-width:600px) 92vw, (max-width:1000px) 46vw, 380px" />
                 </Link>
                 <div className="pkg-card-body">
                   <h3><Link href={item.url}>{displayName(item.slug, item.name)}</Link></h3>

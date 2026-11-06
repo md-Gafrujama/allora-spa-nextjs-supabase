@@ -30,7 +30,7 @@ export default function Contact() {
             <p>Have a question, need a custom package, or want to book a spa experience at your place, hotel, or event? Our team is here to help.</p>
           </div>
           <div className="contact-hero-photo">
-            <Image src="/images/contact/reception.jpg" alt="ALLORA team member at the reception desk ready to take your booking" width={1152} height={864} priority sizes="(max-width:800px) 92vw, 460px" />
+            <Image src="/images/contact/contact-poster.jpg" alt="Contact ALLORA Spa and Wellness" width={1152} height={864} priority sizes="(max-width:800px) 92vw, 460px" />
           </div>
         </div>
       </section>
@@ -73,7 +73,7 @@ export default function Contact() {
           </div>
           <div className="contact-aside">
             <div className="contact-aside-photo">
-              <Image src="/images/home/ready.jpg" alt="ALLORA therapist welcoming a guest with fresh towels" width={1152} height={864} sizes="(max-width:800px) 100vw, 520px" />
+              <Image src="/images/contact/touch-poster.jpg" alt="Spa table ready for a visit at home or hotel" width={1152} height={864} sizes="(max-width:800px) 100vw, 520px" />
             </div>
             <h3>Relaxation Starts with a Conversation</h3>
             <p>Tell us what you need and we’ll create the right spa experience for you.</p>

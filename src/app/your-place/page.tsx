@@ -49,8 +49,8 @@ export default async function YourPlace() {
           </div>
           <div className="pkg-hero-collage" aria-hidden="true">
             <Image className="pkg-collage-main" src="/images/place/your-place-v6.jpg" alt="" width={1089} height={1445} priority sizes="(max-width:900px) 92vw, 520px" />
-            <Image className="pkg-collage-small pkg-collage-a" src="/images/place/hotel.jpg" alt="" width={1152} height={864} sizes="220px" />
-            <Image className="pkg-collage-small pkg-collage-b" src="/images/place/facial.jpg" alt="" width={1152} height={864} sizes="220px" />
+            <Image className="pkg-collage-small pkg-collage-a" src="/images/place/hotel-v3.jpg" alt="" width={1152} height={864} sizes="220px" />
+            <Image className="pkg-collage-small pkg-collage-b" src="/images/place/facial-v3.jpg" alt="" width={1152} height={864} sizes="220px" />
           </div>
         </div>
       </section>
@@ -66,7 +66,7 @@ export default async function YourPlace() {
             {placeItems.map((item) => (
               <article className="pkg-card" key={item.slug}>
                 <Link className="pkg-card-media" href={item.url} tabIndex={-1} aria-hidden="true">
-                  <Image src={item.image} alt={item.name} width={1152} height={864} sizes="(max-width:600px) 92vw, (max-width:1000px) 46vw, 380px" />
+                  <Image src={item.image} alt={item.name} width={864} height={1152} sizes="(max-width:600px) 92vw, (max-width:1000px) 46vw, 380px" />
                 </Link>
                 <div className="pkg-card-body">
                   <h3><Link href={item.url}>{displayName(item.slug, item.name)}</Link></h3>

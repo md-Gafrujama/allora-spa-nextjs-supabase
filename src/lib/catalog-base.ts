@@ -31,12 +31,12 @@ export type CatalogItem = {
 };
 
 const corporate = [
-  { slug: 'chair-massage-dubai', name: 'Chair Massage', image: '/images/corporate/chair.jpg', highlights: ['Usually 10–30 minutes', 'At the desk or wellness corner', 'No change of clothes needed'] },
-  { slug: 'back-neck-shoulder-dubai', name: 'Back, Neck & Shoulder', image: '/images/corporate/back-neck.jpg', highlights: ['Desk-tension relief', 'Seated office-friendly', 'Short session format'] },
-  { slug: 'head-scalp-dubai', name: 'Head / Scalp Massage', image: '/images/corporate/scalp.jpg', highlights: ['Calms mental fatigue', 'Gentle scalp & temples', 'Quick workplace break'] },
-  { slug: 'arm-hand-dubai', name: 'Arm & Hand Massage', image: '/images/corporate/arm-hand.jpg', highlights: ['Typing & mouse strain relief', 'Forearm and hand focus', 'Fully clothed'] },
-  { slug: 'seated-relaxation-dubai', name: 'Seated Relaxation', image: '/images/corporate/seated.jpg', highlights: ['Upper-leg or seated format', 'Where appropriate', 'Modest & professional'] },
-  { slug: 'work-stress-dubai', name: 'Work-Stress Relief', image: '/images/corporate/stress.jpg', highlights: ['Muscle-tension release', 'Neck & shoulders focus', 'Employee wellness ready'] },
+  { slug: 'chair-massage-dubai', name: 'Chair Massage', image: '/images/corporate/chair-poster.jpg', highlights: ['Usually 10–30 minutes', 'At the desk or wellness corner', 'No change of clothes needed'] },
+  { slug: 'back-neck-shoulder-dubai', name: 'Back, Neck & Shoulder', image: '/images/corporate/back-poster.jpg', highlights: ['Desk-tension relief', 'Seated office-friendly', 'Short session format'] },
+  { slug: 'head-scalp-dubai', name: 'Head / Scalp Massage', image: '/images/corporate/scalp-poster.jpg', highlights: ['Calms mental fatigue', 'Gentle scalp & temples', 'Quick workplace break'] },
+  { slug: 'arm-hand-dubai', name: 'Arm & Hand Massage', image: '/images/corporate/arm-poster.jpg', highlights: ['Typing & mouse strain relief', 'Forearm and hand focus', 'Fully clothed'] },
+  { slug: 'seated-relaxation-dubai', name: 'Seated Relaxation', image: '/images/corporate/seated-poster.jpg', highlights: ['Upper-leg or seated format', 'Where appropriate', 'Modest & professional'] },
+  { slug: 'work-stress-dubai', name: 'Work-Stress Relief', image: '/images/corporate/stress-poster.jpg', highlights: ['Muscle-tension release', 'Neck & shoulders focus', 'Employee wellness ready'] },
 ];
 
 export function isCatalogCategory(value: string): value is CatalogCategory {

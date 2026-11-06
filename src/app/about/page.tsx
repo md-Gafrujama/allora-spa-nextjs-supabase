@@ -52,7 +52,7 @@ export default function About() {
       <section className="about-story-block">
         <div className="container-page about-split">
           <div className="about-split-photo">
-            <Image src="/images/about/about-story.jpg" alt="ALLORA therapist arriving with spa care at your place" width={1152} height={864} sizes="(max-width:800px) 100vw, 480px" />
+            <Image src="/images/about/story-poster.jpg" alt="Our Story at ALLORA Spa and Wellness" width={1152} height={864} sizes="(max-width:800px) 100vw, 480px" />
           </div>
           <div className="about-split-copy">
             <p className="eyebrow">Our Story</p>
@@ -98,7 +98,7 @@ export default function About() {
             <a className="btn-primary" href={site.whatsappUrl('Hello ALLORA, I would like to book now.')} target="_blank" rel="noreferrer"><WhatsAppIcon size={16} />Book Now <ArrowRight size={15} /></a>
           </div>
           <div className="about-split-photo">
-            <Image src="/images/about/about-why.jpg" alt="ALLORA therapist preparing a clean spa setup" width={1152} height={864} sizes="(max-width:800px) 100vw, 480px" />
+            <Image src="/images/about/why-poster.jpg" alt="Why choose ALLORA Spa and Wellness" width={1152} height={864} sizes="(max-width:800px) 100vw, 480px" />
           </div>
         </div>
       </section>
