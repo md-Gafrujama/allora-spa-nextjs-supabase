@@ -3170,3 +3170,18 @@ html body .pkg-hero-collage:has(img.pkg-collage-main:is([src*="deep-tissue-v11"]
 html body .home .home-about-main{aspect-ratio:551/465!important}
 html body .home .home-about-pair div{aspect-ratio:535/451!important}
 html body .home .home-about-main img,html body .home .home-about-pair img{object-fit:cover!important;object-position:center!important}
+
+/* Spa package posters (portrait 3:4) — package detail hero shows the full poster, no white frame */
+html body .detail-image:has(img:is([src*="luxury-v4"],[src*="luxury-v3"],[src*="moroccan-v2"],[src*="voucher-v2"],[src*="massage-v4"],[src*="couples-v4"],[src*="spa-day-v4"],[src*="moroccan-v3"],[src*="voucher-v3"],[src*="birthday-v4"],[src*="bridal-v3"],[src*="ladies-v3"])){
+  min-height:0!important;
+  height:auto!important;
+  aspect-ratio:372/499!important;
+  width:100%;
+  max-width:460px;
+  justify-self:center;
+  border-radius:22px!important;
+  box-shadow:0 22px 44px -24px rgba(5,22,80,.28);
+}
+html body .detail-image img:is([src*="luxury-v4"],[src*="luxury-v3"],[src*="moroccan-v2"],[src*="voucher-v2"],[src*="massage-v4"],[src*="couples-v4"],[src*="spa-day-v4"],[src*="moroccan-v3"],[src*="voucher-v3"],[src*="birthday-v4"],[src*="bridal-v3"],[src*="ladies-v3"]){
+  object-fit:cover!important;
+}
