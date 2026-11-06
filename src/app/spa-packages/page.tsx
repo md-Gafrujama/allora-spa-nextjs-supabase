@@ -25,7 +25,8 @@ export default async function SpaPackages() {
     <div className="pkg-page spa-page">
       <PageMobileHero
         title="Spa Package"
-        image="/images/hero/svc-spa-package-v20.jpg"
+        image="/images/packages/spa-packages-v21.jpg"
+        poster={{ width: 1089, height: 1445 }}
         alt="ALLORA therapist for spa package"
         bookMessage="Hello ALLORA, I would like to book a spa package."
       />
@@ -46,7 +47,7 @@ export default async function SpaPackages() {
             </ul>
           </div>
           <div className="pkg-hero-collage" aria-hidden="true">
-            <Image className="pkg-collage-main" src="/images/hero/svc-spa-package-v20.jpg" alt="" width={771} height={1024} priority sizes="(max-width:900px) 92vw, 520px" />
+            <Image className="pkg-collage-main" src="/images/packages/spa-packages-v21.jpg" alt="" width={1089} height={1445} priority sizes="(max-width:900px) 92vw, 520px" />
             <Image className="pkg-collage-small pkg-collage-a" src="/images/packages/couples-v3.jpg" alt="" width={1152} height={864} sizes="220px" />
             <Image className="pkg-collage-small pkg-collage-b" src="/images/packages/bridal-v2.jpg" alt="" width={1152} height={864} sizes="220px" />
           </div>

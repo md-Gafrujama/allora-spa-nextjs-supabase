@@ -2882,3 +2882,215 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
     object-fit:cover!important;
   }
 }
+
+/* Service posters (text flyers) — always show the full image, never crop */
+html body img:is([src*="deep-tissue-v11"],[src*="your-place-v6"],[src*="event-services-v3"],[src*="spa-packages-v21"],[src*="corporate-v4"],[src*="thai-v4"],[src*="couple-v4"],[src*="hot-stone-v3"],[src*="jacuzzi-v5"],[src*="lymphatic-v4"]){
+  object-fit:contain!important;
+  object-position:center center!important;
+  background:#fff!important;
+}
+/* Page hero collage: let the poster keep its own tall shape */
+html body .pkg-page .pkg-hero-collage img.pkg-collage-main:is([src*="deep-tissue-v11"],[src*="your-place-v6"],[src*="event-services-v3"],[src*="spa-packages-v21"],[src*="corporate-v4"],[src*="thai-v4"],[src*="couple-v4"],[src*="hot-stone-v3"],[src*="jacuzzi-v5"],[src*="lymphatic-v4"]){
+  aspect-ratio:auto!important;
+  height:auto!important;
+  padding:0!important;
+  object-fit:contain!important;
+}
+/* Home hero slider */
+html body .home .home-hero-visual .hero-slide .hero-slide-media img.hero-slide-img:is([src*="deep-tissue-v11"],[src*="your-place-v6"],[src*="event-services-v3"],[src*="spa-packages-v21"],[src*="corporate-v4"],[src*="thai-v4"],[src*="couple-v4"],[src*="hot-stone-v3"],[src*="jacuzzi-v5"],[src*="lymphatic-v4"]){
+  object-fit:contain!important;
+  object-position:center center!important;
+}
+/* Home explore cards */
+html body .home-explore-photo img:is([src*="deep-tissue-v11"],[src*="your-place-v6"],[src*="event-services-v3"],[src*="spa-packages-v21"],[src*="corporate-v4"],[src*="thai-v4"],[src*="couple-v4"],[src*="hot-stone-v3"],[src*="jacuzzi-v5"],[src*="lymphatic-v4"]){
+  object-fit:contain!important;
+  object-position:center center!important;
+  transform:none!important;
+}
+
+/* Mobile poster hero — full-width flyer, no card frame, title above + Book Now below */
+@media(max-width:800px){
+  html body .page-mobile-hero.page-mobile-hero--poster{
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    padding:68px 0 18px!important;
+    justify-content:flex-start!important;
+  }
+  html body .page-mobile-hero--poster .page-mobile-hero-media{
+    flex:none!important;
+    width:100%!important;
+    max-width:none!important;
+    border:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    background:transparent!important;
+    overflow:visible!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+  }
+  html body .page-mobile-hero--poster .page-mobile-hero-media img.page-mobile-hero-img{
+    position:static!important;
+    display:block!important;
+    order:2;
+    width:100%!important;
+    height:auto!important;
+    padding:0!important;
+    margin:0!important;
+    object-fit:contain!important;
+    transform:none!important;
+  }
+  html body .page-mobile-hero--poster .page-mobile-hero-caption{
+    display:contents!important;
+  }
+  html body .page-mobile-hero--poster .page-mobile-hero-caption strong{
+    position:static!important;
+    order:1;
+    transform:none!important;
+    margin:0 0 14px!important;
+  }
+  html body .page-mobile-hero--poster .page-mobile-hero-book{
+    position:static!important;
+    order:3;
+    transform:none!important;
+    margin-top:14px!important;
+  }
+}
+
+/* Luxury Spa Services + massage cards — poster images show in full (4:5), no crop or zoom */
+html body .home-treat-photo:has(img:is([src*="thai-v4"],[src*="couple-v4"],[src*="hot-stone-v3"],[src*="jacuzzi-v5"],[src*="lymphatic-v4"],[src*="deep-tissue-v11"])),
+html body .mp-card-photo:has(img:is([src*="thai-v4"],[src*="couple-v4"],[src*="hot-stone-v3"],[src*="jacuzzi-v5"],[src*="lymphatic-v4"],[src*="deep-tissue-v11"])),
+html body .mp-item-photo:has(img:is([src*="thai-v4"],[src*="couple-v4"],[src*="hot-stone-v3"],[src*="jacuzzi-v5"],[src*="lymphatic-v4"],[src*="deep-tissue-v11"])){
+  aspect-ratio:4/5!important;
+  background:#fff!important;
+}
+html body :is(.home-treat-photo,.mp-card-photo,.mp-item-photo) img:is([src*="thai-v4"],[src*="couple-v4"],[src*="hot-stone-v3"],[src*="jacuzzi-v5"],[src*="lymphatic-v4"],[src*="deep-tissue-v11"]){
+  object-fit:contain!important;
+  object-position:center center!important;
+  transform:none!important;
+  animation:none!important;
+}
+
+/* Page hero with a poster: show the poster alone — the small overlapping photos were covering its corners */
+html body .pkg-hero-collage:has(img.pkg-collage-main:is([src*="deep-tissue-v11"],[src*="your-place-v6"],[src*="event-services-v3"],[src*="spa-packages-v21"],[src*="corporate-v4"])){
+  padding:0!important;
+  max-width:460px;
+  margin-inline:auto;
+}
+html body .pkg-hero-collage:has(img.pkg-collage-main:is([src*="deep-tissue-v11"],[src*="your-place-v6"],[src*="event-services-v3"],[src*="spa-packages-v21"],[src*="corporate-v4"])) .pkg-collage-small{
+  display:none!important;
+}
+
+/* Desktop home hero — card is exactly the poster's size (no white frame around it) */
+@media(min-width:801px){
+  html body .home .home-hero-visual .hero-slide .hero-slide-media .hero-slide-img{
+    width:auto!important;
+    aspect-ratio:var(--ar,3/4)!important;
+    padding:0!important;
+    background:#fff!important;
+    object-fit:cover!important;
+    object-position:center center!important;
+    overflow:hidden!important;
+  }
+  html body .home .hero-slide-caption{
+    width:auto!important;
+    aspect-ratio:var(--ar,3/4)!important;
+    overflow:visible!important;
+  }
+  /* title pill sits on the top edge, Book Now on the bottom edge — they don't cover the poster */
+  html body .home .hero-slide-caption > strong{
+    top:0!important;
+    transform:translate(-50%,-50%)!important;
+  }
+  html body .home .hero-slide-book-wrap{
+    bottom:0!important;
+    transform:translate(-50%,50%)!important;
+  }
+  html body .home .hero-reel-dots{
+    bottom:-6px!important;
+  }
+}
+
+/* Mobile home hero — no card frame: name on top, full-width poster, Book Now below (same as service pages) */
+@media(max-width:800px){
+  html body .home .home-hero-visual{
+    flex:none!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    padding:68px 0 18px!important;
+    overflow:visible!important;
+  }
+  html body .home .home-hero-visual .hero-reel,
+  html body .home .home-hero-visual .hero-reel-window,
+  html body .home .home-hero-visual .hero-reel-track,
+  html body .home .home-hero-visual .hero-slide{
+    height:auto!important;
+  }
+  html body .home .home-hero-visual .hero-slide{
+    align-items:flex-start!important;
+  }
+  html body .home .home-hero-visual .hero-slide-media{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    width:100%!important;
+    max-width:none!important;
+    height:auto!important;
+    border:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    background:transparent!important;
+    overflow:visible!important;
+  }
+  html body .home .home-hero-visual .hero-slide-media > a{
+    order:2;
+    display:block!important;
+    width:100%!important;
+  }
+  html body .home .home-hero-visual .hero-slide .hero-slide-media img.hero-slide-img{
+    position:static!important;
+    inset:auto!important;
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    aspect-ratio:var(--ar,3/4)!important;
+    padding:0!important;
+    margin:0!important;
+    transform:none!important;
+    border:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    object-fit:cover!important;
+    background:#fff!important;
+  }
+  html body .home .hero-slide-caption{
+    display:contents!important;
+  }
+  html body .home .hero-slide-caption > strong{
+    position:static!important;
+    order:1;
+    transform:none!important;
+    margin:0 0 14px!important;
+  }
+  html body .home .hero-slide-book-wrap{
+    position:static!important;
+    order:3;
+    transform:none!important;
+    margin-top:14px!important;
+  }
+}
+
+/* Mobile posters: never taller than the screen — name + poster + Book Now fit in one view */
+@media(max-width:800px){
+  html body .home .home-hero-visual .hero-slide .hero-slide-media img.hero-slide-img,
+  html body .page-mobile-hero--poster .page-mobile-hero-media img.page-mobile-hero-img{
+    width:min(100%, calc((100svh - 220px) * var(--ar,0.75)))!important;
+    margin-inline:auto!important;
+  }
+  html body .home .home-hero-visual .hero-slide-media > a{
+    display:flex!important;
+    justify-content:center!important;
+  }
+}

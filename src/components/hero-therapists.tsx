@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
+import type React from 'react';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
 import { site } from '@/lib/site-data';
 
@@ -10,11 +11,11 @@ const INTERVAL_MS = 5500;
 const SLIDE_MS = 700;
 
 const slides = [
-  { name: 'Spa Package', href: '/spa-packages', src: '/images/hero/svc-spa-package-v20.jpg', alt: 'ALLORA therapist giving a spa package massage' },
-  { name: 'Your Place', href: '/your-place', src: '/images/hero/svc-your-place-v5.jpg', alt: 'ALLORA therapist giving a massage at your place' },
-  { name: 'Event Service', href: '/event-services', src: '/images/hero/svc-event-v2.jpg', alt: 'ALLORA therapist giving a seated massage at an event' },
-  { name: 'Corporate', href: '/corporate', src: '/images/hero/svc-corporate-v3.jpg', alt: 'ALLORA therapist giving a seated shoulder massage at the office' },
-  { name: 'Deep Tissue', href: '/deep-tissue', src: '/images/hero/svc-deep-tissue-v2.jpg', alt: 'ALLORA therapist giving a firm deep tissue massage' },
+  { name: 'Spa Package', href: '/spa-packages', src: '/images/packages/spa-packages-v21.jpg', ar: 1089 / 1445, alt: 'ALLORA therapist giving a spa package massage' },
+  { name: 'Your Place', href: '/your-place', src: '/images/place/your-place-v6.jpg', ar: 1089 / 1445, alt: 'ALLORA therapist giving a massage at your place' },
+  { name: 'Event Service', href: '/event-services', src: '/images/events/event-services-v3.jpg', ar: 1089 / 1445, alt: 'ALLORA therapist giving a seated massage at an event' },
+  { name: 'Corporate', href: '/corporate', src: '/images/corporate/corporate-v4.png', ar: 1089 / 1445, alt: 'ALLORA therapist giving a seated shoulder massage at the office' },
+  { name: 'Deep Tissue', href: '/deep-tissue', src: '/images/massages/deep-tissue-v11.jpg', ar: 1199 / 1312, alt: 'ALLORA therapist giving a firm deep tissue massage' },
 ];
 
 export function HeroTherapists() {
@@ -83,7 +84,7 @@ export function HeroTherapists() {
           }}
         >
           {frames.map((slide, i) => (
-            <article className={`hero-slide${i === index ? ' is-active' : ''}`} key={`${slide.src}-${i}`} aria-hidden={i !== index}>
+            <article className={`hero-slide${i === index ? ' is-active' : ''}`} key={`${slide.src}-${i}`} aria-hidden={i !== index} style={{ '--ar': String(slide.ar) } as React.CSSProperties}>
               <div className="hero-slide-media">
                 <Link href={slide.href} tabIndex={-1} aria-hidden="true">
                   <Image
@@ -100,7 +101,6 @@ export function HeroTherapists() {
                 <div className="hero-slide-caption">
                   <strong><Link href={slide.href} tabIndex={i === index ? 0 : -1}>{slide.name}</Link></strong>
                   <div className="hero-slide-book-wrap">
-                    <span className="hero-slide-brand">ALLORA</span>
                     <a className="btn-primary" href={site.whatsappUrl(`Hello ALLORA, I would like to book the ${slide.name} service.`)} target="_blank" rel="noreferrer" tabIndex={i === index ? 0 : -1}><WhatsAppIcon size={15} />Book Now</a>
                   </div>
                 </div>
