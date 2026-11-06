@@ -3094,3 +3094,79 @@ html body .pkg-hero-collage:has(img.pkg-collage-main:is([src*="deep-tissue-v11"]
     justify-content:center!important;
   }
 }
+
+/* Mobile home hero — FINAL: exactly one full screen, centered pill + full poster + Book Now, nothing clipped or peeking */
+@media(max-width:800px){
+  html body .home .home-hero-visual{
+    --hero-h:100svh;
+    --hdr:70px;
+    flex:0 0 var(--hero-h)!important;
+    height:var(--hero-h)!important;
+    min-height:var(--hero-h)!important;
+    max-height:var(--hero-h)!important;
+    margin:-68px 0 0!important;
+    padding:var(--hdr) 0 0!important;
+    box-sizing:border-box!important;
+    overflow:hidden!important;
+  }
+  @supports (height:100dvh){
+    html body .home .home-hero-visual{--hero-h:100dvh}
+  }
+  html body .home .home-hero-visual .hero-reel,
+  html body .home .home-hero-visual .hero-reel-window,
+  html body .home .home-hero-visual .hero-reel-track,
+  html body .home .home-hero-visual .hero-slide{
+    height:100%!important;
+  }
+  html body .home .home-hero-visual .hero-slide{
+    align-items:center!important;
+    justify-content:center!important;
+  }
+  html body .home .home-hero-visual .hero-slide-media{
+    height:100%!important;
+    justify-content:center!important;
+    padding:12px 14px 18px!important;
+    box-sizing:border-box!important;
+  }
+  /* poster: as big as possible while pill (~48px) + Book Now (~60px) + gaps still fit on screen */
+  html body .home .home-hero-visual .hero-slide .hero-slide-media img.hero-slide-img{
+    width:min(100%, calc((var(--hero-h) - var(--hdr) - 30px - 140px) * var(--ar,0.75)))!important;
+    height:auto!important;
+    border-radius:14px!important;
+    box-shadow:0 14px 30px -16px rgba(5,22,80,.28)!important;
+  }
+  html body .home .hero-slide-caption > strong{margin:0 0 14px!important}
+  html body .home .hero-slide-book-wrap{margin-top:16px!important}
+}
+
+/* Mobile service-page poster hero — FINAL: exactly one full screen, same as home */
+@media(max-width:800px){
+  html body .page-mobile-hero.page-mobile-hero--poster{
+    --hero-h:100svh;
+    --hdr:70px;
+    height:var(--hero-h)!important;
+    min-height:var(--hero-h)!important;
+    max-height:var(--hero-h)!important;
+    margin:-68px 0 0!important;
+    padding:var(--hdr) 14px 18px!important;
+    box-sizing:border-box!important;
+    justify-content:center!important;
+    overflow:hidden!important;
+  }
+  @supports (height:100dvh){
+    html body .page-mobile-hero.page-mobile-hero--poster{--hero-h:100dvh}
+  }
+  html body .page-mobile-hero--poster .page-mobile-hero-media{
+    justify-content:center!important;
+  }
+  html body .page-mobile-hero--poster .page-mobile-hero-media img.page-mobile-hero-img{
+    width:min(100%, calc((var(--hero-h) - var(--hdr) - 30px - 140px) * var(--ar,0.75)))!important;
+    border-radius:14px!important;
+    box-shadow:0 14px 30px -16px rgba(5,22,80,.28)!important;
+  }
+}
+
+/* Home About — boxes match the photos' own shape so nothing is cropped */
+html body .home .home-about-main{aspect-ratio:551/465!important}
+html body .home .home-about-pair div{aspect-ratio:535/451!important}
+html body .home .home-about-main img,html body .home .home-about-pair img{object-fit:cover!important;object-position:center!important}

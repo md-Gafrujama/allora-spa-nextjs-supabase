@@ -101,12 +101,12 @@ export default async function HomePage() {
           </div>
           <div className="home-about-photos">
             <div className="home-about-main">
-              <Image src="/images/home/about-care-v2.jpg" alt="ALLORA therapist massaging a shoulder" fill sizes="(max-width:800px) 100vw, 460px" />
+              <Image src="/images/home/about-room-v1.jpg" alt="ALLORA spa massage room" fill sizes="(max-width:800px) 100vw, 460px" />
               <Link href="/about" className="stretch-link" aria-label="About ALLORA" />
             </div>
             <div className="home-about-pair">
-              <div><Image src="/images/home/about-hands-v2.jpg" alt="ALLORA therapist massaging a hand" fill sizes="220px" /><Link href="/spa-packages" className="stretch-link" aria-label="Spa packages" /></div>
-              <div><Image src="/images/home/about-calf-v3.jpg" alt="ALLORA therapist massaging a calf" fill sizes="220px" /><Link href="/your-place" className="stretch-link" aria-label="Spa at your place" /></div>
+              <div><Image src="/images/home/about-towels-v1.jpg" alt="Spa towels, oil and candle" fill sizes="220px" /><Link href="/spa-packages" className="stretch-link" aria-label="Spa packages" /></div>
+              <div><Image src="/images/home/about-stones-v1.jpg" alt="Hot stones and towel on a massage table" fill sizes="220px" /><Link href="/your-place" className="stretch-link" aria-label="Spa at your place" /></div>
             </div>
           </div>
         </div>
