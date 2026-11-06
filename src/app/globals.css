@@ -2884,25 +2884,25 @@ body:has(.admin-shell){padding-top:0!important;background:#f6f7fb!important}
 }
 
 /* Service posters (text flyers) — always show the full image, never crop */
-html body img:is([src*="deep-tissue-v11"],[src*="your-place-v6"],[src*="event-services-v3"],[src*="spa-packages-v21"],[src*="corporate-v4"],[src*="thai-v4"],[src*="couple-v4"],[src*="hot-stone-v3"],[src*="jacuzzi-v5"],[src*="lymphatic-v4"]){
+html body img:is([src*="deep-tissue-v11"],[src*="your-place-v8"],[src*="event-services-v4"],[src*="spa-packages-v22"],[src*="corporate-v5"],[src*="thai-v4"],[src*="couple-v4"],[src*="hot-stone-v3"],[src*="jacuzzi-v5"],[src*="lymphatic-v4"]){
   object-fit:contain!important;
   object-position:center center!important;
   background:#fff!important;
 }
 /* Page hero collage: let the poster keep its own tall shape */
-html body .pkg-page .pkg-hero-collage img.pkg-collage-main:is([src*="deep-tissue-v11"],[src*="your-place-v6"],[src*="event-services-v3"],[src*="spa-packages-v21"],[src*="corporate-v4"],[src*="thai-v4"],[src*="couple-v4"],[src*="hot-stone-v3"],[src*="jacuzzi-v5"],[src*="lymphatic-v4"]){
+html body .pkg-page .pkg-hero-collage img.pkg-collage-main:is([src*="deep-tissue-v11"],[src*="your-place-v8"],[src*="event-services-v4"],[src*="spa-packages-v22"],[src*="corporate-v5"],[src*="thai-v4"],[src*="couple-v4"],[src*="hot-stone-v3"],[src*="jacuzzi-v5"],[src*="lymphatic-v4"]){
   aspect-ratio:auto!important;
   height:auto!important;
   padding:0!important;
   object-fit:contain!important;
 }
 /* Home hero slider */
-html body .home .home-hero-visual .hero-slide .hero-slide-media img.hero-slide-img:is([src*="deep-tissue-v11"],[src*="your-place-v6"],[src*="event-services-v3"],[src*="spa-packages-v21"],[src*="corporate-v4"],[src*="thai-v4"],[src*="couple-v4"],[src*="hot-stone-v3"],[src*="jacuzzi-v5"],[src*="lymphatic-v4"]){
+html body .home .home-hero-visual .hero-slide .hero-slide-media img.hero-slide-img:is([src*="deep-tissue-v11"],[src*="your-place-v8"],[src*="event-services-v4"],[src*="spa-packages-v22"],[src*="corporate-v5"],[src*="thai-v4"],[src*="couple-v4"],[src*="hot-stone-v3"],[src*="jacuzzi-v5"],[src*="lymphatic-v4"]){
   object-fit:contain!important;
   object-position:center center!important;
 }
 /* Home explore cards */
-html body .home-explore-photo img:is([src*="deep-tissue-v11"],[src*="your-place-v6"],[src*="event-services-v3"],[src*="spa-packages-v21"],[src*="corporate-v4"],[src*="thai-v4"],[src*="couple-v4"],[src*="hot-stone-v3"],[src*="jacuzzi-v5"],[src*="lymphatic-v4"]){
+html body .home-explore-photo img:is([src*="deep-tissue-v11"],[src*="your-place-v8"],[src*="event-services-v4"],[src*="spa-packages-v22"],[src*="corporate-v5"],[src*="thai-v4"],[src*="couple-v4"],[src*="hot-stone-v3"],[src*="jacuzzi-v5"],[src*="lymphatic-v4"]){
   object-fit:contain!important;
   object-position:center center!important;
   transform:none!important;
@@ -2973,12 +2973,12 @@ html body :is(.home-treat-photo,.mp-card-photo,.mp-item-photo) img:is([src*="tha
 }
 
 /* Page hero with a poster: show the poster alone — the small overlapping photos were covering its corners */
-html body .pkg-hero-collage:has(img.pkg-collage-main:is([src*="deep-tissue-v11"],[src*="your-place-v6"],[src*="event-services-v3"],[src*="spa-packages-v21"],[src*="corporate-v4"])){
+html body .pkg-hero-collage:has(img.pkg-collage-main:is([src*="deep-tissue-v11"],[src*="your-place-v8"],[src*="event-services-v4"],[src*="spa-packages-v22"],[src*="corporate-v5"])){
   padding:0!important;
   max-width:460px;
   margin-inline:auto;
 }
-html body .pkg-hero-collage:has(img.pkg-collage-main:is([src*="deep-tissue-v11"],[src*="your-place-v6"],[src*="event-services-v3"],[src*="spa-packages-v21"],[src*="corporate-v4"])) .pkg-collage-small{
+html body .pkg-hero-collage:has(img.pkg-collage-main:is([src*="deep-tissue-v11"],[src*="your-place-v8"],[src*="event-services-v4"],[src*="spa-packages-v22"],[src*="corporate-v5"])) .pkg-collage-small{
   display:none!important;
 }
 

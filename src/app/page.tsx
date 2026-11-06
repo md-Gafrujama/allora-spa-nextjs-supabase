@@ -72,10 +72,10 @@ export default async function HomePage() {
           <h2 className="display-font home-explore-title">Explore Spa Services</h2>
           <p className="home-explore-lede">Home, hotel, events or the workplace.</p>
           <div className="home-explore-grid">
-            <Link href="/spa-packages"><span className="home-explore-photo"><Image src="/images/packages/spa-packages-v21.jpg" alt="ALLORA therapist for spa package" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Spa Package</strong><span>Treatments for you.</span><em>Explore</em></Link>
-            <Link href="/your-place"><span className="home-explore-photo"><Image src="/images/place/your-place-v6.jpg" alt="ALLORA therapist massage at your place" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Your Place</strong><span>Home or hotel.</span><em>Explore</em></Link>
-            <Link href="/event-services"><span className="home-explore-photo"><Image src="/images/events/event-services-v3.jpg" alt="ALLORA therapist for event service" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Event Service</strong><span>For a celebration.</span><em>Explore</em></Link>
-            <Link href="/corporate"><span className="home-explore-photo"><Image src="/images/corporate/corporate-v4.png" alt="ALLORA therapist corporate massage" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Corporate</strong><span>Wellness at work.</span><em>Explore</em></Link>
+            <Link href="/spa-packages"><span className="home-explore-photo"><Image src="/images/packages/spa-packages-v22.jpg" alt="ALLORA Spa Package in Media City Dubai" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Spa Package</strong><span>Treatments for you.</span><em>Explore</em></Link>
+            <Link href="/your-place"><span className="home-explore-photo"><Image src="/images/place/your-place-v8.jpg" alt="ALLORA Your Place spa in Media City Dubai" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Your Place</strong><span>Home or hotel.</span><em>Explore</em></Link>
+            <Link href="/event-services"><span className="home-explore-photo"><Image src="/images/events/event-services-v4.jpg" alt="ALLORA Event Services in Media City Dubai" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Event Service</strong><span>For a celebration.</span><em>Explore</em></Link>
+            <Link href="/corporate"><span className="home-explore-photo"><Image src="/images/corporate/corporate-v5.jpg" alt="ALLORA Corporate massage in Media City Dubai" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Corporate</strong><span>Wellness at work.</span><em>Explore</em></Link>
             <Link href="/deep-tissue"><span className="home-explore-photo"><Image src="/images/massages/deep-tissue-v11.jpg" alt="ALLORA therapist deep tissue massage" fill sizes="(max-width:800px) 50vw, 240px" /></span><strong>Deep Tissue</strong><span>Firm, focused care.</span><em>Explore</em></Link>
           </div>
         </div>
@@ -101,7 +101,7 @@ export default async function HomePage() {
           </div>
           <div className="home-about-photos">
             <div className="home-about-main">
-              <Image src="/images/home/about-room-v1.jpg" alt="ALLORA spa massage room" fill sizes="(max-width:800px) 100vw, 460px" />
+              <Image src="/images/home/about-room-v2.jpg" alt="ALLORA spa massage room" fill sizes="(max-width:800px) 100vw, 460px" />
               <Link href="/about" className="stretch-link" aria-label="About ALLORA" />
             </div>
             <div className="home-about-pair">

@@ -26,8 +26,8 @@ export default async function EventServices() {
     <div className="pkg-page event-page">
       <PageMobileHero
         title="Event Service"
-        image="/images/events/event-services-v3.jpg"
-        poster={{ width: 1089, height: 1445 }}
+        image="/images/events/event-services-v4.jpg"
+        poster={{ width: 864, height: 1152 }}
         alt="ALLORA event spa service"
         bookMessage="Hello ALLORA, I would like to book spa care for an event."
       />
@@ -48,7 +48,7 @@ export default async function EventServices() {
             </ul>
           </div>
           <div className="pkg-hero-collage" aria-hidden="true">
-            <Image className="pkg-collage-main" src="/images/events/event-services-v3.jpg" alt="" width={1089} height={1445} priority sizes="(max-width:900px) 92vw, 520px" />
+            <Image className="pkg-collage-main" src="/images/events/event-services-v4.jpg" alt="" width={864} height={1152} priority sizes="(max-width:900px) 92vw, 520px" />
             <Image className="pkg-collage-small pkg-collage-a" src="/images/events/birthday-v3.jpg" alt="" width={1152} height={864} sizes="220px" />
             <Image className="pkg-collage-small pkg-collage-b" src="/images/events/bridal-shower-v2.jpg" alt="" width={1152} height={864} sizes="220px" />
           </div>

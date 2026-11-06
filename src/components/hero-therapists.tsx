@@ -11,10 +11,10 @@ const INTERVAL_MS = 5500;
 const SLIDE_MS = 700;
 
 const slides = [
-  { name: 'Spa Package', href: '/spa-packages', src: '/images/packages/spa-packages-v21.jpg', ar: 1089 / 1445, alt: 'ALLORA therapist giving a spa package massage' },
-  { name: 'Your Place', href: '/your-place', src: '/images/place/your-place-v6.jpg', ar: 1089 / 1445, alt: 'ALLORA therapist giving a massage at your place' },
-  { name: 'Event Service', href: '/event-services', src: '/images/events/event-services-v3.jpg', ar: 1089 / 1445, alt: 'ALLORA therapist giving a seated massage at an event' },
-  { name: 'Corporate', href: '/corporate', src: '/images/corporate/corporate-v4.png', ar: 1089 / 1445, alt: 'ALLORA therapist giving a seated shoulder massage at the office' },
+  { name: 'Spa Package', href: '/spa-packages', src: '/images/packages/spa-packages-v22.jpg', ar: 864 / 1152, alt: 'ALLORA Spa Package in Media City Dubai' },
+  { name: 'Your Place', href: '/your-place', src: '/images/place/your-place-v8.jpg', ar: 864 / 1152, alt: 'ALLORA Your Place spa in Media City Dubai' },
+  { name: 'Event Service', href: '/event-services', src: '/images/events/event-services-v4.jpg', ar: 864 / 1152, alt: 'ALLORA Event Services in Media City Dubai' },
+  { name: 'Corporate', href: '/corporate', src: '/images/corporate/corporate-v5.jpg', ar: 864 / 1152, alt: 'ALLORA Corporate massage in Media City Dubai' },
   { name: 'Deep Tissue', href: '/deep-tissue', src: '/images/massages/deep-tissue-v11.jpg', ar: 1199 / 1312, alt: 'ALLORA therapist giving a firm deep tissue massage' },
 ];
 

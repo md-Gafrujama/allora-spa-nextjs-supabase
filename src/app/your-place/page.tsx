@@ -26,8 +26,8 @@ export default async function YourPlace() {
     <div className="pkg-page place-page">
       <PageMobileHero
         title="Your Place"
-        image="/images/place/your-place-v6.jpg"
-        poster={{ width: 1089, height: 1445 }}
+        image="/images/place/your-place-v8.jpg"
+        poster={{ width: 864, height: 1152 }}
         alt="ALLORA therapist massage at your place"
         bookMessage="Hello ALLORA, I would like to book a spa at my place."
       />
@@ -48,7 +48,7 @@ export default async function YourPlace() {
             </ul>
           </div>
           <div className="pkg-hero-collage" aria-hidden="true">
-            <Image className="pkg-collage-main" src="/images/place/your-place-v6.jpg" alt="" width={1089} height={1445} priority sizes="(max-width:900px) 92vw, 520px" />
+            <Image className="pkg-collage-main" src="/images/place/your-place-v8.jpg" alt="" width={864} height={1152} priority sizes="(max-width:900px) 92vw, 520px" />
             <Image className="pkg-collage-small pkg-collage-a" src="/images/place/hotel-v3.jpg" alt="" width={1152} height={864} sizes="220px" />
             <Image className="pkg-collage-small pkg-collage-b" src="/images/place/facial-v3.jpg" alt="" width={1152} height={864} sizes="220px" />
           </div>
